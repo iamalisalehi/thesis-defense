@@ -4,6 +4,10 @@
 \input{tex/setup-colors}
 \input{tex/setup-settings}
 
+\usepackage[normalem]{ulem}
+
+\newcommand{\der}{\mathrm{d}}
+
 \usetheme{JD}
 \beamertemplatenavigationsymbolsempty
 
@@ -13,34 +17,156 @@
 %     {long form on title page}
 %
 \title
-    [Open Source Modelling of Energy Infrastructure]
-    {Open Source Modelling and Optimisation of\\ Energy Infrastructure at Urban Scale}
+    [SGWB detection with TDA]
+    {Detection of Stochastic Gravitational Wave Background\\ Based on Topological Data Analysis}
 
-\subtitle{Final presentation} % short version unused by this template
+\subtitle{M.Sc. Thesis defense} % short version unused by this template
 \author
-    [J. Dorfner]
-    {Johannes Dorfner}
+    [A. Salehi]
+    {Ali Salehi}
 \institute
     [\hypersetup{urlcolor=jdgrey}%
-     \href{http://www.tum.de/}{TUM} %
-     \href{http://www.ei.tum.de/}{EI} %
-     \href{http://www.ens.ei.tum.de/}{ENS}]
-    {Chair of Renewable and Sustainable Energy Systems\\%
-     Department of Electrical and Computer Engineering\\%
-     Technical University of Munich}
+     \href{http://www.ccg.sbu.ac.ir/}{CCG} %
+     \href{http://www.sbu.ac.ir}{SBU}]
+    {Computational Cosmology Group\\
+     Department of Physics\\%
+     Shahid Beheshti University}
 \date
-    [12/2016]
-    {06 December 2016}
+    [2023/06]
+    {28 Shahrivar 2023}
+
+%\logo{\includegraphics[width=1cm]{logo}}
+\titlegraphic{\includegraphics[width=2cm]{logo}}
+
+%\titlegraphic{%
+%\begin{picture}(0,0)
+%		\put(-40,-150){\makebox(0,0)[rt]{\includegraphics[width=2cm]{logo}}}
+%\end{picture}}
+%\AtBeginSection[]{
+%	\begin{frame}{Talk Overview}
+%		\tableofcontents[currentsection]
+%	\end{frame}
+%	\frame{\sectionpage}
+%}
+
 
 \begin{document}
 
 \maketitle
 
+\begin{frame}{Overview}
+\begin{center}
+\begin{tikzpicture}%[
+	%node distance=4.5em and .75cm,font=\small
+	%]
+	\node[terminator, fill=yellow!20] (SGWB) at (-7, 2) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Stochastic\\ Gravitational Wave\\ Background}
+		\end{minipage}};
+
+	\node[terminator, fill=yellow!20] (TDA) at (3, 4.5) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Topological Data\\ Analysis}
+		\end{minipage}};
+\uncover<2-12>{
+	\node[terminator, fill=blue!20] (Inf) at (-2, 7) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Inflation}
+		\end{minipage}};
+}
+\uncover<2-5>{
+	\path [connector] (Inf) -- (SGWB);
+	\node [draw=none, rotate=45] at (-3.6, 5.7) {\scriptsize Early universe};
+}
+\uncover<3-12>{
+	\node[terminator, fill=blue!20] (GW) at (-7, 4.5) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Gravitational Wave\\ Events}
+		\end{minipage}};		
+	\path [connector] (GW) -- (SGWB);
+}
+\uncover<4-12>{
+	\node[terminator, fill=blue!20] (BBH) at (-7, 7) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Compact binaries}
+		\end{minipage}};
+	\path [connector] (BBH) -- (GW);
+}
+
+\uncover<5-12>{	
+	\node[terminator, fill=blue!20] (PBH) at (-2, 4.5) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Primordial\\ Black Holes}
+		\end{minipage}};
+	\path [connector] (Inf) -- (PBH);
+}
+\uncover<6-12>{
+	\node[terminator, fill=blue!20] (Clust) at (-2, 2.5) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Compact\\ Sub-Halos}
+		\end{minipage}};
+	\path [connector] (PBH) -- (Clust);
+}
+\uncover<7-12>{
+	\path [connector] (Clust) -- (BBH);
+	\node [draw=none, rotate=-42] at (-5, 5.5) {\scriptsize Late universe};
+}
+\uncover<8-12>{
+	\node[terminator, fill=blue!20] (Top) at (3, 7) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Algabraic\\ Topology}
+		\end{minipage}};
+	\path [connector] (Top) -- (TDA);
+}
+\uncover<9-12>{
+	\node[terminator, fill=green!20] (Ana) at (3, 2.5) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Data Analysis\\ Model}
+		\end{minipage}};
+	\path [connector] (TDA) -- (Ana);
+}
+\uncover<10-12>{
+	\node[terminator, fill=green!20] (Dat) at (-2, 0.3) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Data}
+		\end{minipage}};
+	\path [connector] (SGWB) -- (Dat);
+}
+\uncover<11-12>{
+	\path [connector] (Dat) -- (Ana);
+}
+\uncover<12>{
+	\node[terminator, fill=red!20] (Res) at (3, 0) {
+		\begin{minipage}{.16\textwidth}
+			\centering
+			\textbf{Results}
+		\end{minipage}};
+	\path [connector] (Ana) -- (Res);
+}
+
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
 \begin{frame}{Outline}
     \tableofcontents
 \end{frame}
 
-\input{tex/introduction}
-\input{tex/models}
-\input{tex/development}
+\input{tex/gravitational_waves}
+\input{tex/primordial_black_holes}
+\input{tex/simulations}
+\input{tex/topological_data_analysis}
+\input{tex/results}
+\input{tex/conclusion_and_outlook}
 \end{document}

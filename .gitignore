@@ -7,3 +7,5 @@
 *.toc
 *.out
 *.vrb
+animate/
+animate.sh

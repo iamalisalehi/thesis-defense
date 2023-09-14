@@ -173,11 +173,7 @@
 % Title page
 \setbeamertemplate{title page}
 {
-  \vskip-1em%
-  \hfill%
-  \llap\inserttitlegraphic\par%
-  \vbox{}%
-  \vfill
+  \vskip1em%
     \begin{beamercolorbox}[sep=6pt]{title}
       \usebeamerfont{title}\inserttitle\par%
       \ifx\insertsubtitle\@empty%
@@ -196,6 +192,10 @@
     \begin{beamercolorbox}[sep=6pt]{date}
       \usebeamerfont{date}\insertdate
     \end{beamercolorbox}
+  \vfill
+  \hfill%
+  \llap\inserttitlegraphic\par%
+  \vbox{}%
   \vfill
 }
 
