@@ -1,0 +1,70 @@
+% !TeX spellcheck = en_GB
+% PhD seminar: isolated black holes with Roman and Rubin microlensing.
+% Build: latexmk -pdf seminar.tex   (pdflatex; the animation plays in Adobe Reader or Okular)
+\documentclass[english,11pt,aspectratio=1610,xcolor=table]{beamer}
+\input{tex/setup}
+\input{tex/setup-colors}
+\input{tex/setup-settings}
+
+\usepackage[normalem]{ulem}
+
+\newcommand{\der}{\mathrm{d}}
+\newcommand{\tE}{t_{\rm E}}
+\newcommand{\piE}{\pi_{\rm E}}
+\newcommand{\tetE}{\theta_{\rm E}}
+\newcommand{\Ml}{M_{\rm L}}
+\newcommand{\Msun}{M_\odot}
+\newcommand{\Neff}{N_{\rm eff}}
+\newcommand{\pirel}{\pi_{\rm rel}}
+% x position (cm) of a mass on the log mass axis of the "why it matters" slide: 3.3 cm per decade
+\newcommand{\massx}[1]{\fpeval{3.3*ln(#1)/ln(10)}}
+
+% References and image credits: small grey text on the slide, as in the defense.
+% \ads{bibcode}{text} links to the NASA ADS abstract page.
+\newcommand{\ads}[2]{\href{https://ui.adsabs.harvard.edu/abs/#1}{#2}}
+\newcommand{\refnote}[1]{{\hypersetup{urlcolor=gray}\textcolor{gray}{\fontsize{6.5}{8}\selectfont #1}}}
+\newcommand{\credit}[1]{\refnote{Image credit: #1}}
+
+\usetheme{JD}
+\beamertemplatenavigationsymbolsempty
+
+\title
+    [Isolated black holes with Roman \& Rubin]
+    {Detecting Isolated Black Holes through Gravitational\\ Microlensing with Next-Generation Telescopes}
+\subtitle{Ph.D.\ seminar}
+\author
+    [A. Salehi]
+    {Ali Salehi\\[6pt]
+     {\small Supervisor: Dr.\ Sedighe Sajadian\qquad Advisor: Dr.\ Hamed Bakhshian}}
+\institute
+    [\hypersetup{urlcolor=jdgrey}\href{https://english.iut.ac.ir/}{IUT}]
+    {Department of Physics\\%
+     Isfahan University of Technology}
+% the date of the talk: set it here
+\date
+    [2026]
+    {\today}
+
+\titlegraphic{\includegraphics[width=2cm]{iut_logo}}
+
+\begin{document}
+
+\maketitle
+
+\input{tex/00_overview}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\input{tex/01_black_holes}
+\input{tex/02_microlensing}
+\input{tex/03_surveys}
+\input{tex/04_simulation}
+\input{tex/05_results}
+\input{tex/06_plan}
+\input{tex/07_closing}
+
+\appendix
+\input{tex/08_backup}
+\end{document}

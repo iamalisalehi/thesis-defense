@@ -1,0 +1,148 @@
+% !TeX root = ../seminar.tex
+\section{Gravitational Microlensing}
+\frame{\sectionpage}
+
+\begin{frame}{A point lens: two images and the Einstein radius}
+\centering
+% Schematic, but the image angles obey the lens equation for beta = 0.06, theta_E = 0.25 (D_S = 10).
+\begin{tikzpicture}[x=0.9cm, y=0.62cm, font=\footnotesize]
+  \draw[jdlightgrey, dashed] (-0.3,0) -- (10.6,0);
+  \draw[jdverylightgrey] (4.2,-2.5) -- (4.2,3.0) node[above, text=jdgrey] {lens plane};
+  \draw[jdverylightgrey] (10,-2.5) -- (10,3.0) node[above, text=jdgrey] {source plane};
+  % observer, lens, source
+  \fill (0,0) circle (2pt) node[below=2pt] {observer};
+  \fill[black] (4.2,0) circle (3.5pt);
+  \node[below=4pt] at (4.2,0) {lens $M$};
+  \node[star, star points=5, star point ratio=2.2, fill=yellow!80!orange, draw=orange!70!black,
+        inner sep=1.6pt] (S) at (10,0.6) {};
+  \node[right=2pt] at (S) {source};
+  % the two light paths
+  \draw[orange!80!black, thick, -{Latex[length=2mm]}] (10,0.6) -- (4.2,1.184) -- (0,0);
+  \draw[orange!80!black, thick, -{Latex[length=2mm]}] (10,0.6) -- (4.2,-0.932) -- (0,0);
+  % where the observer sees the images
+  \uncover<2->{
+  \draw[jdblue, densely dashed] (4.2,1.184) -- (10,2.818);
+  \draw[jdblue, densely dashed] (4.2,-0.932) -- (10,-2.218);
+  \node[star, star points=5, star point ratio=2.2, fill=yellow!40, draw=orange!50, inner sep=1.3pt]
+       at (10,2.818) {};
+  \node[star, star points=5, star point ratio=2.2, fill=yellow!40, draw=orange!50, inner sep=0.9pt]
+       at (10,-2.218) {};
+  \node[right=3pt, text=jdblue] at (10,2.818) {image $+$};
+  \node[right=3pt, text=jdblue] at (10,-2.218) {image $-$};
+  % angles at the observer
+  \draw[jdblue] (1.6,0) arc (0:15.8:1.6);
+  \node[text=jdblue] at (1.95,0.27) {$\theta$};
+  \draw[orange!80!black] (2.8,0) arc (0:3.4:2.8);
+  \node[text=orange!80!black] at (3.12,0.1) {$\beta$};}
+  % distances
+  \draw[{Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (0,-2.0) -- node[fill=white, inner sep=1pt] {$D_L$} (4.2,-2.0);
+  \draw[{Latex[length=1.6mm]}-{Latex[length=1.6mm]}] (0,-2.55) -- node[fill=white, inner sep=1pt] {$D_S$} (10,-2.55);
+\end{tikzpicture}
+
+\vspace{2mm}
+\begin{columns}[T]
+\begin{column}{.48\linewidth}
+\uncover<3->{
+\[
+  \beta = \theta - \frac{\tetE^2}{\theta},\qquad
+  \theta_\pm = \frac{\tetE}{2}\left(u\pm\sqrt{u^2+4}\right)
+\]}
+\end{column}
+\begin{column}{.48\linewidth}
+\uncover<4->{
+\[
+  \tetE = \sqrt{\kappa\,M\,\pirel},\quad \kappa = 8.144\,\tfrac{\rm mas}{\Msun}
+\]
+\[
+  \pirel = {\rm AU}\bigl(\tfrac{1}{D_L}-\tfrac{1}{D_S}\bigr)
+\]}
+\end{column}
+\end{columns}
+\uncover<5->{\centering\small
+Bulge star ($0.5\,\Msun$): $\tetE\approx0.4$\,mas \qquad
+$10\,\Msun$ black hole at 2\,kpc: $\tetE\approx5$\,mas \qquad
+$u=\beta/\tetE$\par}
+\vfill
+\refnote{\ads{1986ApJ...304....1P}{Paczy\'nski 1986, ApJ 304, 1}}
+\end{frame}
+
+\begin{frame}{A lens crossing a star}
+\centering
+\animategraphics[autoplay, loop, controls=play, poster=40, width=.84\linewidth]{16}{img/anim/frame_}{00}{80}
+
+\vspace{1mm}
+\small
+The star is magnified (top) and the centre of its light moves (bottom), even though the two images
+are never resolved. Near the peak the lens is \emph{inside} the stellar disc: an Einstein ring forms
+and the finite source caps the magnification.
+\vfill
+\refnote{Reverse ray tracing of a limb-darkened star, $R_\star=0.6\,\tetE$ (A.~Salehi); the curves are
+measured from the traced images. Plays in Adobe Reader or Okular.}
+\end{frame}
+
+\begin{frame}{What a light curve does --- and does not --- tell us}
+\begin{columns}[T]
+\begin{column}{.45\linewidth}
+Point-lens magnification:
+\[
+  A(u) = \frac{u^2+2}{u\sqrt{u^2+4}}
+\]
+\[
+  u(t) = \sqrt{u_0^2 + \left(\frac{t-t_0}{\tE}\right)^2}
+\]
+\uncover<2->{Einstein timescale:
+\[
+  \tE = \frac{\tetE}{\mu_{\rm rel}}
+\]
+mixes \textbf{mass}, \textbf{distances} and \textbf{velocity}.
+Bulge events: $\tE\sim20$\,d; black holes: hundreds of days.}
+\end{column}
+\begin{column}{.52\linewidth}
+\uncover<3->{Astrometric shift of the light centroid:
+\[
+  \delta\theta = \frac{\tetE\,u}{u^2+2},\qquad \delta\theta_{\max} = \frac{\tetE}{\sqrt8}\ \ \text{at}\ u=\sqrt2
+\]}
+\uncover<4->{Separation of the two images:
+\[
+  \Delta\theta = \tetE\sqrt{u^2+4}\ \ \ge 2\tetE
+\]
+\footnotesize resolvable for heavy, nearby lenses ($\gtrsim10$\,mas for tens of $\Msun$ at a few kpc)}
+\end{column}
+\end{columns}
+\vfill
+\refnote{\ads{1986ApJ...304....1P}{Paczy\'nski 1986, ApJ 304, 1};
+\ads{2000ApJ...542..785G}{Gould 2000, ApJ 542, 785}}
+\end{frame}
+
+\begin{frame}{Breaking the degeneracy: from observables to a lens mass}
+\centering
+\begin{tikzpicture}[font=\small,
+    ob/.style={terminator, fill=orange!15, text width=2.9cm, align=center, minimum height=3.2em},
+    qu/.style={terminator, fill=blue!10, text width=5.1cm, align=center, minimum height=3em},
+    re/.style={terminator, fill=green!15, text width=3.3cm, align=center, minimum height=3em}]
+  \node[ob] (ph) at (0,1.2) {\textbf{Photometry}\\ brightness vs time};
+  \node[ob] (as) at (0,-1.2) {\textbf{Astrometry}\\ centroid vs time};
+  \node[qu] (te) at (5.3,2.0) {$\tE$, $u_0$, $t_0$, blending:\\ the shape of the light curve};
+  \uncover<2->{\node[qu] (pi) at (5.3,0) {$\piE = \pirel/\tetE$: annual parallax (Earth's orbit)\\
+     \& satellite parallax (two observers)};}
+  \uncover<3->{\node[qu] (th) at (5.3,-2.0) {$\tetE$: size of the centroid's excursion\\ (or of the image separation)};}
+  \uncover<4->{
+  \node[re] (m) at (10.6,0.8) {\textbf{Lens mass}\\ $\Ml = \dfrac{\tetE}{\kappa\,\piE}$};
+  \node[re] (d) at (10.6,-1.0) {\textbf{Lens distance}\\ $\pirel = \tetE\,\piE$};}
+  \path[connector] (ph.east) -- (te.west);
+  \uncover<2->{\path[connector] (ph.east) -- (pi.west); \path[connector] (as.east) -- (pi.west);}
+  \uncover<3->{\path[connector] (as.east) -- (th.west);}
+  \uncover<4->{
+  \path[connector] (pi.east) -- (m.west); \path[connector] (th.east) -- (m.west);
+  \path[connector] (pi.east) -- (d.west); \path[connector] (th.east) -- (d.west);}
+\end{tikzpicture}
+
+\vspace{4mm}
+\uncover<5->{%
+\[
+  \left(\frac{\sigma_M}{M}\right)^2 = \left(\frac{\sigma_{\piE}}{\piE}\right)^2 + \left(\frac{\sigma_{\tetE}}{\tetE}\right)^2
+\]
+\small Black holes: $\tetE$ is large (easy), $\piE$ is small (hard).}
+\vfill
+\refnote{\ads{2000ApJ...542..785G}{Gould 2000, ApJ 542, 785}}
+\end{frame}

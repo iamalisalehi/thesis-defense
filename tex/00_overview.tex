@@ -1,0 +1,46 @@
+% !TeX root = ../seminar.tex
+% Concept map of the talk, built step by step (the defense's overview frame, redrawn).
+\begin{frame}{Overview}
+\centering
+\begin{tikzpicture}[
+    every node/.style={font=\small},
+    cbox/.style={terminator, minimum height=2.6em, text width=2.55cm, align=center},
+    lab/.style={draw=none, font=\scriptsize\itshape, text=jddarkgrey}]
+  \node[cbox, fill=yellow!25] (bh)  at (-5.6, 2.9) {\textbf{Isolated\\ black holes}};
+  \node[cbox, fill=yellow!25] (ml)  at (-1.6, 2.9) {\textbf{Gravitational\\ microlensing}};
+  \path[connector] (bh) -- node[lab, above] {only gravity} (ml);
+\uncover<2->{
+  \node[cbox, fill=blue!15] (ph) at (-3.5, 1.15) {Photometry\\ $\tE$, $\piE$};
+  \node[cbox, fill=blue!15] (as) at ( 0.3, 1.15) {Astrometry\\ $\tetE$};
+  \path[connector] (ml) -- (ph);
+  \path[connector] (ml) -- (as);
+}
+\uncover<3->{
+  \node[cbox, fill=blue!15] (m) at (-1.6, -0.6) {Lens mass\\ $\Ml=\tetE/\kappa\piE$};
+  \path[connector] (ph) -- (m);
+  \path[connector] (as) -- (m);
+}
+\uncover<4->{
+  \node[cbox, fill=blue!15] (ro) at (3.6, 2.9) {\textbf{Roman}\\ \footnotesize near-IR, from L2};
+  \node[cbox, fill=blue!15] (ru) at (6.5, 2.9) {\textbf{Rubin}\\ \footnotesize optical, 10 years};
+}
+\uncover<5->{
+  \node[cbox, fill=green!20] (sim) at (5.05, 1.15) {Monte Carlo\\ simulator};
+  \path[connector] (ro) -- (sim);
+  \path[connector] (ru) -- (sim);
+}
+\uncover<6->{
+  \node[cbox, fill=green!20] (fi) at (5.05, -0.6) {Fisher forecasts\\ \footnotesize Rubin / Roman / joint};
+  \path[connector] (sim) -- (fi);
+  \path[connector, dashed] (m) -- (fi);
+}
+\uncover<7->{
+  \node[cbox, fill=red!20, text width=3.4cm] (res) at (1.7, -2.2) {Yields \& mass precision\\ \footnotesize (preliminary results)};
+  \path[connector] (fi) |- (res);
+}
+\uncover<8->{
+  \node[cbox, fill=red!20, text width=3.4cm] (pop) at (-4.0, -2.2) {BH abundance\\ \& mass function};
+  \path[connector] (res) -- node[lab, above] {thesis} (pop);
+}
+\end{tikzpicture}
+\end{frame}

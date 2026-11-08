@@ -1,0 +1,245 @@
+% !TeX root = ../seminar.tex
+\section{Preliminary Results}
+\frame{\sectionpage}
+
+\begin{frame}{The preliminary runs}
+\begin{columns}[T]
+\begin{column}{.32\linewidth}
+\begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body}
+\centering\textbf{Three lens populations}\\[3pt]\raggedright\small
+\textbf{ordinary}: Kroupa IMF + remnants of a $10$\,Gyr bulge\\[2pt]
+\textbf{black holes}: log-uniform, $3$--$1000\,\Msun$\\[2pt]
+\textbf{neutron stars}: $1.35\pm0.15\,\Msun$
+\end{beamercolorbox}
+\end{column}
+\begin{column}{.32\linewidth}
+\begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body}
+\centering\textbf{Same sky, ten years}\\[3pt]\raggedright\small
+$1{,}829$ sightlines, millions of events per population; Roman's fields modelled as six circles
+($1.47$\,deg$^2$); Roman's mission placed in 2028--2032
+\end{beamercolorbox}
+\end{column}
+\begin{column}{.32\linewidth}
+\begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body}
+\centering\textbf{How to read the numbers}\\[3pt]\raggedright\small
+event-rate weighted; corrected for the model's too-thin dust near the plane; rounded.
+Compact-object yields scale with the abundance $F$
+\end{beamercolorbox}
+\end{column}
+\end{columns}
+\vspace{6mm}
+\uncover<2->{%
+\begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body alerted}
+\centering
+$F$ = the share of the Galaxy's stellar mass held by the population;\quad
+yield $N(F) = F\,N_1$\\[2pt]
+\small literature: $F_{\rm BH}\approx0.005$--$0.03$, \quad $F_{\rm NS}\lesssim0.06$
+\end{beamercolorbox}}
+\vfill
+\refnote{\ads{2001MNRAS.322..231K}{Kroupa 2001, MNRAS 322, 231};
+\ads{2000ApJ...535..928G}{Gould 2000, ApJ 535, 928}}
+\end{frame}
+
+\begin{frame}{Who detects what --- and why: the dust}
+\begin{columns}[T]
+\begin{column}{.53\linewidth}
+\begin{itemize}
+  \item<+-> \textbf{Inside Roman's fields} (10 years, ordinary lenses):\\
+        Roman $\approx\!5.0\times10^4$ events, Rubin $\approx\!4.9\times10^3$
+  \item<+-> \textbf{Why:} at the median extinction of Roman's detections, $A_V\approx7.2$,
+        the dust dims Rubin's $r$-band source by $6.1$\,mag and Roman's F146 source by $1.4$\,mag;
+        and Roman has $\sim\!20$ times as many points
+  \item<+-> \emph{When Roman observes the peak, Roman detects the event}
+  \item<+-> \textbf{Outside Roman's fields} Rubin is alone: $(59\pm5)\%$ of all detections,
+        $\approx\!7.8\times10^4$ over the $59$\,deg$^2$ simulated
+\end{itemize}
+\end{column}
+\begin{column}{.45\linewidth}
+\centering
+\uncover<2->{%
+\begin{tikzpicture}[font=\small]
+  \node[anchor=west] at (0,2.6) {dimming of the source at $A_V=7.2$};
+  \fill[orange!70] (0,1.6) rectangle (6.1*0.85,2.1);
+  \node[anchor=west, font=\footnotesize] at (0.1,1.85) {Rubin $r$: $6.1$\,mag};
+  \fill[jdblue!70] (0,0.8) rectangle (1.4*0.85,1.3);
+  \node[anchor=west, font=\footnotesize] at (1.4*0.85+0.1,1.05) {Roman F146: $1.4$\,mag};
+  \draw (0,0.6) -- (0,2.25);
+  \node[anchor=west, font=\footnotesize, text=jdgrey] at (0,0.25) {a factor $\sim\!100$ in flux for Rubin};
+\end{tikzpicture}}
+\vspace{4mm}
+\uncover<3->{%
+\begin{beamercolorbox}[rounded=true,sep=5pt,wd=\linewidth]{block body example}
+\small Of the footprint events Rubin detects and Roman does not, \textbf{all but one} peak while
+Roman is not observing (in a gap, or before / after its mission).
+\end{beamercolorbox}}
+\end{column}
+\end{columns}
+\vfill
+\refnote{Extinction law: \ads{1989ApJ...345..245C}{Cardelli et al.\ 1989}; $A_r/A_V=0.85$, $A_{\rm F146}/A_V=0.20$.}
+\end{frame}
+
+\begin{frame}{Roman turns Rubin's detections into measurements}
+For the events \textbf{Rubin detects inside Roman's fields}, Rubin alone $\to$ Rubin + Roman:
+\vspace{2mm}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{lccc}
+\toprule
+ & ordinary lenses & neutron stars & black holes \\
+\midrule
+characterised ($\tE$, $\piE$) & $5\% \to 28\%$ & $5\% \to 37\%$ & $12\% \to 83\%$ \\
+\rowcolor{jdlightestblue}
+mass to $10\%$ & $\approx0 \to \mathbf{8\%}$ & $\approx0 \to \mathbf{16\%}$ & $0.2\% \to \mathbf{53\%}$ \\
+median gain in $\sigma(\tE)$ & $\times10$ & $\times8$ & $\times17$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\vspace{2mm}
+\begin{itemize}\small
+  \item<2-> \textbf{The reverse is small:} Rubin changes Roman's precision on shared events by $<0.4\%$
+        and adds $9$--$13\%$ to Roman's $10\%$ masses
+  \item<3-> Rubin matters inside the fields only for \textbf{events Roman does not see peak}: short events wholly
+        inside a season gap ($\sigma(\tE)$ ten times better), and events before / after Roman's mission
+  \item<4-> \textbf{Parallax:} Roman's ten seasons already sample Earth's orbit; Rubin's decade adds $<0.4\%$
+        even for multi-year black-hole events, and L2 vs Earth adds $<1\%$
+\end{itemize}
+\vfill
+\refnote{This work, preliminary runs; dust-corrected. Details in the backup slides.}
+\end{frame}
+
+\begin{frame}{The Einstein radius is Roman's measurement}
+\begin{columns}[T]
+\begin{column}{.58\linewidth}
+\includegraphics[width=\linewidth]{h5_astrometry_summary}
+\refnote{Ordinary lenses in Roman's fields, as simulated.}
+\end{column}
+\begin{column}{.40\linewidth}
+\small
+\begin{itemize}
+  \item<+-> Roman's per-exposure error: a $1.1$\,mas floor for bright stars, $\approx2.8$\,mas for a typical source
+  \item<+-> \textbf{Black holes}: median maximum shift $3.4$\,mas --- visible in \emph{single exposures};
+        $\tetE$ to $10\%$ for $97\%$ of them
+  \item<+-> \textbf{Ordinary lenses}: median shift $0.12$\,mas --- emerges only by averaging
+        $\sim\!5\times10^4$ exposures
+  \item<+-> Rubin ($\gtrsim10$\,mas per visit) adds nothing to $\tetE$
+\end{itemize}
+\uncover<5->{%
+\begin{beamercolorbox}[rounded=true,sep=4pt,wd=\linewidth]{block body alerted}
+\footnotesize Largest uncertainty: does Roman's astrometric floor really average down?
+Black holes are the least sensitive to it.
+\end{beamercolorbox}}
+\end{column}
+\end{columns}
+\vfill
+\refnote{Astrometric floor: \ads{2019JATIS...5d4005S}{Sanderson et al.\ 2019}}
+\end{frame}
+
+\begin{frame}{For black holes the parallax limits the mass}
+\begin{columns}[T]
+\begin{column}{.58\linewidth}
+\includegraphics[width=\linewidth, trim=0 14 508 0, clip]{p7_precision}
+\refnote{Weighted cumulative fractional errors of (a) $\tE$, (b) $\piE$, (c) $\tetE$, (d) mass; black holes (bh)
+and neutron stars (ns); Rubin, Roman, joint. Dotted: $10\%$. As simulated.}
+\end{column}
+\begin{column}{.40\linewidth}
+\small
+Roman's black-hole detections:
+\begin{itemize}
+  \item $\tetE$ to $10\%$: $\approx97\%$
+  \item $\piE$ to $10\%$: $\approx13\%$
+  \item mass to $10\%$: $\approx10\%$
+\end{itemize}
+\vspace{2mm}
+\uncover<2->{Heavy lenses have \textbf{large} $\tetE$ but \textbf{small} $\piE$:
+\[
+  \piE = \sqrt{\frac{\pirel}{\kappa M}}
+\]
+The parallax, not the Einstein radius, decides how many black-hole masses we get.}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{How many black holes?}
+\begin{columns}[T]
+\begin{column}{.56\linewidth}
+\includegraphics[width=\linewidth, trim=0 11 0 0, clip]{y3_yield_vs_F}
+\refnote{Expected events in Roman's fields over ten years against $F$; dashed: masses to $10\%$; dotted verticals:
+literature abundances. Figure as simulated (before the dust correction).}
+\end{column}
+\begin{column}{.42\linewidth}
+\small
+Roman, its fields, ten years (dust-corrected):
+\vspace{1mm}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+ & events & masses ($10\%$) \\
+\midrule
+black holes & $5{,}660\,F$ & $580\,F$ \\
+neutron stars & $36{,}500\,F$ & $1{,}100\,F$ \\
+ordinary & $50{,}000$ & $830$ \\
+\bottomrule
+\end{tabular}
+\vspace{2mm}
+\uncover<2->{%
+\begin{beamercolorbox}[rounded=true,sep=5pt,wd=\linewidth]{block body example}
+\textbf{$F_{\rm BH}=0.005$--$0.03$:}\\ $\approx$\textbf{30--170} black-hole events,\\
+\textbf{3--17} masses to $10\%$
+\end{beamercolorbox}}
+\uncover<3->{\footnotesize Neutron stars ($F=0.005$--$0.06$): 180--2,190 events, 6--66 masses.
+The adopted field layout would add $\sim\!15$--$25\%$.}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Seeing the two images}
+\begin{columns}[T]
+\begin{column}{.55\linewidth}
+\includegraphics[width=\linewidth]{p6_resolution}
+\refnote{(a) Probability per population, telescope and criterion; (b) at $\mathcal{D}=5$ against lens mass.
+As simulated.}
+\end{column}
+\begin{column}{.43\linewidth}
+\small
+Resolvable: $\ge3$ visits with both images detectable and $\Delta\theta$ above a bar
+\begin{itemize}
+  \item $\Delta\theta \ge \mathcal{D}\,\sigma_{\rm ast}$, $\mathcal{D}=5$ or $20$
+  \item $\Delta\theta \ge$ PSF width (conservative)
+\end{itemize}
+\uncover<2->{%
+Roman, black holes:\\
+\textbf{34\%} ($\mathcal{D}=5$), \textbf{15\%} ($\mathcal{D}=20$), \textbf{0.25\%} (PSF)\\[2pt]
+Rubin, black holes: $\approx5\%$; lighter lenses: rare}
+\uncover<3->{%
+\begin{beamercolorbox}[rounded=true,sep=4pt,wd=\linewidth]{block body alerted}
+\footnotesize Two orders of magnitude between the bars: the criterion for Roman's diffraction-limited
+images must be measured on simulated Roman images.
+\end{beamercolorbox}}
+\end{column}
+\end{columns}
+\vfill
+\refnote{Criterion: \ads{2026ApJ..1009..116S}{Sajadian \& Makler 2026, ApJ 1009, 116}}
+\end{frame}
+
+\begin{frame}{What the preliminary runs taught us}
+The simulator works, reproduces known numbers, and showed \textbf{which inputs move the answer most}:
+\vspace{2mm}
+\begin{enumerate}
+  \item<2-> \textbf{Correlated astrometric errors} --- whether Roman's floor averages down
+        (decisive for neutron stars and ordinary lenses)
+  \item<3-> \textbf{Dust near the Galactic plane} --- the map used is $3$--$6$ times too thin within
+        $\sim\!1^\circ$ of the plane (VVV check); correcting it lowers Roman's yields by $\sim\!1/3$, Rubin's by $>1/2$,
+        and leaves the survey comparison intact
+  \item<4-> \textbf{Roman's photometric noise} --- to be taken from pixel-level simulations
+  \item<5-> \textbf{The field geometry} --- the adopted layout gives Roman $\sim\!15$--$25\%$ more events
+  \item<6-> \textbf{Black-hole physics} --- mass function and velocities; and the image-resolution criterion
+\end{enumerate}
+\vspace{2mm}
+\uncover<7->{\small\textbf{Checks:} the event-rate-weighted $\tE$ distribution matches OGLE-IV (mean $23.5$ vs $23.8$\,d);
+Roman's detection rate is within $\sim\!25\%$ of Penny et al.; black-hole fractions agree with Sajadian \& Sahu on their sample.}
+\vfill
+\refnote{\ads{2019ApJS..244...29M}{Mr\'oz et al.\ 2019, ApJS 244, 29};
+\ads{2020A\%26A...644A.140S}{Surot et al.\ 2020, A\&A 644, A140};
+\ads{2019ApJS..241....3P}{Penny et al.\ 2019};
+\ads{2023AJ....165...96S}{Sajadian \& Sahu 2023}}
+\end{frame}

@@ -1,0 +1,348 @@
+% !TeX root = ../seminar.tex
+% Backup slides: not counted in the frame numbers (appendixnumberbeamer).
+\section*{Backup}
+
+\begin{frame}[plain]
+\vfill
+\centering
+{\usebeamerfont{title}\usebeamercolor[fg]{title}\Large Backup slides}
+\vfill
+\end{frame}
+
+\begin{frame}{Backup: light curves and centroid shifts for several $u_0$}
+\centering
+\includegraphics[width=\linewidth]{theory_curves}
+
+\small (a) magnification, (b) centroid shift against time, (c) the centroid's ellipse on the sky.
+\end{frame}
+
+\begin{frame}{Backup: gap filling --- when Rubin matters inside Roman's fields}
+\begin{columns}[T]
+\begin{column}{.56\linewidth}
+\includegraphics[width=\linewidth]{f2_gap_filling}
+\refnote{Left: median $\sigma_{\rm joint}(\tE)/\sigma_{\rm Roman}(\tE)$ against the peak's distance from a season edge,
+per $\tE$ bin. Right: fraction characterised jointly but not by Roman. Shaded: inside a season.}
+\end{column}
+\begin{column}{.42\linewidth}
+\footnotesize
+$10$--$30$\,d events, by where the peak falls:\\[2pt]
+\begin{tabular}{@{}lcc@{}}
+\toprule
+peak & $\dfrac{\sigma_{\rm joint}}{\sigma_{\rm Roman}}(\tE)$ & $\Neff$ \\
+\midrule
+anywhere in a gap & $0.97$ & $670$ \\
+$>15$\,d past an edge & $0.83$ & $376$ \\
+$>30$\,d past & $0.44$ & $177$ \\
+$>45$\,d past & $\mathbf{0.08}$ & $62$ \\
+in a season & $1.00$ & $888$ \\
+\bottomrule
+\end{tabular}
+\begin{itemize}
+  \item Roman itself detects $96\%$ of in-gap events, from the wings
+  \item The gain is large only when the \emph{whole event} sits in a gap
+  \item As simulated: the corrected dust can only shrink it
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Backup: two parallax baselines}
+\begin{columns}[T]
+\begin{column}{.52\linewidth}
+\includegraphics[width=\linewidth]{h3c_honest}
+\refnote{Median improvement in $\sigma(\piE)$ per $\tE$ bin. Blue: Roman at L2 vs Roman at Earth (spatial).
+Orange: joint vs Roman for events peaking in a gap (temporal).}
+\end{column}
+\begin{column}{.46\linewidth}
+\small
+\textbf{Spatial} (L2 vs Earth, $0.01$\,AU): each event forecast twice
+\begin{itemize}\footnotesize
+  \item median $\sigma(\piE)$ ratio $0.991$: under $1\%$, but $92\%$ of events improve
+  \item $1.2\%$ improve by $>2\times$: short ($\tE\approx5$\,d), high-magnification events
+  \item black holes and neutron stars: no gain
+\end{itemize}
+\textbf{Temporal} (Rubin while Roman is not observing)
+\begin{itemize}\footnotesize
+  \item $10$--$30$\,d events: $1.6\%$ vs $0.9\%$ spatial
+  \item large only for events wholly inside a gap
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Backup: what only the combination characterises}
+\begin{columns}[T]
+\begin{column}{.62\linewidth}
+\includegraphics[width=\linewidth]{f3_characterization_map}
+\refnote{Characterised fraction, joint over single survey, in the $(\tE,\piE)$ plane. (a) What Rubin adds to Roman;
+(b) what Roman adds to Rubin (hatched: Rubin alone characterises none, the joint fit does). Dashed: constant mass.}
+\end{column}
+\begin{column}{.36\linewidth}
+\small
+\begin{itemize}
+  \item (a) is pale: Rubin barely changes \emph{which} of Roman's events are characterised
+  \item (b): Roman multiplies what Rubin can characterise, most for short events --- at $10$--$30$\,d and
+        $\piE\sim0.03$--$0.1$, $66\times$
+  \item $358$ of $12{,}461$ simulated footprint detections are characterised \emph{only} jointly: each survey holds part of the information
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Backup: absolute precision, ordinary lenses}
+\begin{columns}[T]
+\begin{column}{.6\linewidth}
+\includegraphics[width=\linewidth]{f4_fisher_precision}
+\refnote{Fractional $1\sigma$ forecasts per survey over Roman's footprint detections ($\Neff\approx4{,}000$):
+(a--c) fitted parameters, (d) mass, (e) $\sigma_{\rm joint}\le\sigma_{\rm single}$ event by event, (f) condition numbers.}
+\end{column}
+\begin{column}{.38\linewidth}
+\small
+Weighted \% measured to $10\%$ (as simulated):\\[3pt]
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ & joint & Roman & Rubin \\
+\midrule
+$\tE$ & $13.2$ & $11.6$ & $0.8$ \\
+$\piE$ & $3.7$ & $3.3$ & $0.15$ \\
+$\tetE$ & $50.5$ & $50.3$ & $0.13$ \\
+$\Ml$ & $2.4$ & $2.2$ & $0.001$ \\
+\bottomrule
+\end{tabular}
+\vspace{2mm}
+\begin{itemize}\footnotesize
+  \item the parallax is the limiting measurement
+  \item unweighted the mass fraction is $9.9\%$: the raw sample over-represents long, slow events --- the weighting matters
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Backup: compact objects in detail}
+\centering
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrr}
+\toprule
+ & black holes & neutron stars \\
+\midrule
+detected by Rubin only / Roman only / both [\%] & $72.9$ / $21.5$ / $5.6$ & $69.6$ / $26.3$ / $3.9$ \\
+median $\sigma_{\rm joint}/\sigma_{\rm Roman}$: $\tE$, $\piE$, $\tetE$ & $0.997$, $0.998$, $0.999$ & $0.999$, $0.999$, $0.999$ \\
+median $\sigma_{\rm joint}/\sigma_{\rm Rubin}$: $\tE$, $\piE$, $\tetE$ & $0.022$, $0.010$, $0.041$ & $0.008$, $0.008$, $0.035$ \\
+median maximum centroid shift & $3.60$\,mas & $0.26$\,mas \\
+above Roman's $1.1$\,mas floor [\%] & $90.4$ & $0.6$ \\
+Roman to $10\%$: $\tE$ / $\piE$ / $\tetE$ / $\Ml$ [\%] & $24$ / $13$ / $97$ / $13$ & $16$ / $4.5$ / $67$ / $3.7$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{4mm}
+\begin{itemize}\small
+  \item Rubin adds almost nothing to Roman on shared events, flat over four decades of $\tE$ --- the expectation that long
+        events need Rubin's decade for the parallax is not borne out
+  \item Black-hole $\tetE$ does not rely on averaging exposures; neutron-star $\tetE$ does
+\end{itemize}
+\vfill
+\refnote{As simulated, over all detections ($\Neff\approx17{,}000$ each); $\sigma$ ratios over events both surveys constrain.}
+\end{frame}
+
+\begin{frame}{Backup: yields per unit abundance}
+\centering
+\small
+Expected events over ten years, inside Roman's fields unless stated; multiply by $F$ (dust-corrected):\\[4pt]
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrr}
+\toprule
+selection & black holes & neutron stars & ordinary ($F=1$) \\
+\midrule
+Roman detects & $5{,}660$ & $36{,}500$ & $50{,}400$ \\
+Rubin detects & $690$ & $3{,}620$ & $4{,}850$ \\
+both detect & $650$ & $2{,}220$ & $2{,}970$ \\
+Rubin only & $23$ & $1{,}290$ & $1{,}820$ \\
+\midrule
+Roman, $\sigma_M/M<10\%$ & $580$ & $1{,}100$ & $830$ \\
+joint, $\sigma_M/M<10\%$ & $650$ & $1{,}240$ & $900$ \\
+Roman, $\sigma_M/M<1\%$ & $26$ & $20$ & $3$ \\
+\midrule
+Rubin detects, all $59$\,deg$^2$ & $11{,}200$ & $62{,}400$ & $78{,}300$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{3mm}
+Per unit mass black holes are poor lenses (rate $\propto\sqrt{M}$, number $\propto1/M$), but their masses are the best measured.
+\end{frame}
+
+\begin{frame}{Backup: the sky that was simulated}
+\begin{columns}[T]
+\begin{column}{.58\linewidth}
+\includegraphics[width=\linewidth]{footprint_vs_gbtds}
+\credit{background: \ads{2000A\%26AS..143...33B}{Aladin} (CDS), DSS images}
+\end{column}
+\begin{column}{.40\linewidth}
+\small
+\begin{itemize}
+  \item $1{,}829$ sightlines over $68$\,deg$^2$: a Rubin exposure that contains part of a Roman field reaches $3.5^\circ$ beyond it
+  \item $0.1^\circ$ grid inside Roman's fields ($147$ sightlines), $0.2^\circ$ outside; each carries its area
+  \item Roman as simulated (orange): six circles, $1.47$\,deg$^2$, $\sim\!0.2^\circ$ closer to the plane than the adopted
+        layout (green)
+  \item $79\%$ of the simulated footprint lies on real detectors; the adopted layout: $+15$--$25\%$ events
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Backup: from the simulated sample to the sky}
+\begin{itemize}
+  \item The Monte Carlo does not draw events in proportion to the event rate: the lens mass and velocity draws miss a
+        factor $\sqrt{\Ml}\,v_t$
+  \item Each event therefore carries a weight $W\propto$ its event rate; every pooled fraction or median is weighted
+  \item The weight costs precision; it is quoted as the Kish effective sample size
+  \[
+    \Neff = \frac{\left(\sum W\right)^2}{\sum W^2}
+  \]
+        e.g.\ $12{,}461$ simulated footprint detections weigh as $\Neff\approx4{,}000$
+  \item Populations are never pooled: the weight contains $\sqrt{M}$ of the population drawn
+  \item Yields: the weighted sample normalised to an expected number of events, $N(F)=F\,N_1$
+  \item \textbf{Check:} the weighted $\tE$ distribution matches OGLE-IV (mean $23.5$ vs $23.8$\,d)
+\end{itemize}
+\vfill
+\refnote{\ads{2019ApJS..244...29M}{Mr\'oz et al.\ 2019, ApJS 244, 29}}
+\end{frame}
+
+\begin{frame}{Backup: the dust near the Galactic plane}
+\begin{itemize}
+  \item A declination rule gave almost all of Roman's fields to Bayestar, which cannot see behind the dust lanes: within
+        $\sim\!1^\circ$ of the plane it gives \textbf{3--6 times too little} extinction, measured against the VVV
+        reddening map
+  \item Corrected with a reference dust checked against VVV:
+  \begin{itemize}
+    \item Roman's yields $-33$ to $-38\%$ (its $10\%$ masses $-46$ to $-57\%$); Rubin's $-54$ to $-71\%$
+    \item the comparisons between the surveys are intact or strengthened
+    \item Roman's detection rate becomes $(23\pm5)\%$ below Penny et al.\ for the same $u_0$ range
+  \end{itemize}
+  \item \textbf{Fix (stage 1):} rebuild the extinction tables from DECaPS, with near-infrared dust where DECaPS saturates;
+        check against VVV before any run
+\end{itemize}
+\vfill
+\refnote{\ads{2019ApJ...887...93G}{Green et al.\ 2019};
+\ads{2025ApJ...992...39Z}{Zucker et al.\ 2025};
+\ads{2020A\%26A...644A.140S}{Surot et al.\ 2020};
+\ads{2006A\%26A...453..635M}{Marshall et al.\ 2006};
+\ads{2019ApJS..241....3P}{Penny et al.\ 2019}}
+\end{frame}
+
+\begin{frame}{Backup: comparison with Sajadian \& Sahu (2023)}
+This simulation builds on the paper's approach (separate photometric and astrometric Fisher matrices). With its mass
+function ($dN/dM\propto M^{-1}$) and on its sample ($u_0<1$, peak inside the mission):
+\vspace{2mm}
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lcccc}
+\toprule
+\% to $10\%$ & $\tE$ & $\piE$ & $\tetE$ & $\Ml$ \\
+\midrule
+Sajadian \& Sahu 2023 & $67.0$ & $30.0$ & $99.2$ & $29.8$ \\
+this work, rate-weighted & $67.4$ & $23.5$ & $75.5$ & $21.1$ \\
+this work, per simulated event & $71.9$ & $42.1$ & $80.2$ & $38.1$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{itemize}\small
+  \item $\tE$, $\piE$ and mass agree; the paper does not say which counting it uses
+  \item $\tetE$ differs: the paper takes the parallax from the photometry in the astrometric fit (here it is free), and
+        uses a Roman astrometric precision from simulations not tabulated --- to be settled in stage 4
+\end{itemize}
+\vfill
+\refnote{\ads{2023AJ....165...96S}{Sajadian \& Sahu 2023, AJ 165, 96}}
+\end{frame}
+
+\begin{frame}{Backup: a distant black hole}
+\begin{columns}[T]
+\begin{column}{.66\linewidth}
+\includegraphics[width=\linewidth, trim=0 255 0 0, clip]{bh_short_b002_3x3}
+\end{column}
+\begin{column}{.32\linewidth}
+\small
+\textbf{$7.4\,\Msun$ at $9.4$\,kpc}, behind the Galactic centre; $\tE=50$\,d
+\begin{itemize}
+  \item Roman alone: $\tE$ to $0.7\%$, $\tetE$ to $2.2\%$
+  \item but $\piE$ is tiny: \textbf{mass only to $\sim\!40\%$}
+  \item Rubin does not detect it
+\end{itemize}
+The parallax limit in one event.
+\end{column}
+\end{columns}
+\vfill
+\refnote{This work, preliminary runs.}
+\end{frame}
+
+\begin{frame}{Backup: resolving the images --- the criterion}
+\begin{itemize}
+  \item At every visit: (i) both images detectable on their own (between saturation and the single-visit depth; blended
+        light not added back); (ii) $\Delta\theta=\tetE\sqrt{u^2+4}$ above a bar
+  \item Resolvable: $\ge3$ such visits
+  \item Bars: $\mathcal{D}\sigma_{\rm ast}$ with $\mathcal{D}\approx5$ (detection limit) to $\approx20$ (S/N $\sim100$),
+        built for Rubin's seeing-limited images; the PSF width ($105$\,mas for Roman, $\approx1''$ for Rubin)
+  \item On Roman's $1.1$\,mas floor, $\mathcal{D}=5$ means separating sources $5.5$\,mas apart --- a twentieth of its PSF
+  \item Roman's depth taken as F146 $=25.5$ ($5\sigma$, single exposure)
+\end{itemize}
+\vspace{2mm}
+\centering\small
+\begin{tabular}{lccc}
+\toprule
+Roman (dust-corrected) [\%] & black holes & neutron stars & ordinary \\
+\midrule
+$\mathcal{D}=5$ & $34$ & $1.7$ & $0.8$ \\
+$\mathcal{D}=20$ & $15$ & $0.02$ & $\approx0$ \\
+PSF & $0.25$ & $\approx0$ & $0$ \\
+\bottomrule
+\end{tabular}
+\vfill
+\refnote{\ads{2026ApJ..1009..116S}{Sajadian \& Makler 2026, ApJ 1009, 116}}
+\end{frame}
+
+\begin{frame}{Backup: what to believe}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{p{.52\linewidth}p{.12\linewidth}p{.28\linewidth}}
+\toprule
+result & confidence & main risk \\
+\midrule
+Roman dominates in its fields; Rubin adds $<0.4\%$ there & high & Roman photometric noise \\
+Roman turns Rubin's detections into measurements & high & noise; astrometric floor \\
+$\sim\!60\%$ of detections outside the fields are Rubin's & high & latitude gradient \\
+gap filling: only deep in gaps, short events & medium & small $\Neff$; not dust-corrected \\
+satellite parallax $<1\%$ & high & halo orbit (small) \\
+black-hole $\tetE$ & high & --- \\
+ordinary and neutron-star $\tetE$ and masses & medium--low & correlated astrometric floor \\
+absolute yields $N_1$ & medium--low & dust near the plane \\
+yields $N(F)$ & low & $F$ unknown to $\times6$ \\
+image resolution & low & the criterion for Roman \\
+\bottomrule
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Backup: Roman's adopted field layout}
+\centering
+\includegraphics[width=.47\linewidth]{roman_gbtds_fields_spring}\hfill
+\includegraphics[width=.47\linewidth]{roman_gbtds_fields_autumn}\\
+\credit{\href{https://roman-docs.stsci.edu/roman-community-defined-surveys/galactic-bulge-time-domain-survey}{STScI, Roman GBTDS}}\\[2pt]
+\small WFI detectors in the six GBTDS fields, spring (left) and autumn (right) seasons; the roll angle differs between them.
+\end{frame}
+
+\begin{frame}{Backup: forecasts in the literature}
+\begin{columns}[T]
+\begin{column}{.48\linewidth}
+\centering
+\includegraphics[width=.9\linewidth]{ss23_astrometry}
+\credit{\ads{2023AJ....165...96S}{Sajadian \& Sahu 2023, AJ 165, 96}}\\
+\footnotesize Roman: a simulated black-hole event, the source and lens tracks on the sky with the astrometric deflection.
+\end{column}
+\begin{column}{.48\linewidth}
+\centering
+\includegraphics[width=.9\linewidth]{sm26_astrometry}
+\credit{\ads{2026ApJ..1009..116S}{Sajadian \& Makler 2026, ApJ 1009, 116}}\\
+\footnotesize Rubin toward the LMC: a $422\,\Msun$ lens at $0.6$\,kpc, $\tE=5.4$\,yr, $\tetE=73$\,mas.
+\end{column}
+\end{columns}
+\end{frame}

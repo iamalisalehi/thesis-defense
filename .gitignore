@@ -9,3 +9,6 @@
 *.vrb
 animate/
 animate.sh
+seminar.pdf
+*.fdb_latexmk
+*.fls

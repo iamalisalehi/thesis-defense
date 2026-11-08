@@ -1,0 +1,100 @@
+% !TeX root = ../seminar.tex
+\section{Roman and Rubin}
+\frame{\sectionpage}
+
+\begin{frame}{Roman's Galactic Bulge Time Domain Survey}
+\begin{columns}[T]
+\begin{column}{.55\linewidth}
+\vspace{2mm}
+\includegraphics[width=\linewidth]{roman_gbtds_infographic}
+\credit{\href{https://roman-docs.stsci.edu/roman-community-defined-surveys/galactic-bulge-time-domain-survey}{STScI, Roman Galactic Bulge Time Domain Survey}}
+\end{column}
+\begin{column}{.43\linewidth}
+\small
+\begin{itemize}
+  \item<+-> Six fields, $\approx1.7$\,deg$^2$, toward the Galactic centre
+  \item<+-> Near-infrared \textbf{F146} filter: the dust dims it only $A_{\rm F146}\approx0.20\,A_V$
+  \item<+-> Ten $\sim\!70$-day seasons: six at high cadence (an exposure every $12.1$\,min), four at low cadence
+        ($\sim\!5$\,d); gaps while the bulge is near the Sun
+  \item<+-> $\sim\!5\times10^4$ exposures per field
+  \item<+-> Diffraction-limited images: $\sim\!1$\,mas \textbf{astrometry} per exposure for bright stars
+  \item<+-> Observes from \textbf{L2}: a second vantage point to Earth (satellite parallax)
+\end{itemize}
+\end{column}
+\end{columns}
+\vfill
+\refnote{\ads{2019ApJS..241....3P}{Penny et al.\ 2019, ApJS 241, 3};
+\ads{2019JATIS...5d4005S}{Sanderson et al.\ 2019, JATIS 5, 044005}}
+\end{frame}
+
+\begin{frame}{Rubin's LSST, and why the two complement each other}
+\begin{columns}[T]
+\begin{column}{.50\linewidth}
+\includegraphics[width=\linewidth]{filters}
+\credit{filter curves from the \href{http://svo2.cab.inta-csic.es/theory/fps/}{SVO Filter Profile Service}}
+\end{column}
+\begin{column}{.48\linewidth}
+\small
+\textbf{Rubin}: ten years, six optical bands ($ugrizy$), $9.6$\,deg$^2$ field of view, from the ground
+\begin{itemize}
+  \item $\sim\!2{,}400$ visits per bulge sightline, every few days while the bulge is up
+  \item seeing-limited: $\gtrsim10$\,mas astrometry per visit
+  \item heavily extincted toward the bulge: $A_r\approx0.85\,A_V$
+\end{itemize}
+\uncover<2->{
+\begin{tabular}{@{}lcc@{}}
+\toprule
+ & \textbf{Roman} & \textbf{Rubin} \\
+\midrule
+area & small & large \\
+cadence & minutes & days \\
+time span & seasons & 10 years \\
+dust & mild & severe \\
+astrometry & $\sim$1 mas & $\gtrsim$10 mas \\
+\bottomrule
+\end{tabular}}
+\end{column}
+\end{columns}
+\uncover<3->{
+\centering
+\resizebox{.9\linewidth}{!}{\input{tex/timeline}}\\
+\refnote{One sightline in Roman's fields: Rubin's visits (orange) against Roman's seasons (blue; dark = high cadence).}}
+\vfill
+\refnote{\ads{2019ApJ...873..111I}{Ivezi\'c et al.\ 2019, ApJ 873, 111}}
+\end{frame}
+
+\begin{frame}{What has been forecast so far}
+\begin{columns}[T]
+\begin{column}{.32\linewidth}
+\centering
+\includegraphics[width=\linewidth]{ss23_lightcurve}
+\credit{\ads{2023AJ....165...96S}{Sajadian \& Sahu 2023, AJ 165, 96}}\\[2pt]
+\raggedright\footnotesize
+\textbf{Roman alone, isolated black holes.} Photometric + astrometric Fisher forecasts: for
+$dN/dM\propto M^{-1}$, $\tetE$ to $10\%$ for $\sim\!99\%$ and the mass for $\sim\!30\%$ of detected events.
+\end{column}
+\begin{column}{.32\linewidth}
+\centering
+\includegraphics[width=\linewidth, height=3.45cm, keepaspectratio]{abrams2025_example}
+\credit{\ads{2025ApJS..276...10A}{Abrams et al.\ 2025, ApJS 276, 10}}\\[2pt]
+\raggedright\footnotesize
+\textbf{Rubin alone.} Which LSST observing strategies can characterise events ($\tE$ and $\piE$)
+across the Galactic plane.
+\end{column}
+\begin{column}{.32\linewidth}
+\centering
+\includegraphics[width=\linewidth]{sm26_lightcurve}
+\credit{\ads{2026ApJ..1009..116S}{Sajadian \& Makler 2026, ApJ 1009, 116}}\\[2pt]
+\raggedright\footnotesize
+\textbf{Rubin, black holes toward the Magellanic Clouds.} The two images could be resolved for
+$1.4\%$ (LMC) and $16.3\%$ (SMC) of black-hole events.
+\end{column}
+\end{columns}
+\vspace{3mm}
+\uncover<2->{%
+\begin{beamercolorbox}[rounded=true,sep=5pt,wd=\linewidth]{block body alerted}
+\textbf{The gap:} each telescope has been forecast on its own. \textbf{This thesis:} both telescopes in
+one simulation, \emph{on the same events}: who detects what, what each adds to the other, and how many
+black-hole masses the combination delivers.
+\end{beamercolorbox}}
+\end{frame}

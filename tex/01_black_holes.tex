@@ -1,0 +1,141 @@
+% !TeX root = ../seminar.tex
+\section{Isolated Black Holes}
+\frame{\sectionpage}
+
+\begin{frame}{The Galaxy's hidden black holes}
+\begin{columns}[T]
+\begin{column}{.56\linewidth}
+\begin{itemize}
+  \item<+-> Stars above $\sim\!20\,\Msun$ end as black holes: the Milky Way should hold
+        $\boldsymbol{\sim\!10^8}$ \textbf{stellar black holes}
+        \\ {\footnotesize ($1.2\times10^8$ at $\sim\!14\,\Msun$; $2.2\times10^8$ at $5$--$16\,\Msun$)}
+  \item<+-> Almost every known one is in a \textbf{binary}:
+  \begin{itemize}
+    \item X-ray binaries (accretion from a companion)
+    \item \emph{Gaia} BH1--3 (a companion's orbit)
+    \item gravitational-wave mergers, in distant galaxies
+  \end{itemize}
+  \item<+-> These samples are chosen by the binary: mass transfer and binary evolution change
+        a black hole's mass and velocity
+  \item<+-> An \textbf{isolated} black hole emits essentially nothing
+\end{itemize}
+\end{column}
+\begin{column}{.40\linewidth}
+\vspace{6mm}
+\uncover<5->{%
+\begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body alerted}
+\centering
+\textbf{Gravitational microlensing} is the only known way to \emph{see} --- and \emph{weigh} ---
+an isolated black hole.\\[4pt]
+\footnotesize It needs no light from the lens, only its gravity.
+\end{beamercolorbox}}
+\end{column}
+\end{columns}
+\vfill
+\refnote{%
+\ads{2020A\%26A...638A..94O}{Olejak et al.\ 2020, A\&A 638, A94};
+\ads{2020ApJ...889...31L}{Lam et al.\ 2020, ApJ 889, 31};
+\ads{2023MNRAS.518.1057E}{El-Badry et al.\ 2023, MNRAS 518, 1057};
+\ads{2024A\%26A...686L...2G}{Gaia Collaboration 2024, A\&A 686, L2}}
+\end{frame}
+
+\begin{frame}{Why the isolated population matters}
+\begin{columns}[T]
+\begin{column}{.47\linewidth}
+\begin{itemize}
+  \item<+-> \textbf{Mass function:} X-ray binaries peak near $8\,\Msun$ with a deficit below
+        $\sim\!5\,\Msun$ --- a real \emph{mass gap} above neutron stars, or a selection effect?
+        It traces the supernova mechanism
+  \item<+-> \textbf{Natal kicks:} how fast are black holes born moving?
+  \item<+-> \textbf{Abundance:} the black holes' share of the Galaxy's stellar mass,
+        $F\approx0.005$--$0.03$, is uncertain by a factor $\sim\!6$
+  \item<+-> All of these need a \textbf{population} of mass measurements, not one
+\end{itemize}
+\end{column}
+\begin{column}{.51\linewidth}
+\centering
+% schematic mass axis (log scale): 1 Msun at x=0, 100 Msun at x=6.6
+\begin{tikzpicture}[x=1cm, y=1cm, font=\footnotesize]
+  \fill[orange!45] ({\massx{1.1}},1.0) rectangle ({\massx{2.0}},1.45);
+  \node[anchor=south] at ({\massx{1.45}},1.45) {neutron stars};
+  \fill[pattern=north east lines, pattern color=jdgrey] ({\massx{2.0}},1.0) rectangle ({\massx{5.0}},1.45);
+  \node[anchor=south, text=jdgrey] at ({\massx{3.2}},1.45) {gap?};
+  \fill[jdblue!60] ({\massx{5}},1.0) rectangle ({\massx{20}},1.45);
+  \node[anchor=south] at ({\massx{10}},1.45) {X-ray binaries};
+  \fill[violet!35] ({\massx{5}},0.25) rectangle ({\massx{100}},0.7);
+  \node[anchor=west] at ({\massx{20}},0.475) {GW mergers};
+  \draw[-{Latex}] (0,0) -- (6.9,0);
+  \foreach \m/\l in {1/1, 10/10, 100/100} \draw ({\massx{\m}},0) -- ({\massx{\m}},-0.12) node[below] {\l};
+  \foreach \m in {2,3,4,5,6,7,8,9,20,30,40,50,60,70,80,90} \draw ({\massx{\m}},0) -- ({\massx{\m}},-0.06);
+  \node[below] at (3.3,-0.45) {mass [$\Msun$]};
+  \uncover<4->{
+  \draw[red!70!black, thick] ({\massx{7.1}},-0.05) -- ({\massx{7.1}},2.2);
+  \node[red!70!black, anchor=south, align=center] at ({\massx{7.1}},2.2) {one isolated BH\\ (OGLE-2011-BLG-0462)};
+  \fill[jdgreen!25, rounded corners] (0.2,-1.55) rectangle (6.6,-0.95);
+  \node at (3.4,-1.25) {isolated black holes: \textbf{?}};}
+\end{tikzpicture}
+\end{column}
+\end{columns}
+\vfill
+\refnote{%
+\ads{2012ApJ...749...91F}{Fryer et al.\ 2012, ApJ 749, 91};
+\ads{2022MNRAS.516.4971S}{Sweeney et al.\ 2022, MNRAS 516, 4971};
+\ads{2020ApJ...889...31L}{Lam et al.\ 2020, ApJ 889, 31}}
+\end{frame}
+
+\begin{frame}{The first one: OGLE-2011-BLG-0462}
+\begin{columns}[T]
+\begin{column}{.46\linewidth}
+\includegraphics[width=.78\linewidth]{sahu2022_photometry}
+\end{column}
+\begin{column}{.25\linewidth}
+\includegraphics[angle=90,width=.8\linewidth]{sahu2022_sky}
+\end{column}
+\begin{column}{.27\linewidth}
+\footnotesize
+\begin{itemize}
+  \item $\tE\approx270$\,d
+  \item parallax $\piE$ from ground photometry
+  \item $\tetE$ from 8 epochs of \emph{HST} astrometry over 6 years
+\end{itemize}
+\end{column}
+\end{columns}
+\credit{\ads{2022ApJ...933...83S}{Sahu et al.\ 2022, ApJ 933, 83}}
+\vspace{2pt}
+\begin{itemize}\small
+  \item<2-> Mass $7.1\pm1.3\,\Msun$ at $1.58$\,kpc --- but a second team, same data: $1.6$--$4.4\,\Msun$
+  \item<3-> Settled only after the \textbf{astrometric systematics} were understood: a $\sim\!7\,\Msun$ black hole
+  \item<4-> \textbf{Lessons:} the mass needs \emph{both} $\piE$ and $\tetE$; systematics can shift it by a factor $\sim\!2$;
+        after a decade of searching, \textbf{one} measured mass
+\end{itemize}
+\vfill
+\refnote{%
+\ads{2022ApJ...933L..23L}{Lam et al.\ 2022, ApJL 933, L23};
+\ads{2022ApJ...937L..24M}{Mr\'oz, Udalski \& Gould 2022, ApJL 937, L24};
+\ads{2023ApJ...955..116L}{Lam \& Lu 2023, ApJ 955, 116}}
+\end{frame}
+
+\begin{frame}{Black holes stand out in the microlensing observables}
+\begin{columns}[T]
+\begin{column}{.62\linewidth}
+\includegraphics[width=.49\linewidth]{lam2020_tE_piE}\hfill
+\includegraphics[width=.49\linewidth]{lam2020_deltac_piE}
+\credit{\ads{2020ApJ...889...31L}{Lam et al.\ 2020, ApJ 889, 31} (PopSyCLE)}
+\end{column}
+\begin{column}{.36\linewidth}
+\small
+Simulated bulge events: black holes (BH) separate from stars, white dwarfs and neutron stars by
+\begin{itemize}
+  \item a \textbf{long} timescale $\tE$
+  \item a \textbf{small} parallax $\piE$
+  \item a \textbf{large} centroid shift $\delta_{c}$
+\end{itemize}
+\vspace{4pt}
+\uncover<2->{Next-generation surveys should find them in numbers: Roman may measure the masses of
+\emph{hundreds} of isolated black holes.\\[3pt]
+\textbf{This thesis tests that claim quantitatively.}}
+\end{column}
+\end{columns}
+\vfill
+\refnote{\ads{2023ApJ...955..116L}{Lam \& Lu 2023, ApJ 955, 116}}
+\end{frame}
