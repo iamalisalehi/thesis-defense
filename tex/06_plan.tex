@@ -2,32 +2,21 @@
 \section{The Plan}
 \frame{\sectionpage}
 
-\begin{frame}{Hypotheses and open questions}
-\begin{columns}[T]
-\begin{column}{.5\linewidth}
-\textbf{Hypotheses}
-\begin{enumerate}\small
-  \item<+-> Roman measures the masses of a few to $\sim\!20$ isolated black holes to $<10\%$; the
-        \textbf{parallax}, not $\tetE$, is the limit
-  \item<+-> In Roman's fields Roman makes the measurements; Roman turns Rubin's detections from
-        \emph{detected} into \emph{measured}; elsewhere Rubin is the only source
-  \item<+-> \textbf{Dust} near the plane and \textbf{correlated astrometric errors} move the forecasts most
-  \item<+-> The black-hole \textbf{mass function}, including a lower mass gap, leaves a detectable imprint
-        on Roman's events
+\begin{frame}{Hypotheses}
+\vspace{4mm}
+\begin{enumerate}\setlength{\itemsep}{9pt}
+  \item<+-> Roman weighs a few to $\sim\!20$ isolated black holes; the \textbf{parallax} is the limit
+  \item<+-> Roman \textbf{measures} in its fields; Rubin \textbf{widens} the sky
+  \item<+-> \textbf{Dust} and \textbf{correlated astrometric errors} matter most
+  \item<+-> The \textbf{mass function} --- and a mass gap --- leaves a visible imprint
 \end{enumerate}
-\end{column}
-\begin{column}{.48\linewidth}
-\uncover<5->{%
-\textbf{Questions that follow}
-\begin{itemize}\small
-  \item How do the numbers of masses to $10$, $5$ and $1\%$ depend on the abundance and the mass function?
+\note{Questions that follow:
+\begin{itemize}
+  \item How do the numbers of masses to 10, 5 and 1\% depend on the abundance and the mass function?
   \item If part of Roman's astrometric error is correlated, which lenses can still be weighed?
   \item How far are the Fisher forecasts from full fits? How often do degeneracies and blending matter?
-  \item From the expected event list, how well can $F$ and the mass function --- and the mass gap ---
-        be determined?
+  \item From the expected event list, how well can $F$ and the mass function --- and the mass gap --- be determined?
 \end{itemize}}
-\end{column}
-\end{columns}
 \end{frame}
 
 % the roadmap drawn once, with one stage group highlighted
@@ -44,30 +33,28 @@
 
 \begin{frame}{The plan (1/2): a better model, then the full run}
 \centering
+\vspace{1mm}
 \roadmap{on}{on}{}{}
-\vspace{2mm}
+\vspace{5mm}
+\raggedright
 \begin{columns}[T]
-\begin{column}{.5\linewidth}
-\small
+\begin{column}{.48\linewidth}
 \textbf{1. The physical model}
-\begin{itemize}\footnotesize
-  \item dust: DECaPS, with near-IR dust where it saturates; checked against VVV
-  \item Roman noise from pixel-level simulations; a two-part astrometric error with a correlated piece
-  \item ordinary lenses from the Besan\c{c}on catalogue
-  \item the adopted GBTDS fields and published schedule (from February 2027)
+\begin{itemize}
+  \item dust near the plane
+  \item Roman's noise \& astrometric errors
+  \item Besan\c{c}on lenses, the adopted fields
 \end{itemize}
 \end{column}
 \begin{column}{.48\linewidth}
-\small
 \textbf{2. Black-hole physics}
-\begin{itemize}\footnotesize
-  \item mass functions from supernova models (rapid / delayed) and population synthesis
-  \item natal kicks; scenarios with and without a lower mass gap
+\begin{itemize}
+  \item mass functions, natal kicks, mass gap
 \end{itemize}
+\vspace{2mm}
 \textbf{3. The full run}
-\begin{itemize}\footnotesize
-  \item a $0.02^\circ$ grid over Roman's detectors ($\sim\!4{,}800$ sightlines), on a cluster
-  \item $25\times$ the sightlines: Monte Carlo errors $\sim\!5\times$ smaller, and maps
+\begin{itemize}
+  \item $\sim\!4{,}800$ sightlines on a cluster
 \end{itemize}
 \end{column}
 \end{columns}
@@ -76,53 +63,66 @@
 \ads{2023ApJS..269....5W}{Wilson et al.\ 2023};
 \ads{2012ApJ...749...91F}{Fryer et al.\ 2012};
 \ads{2020A\%26A...638A..94O}{Olejak et al.\ 2020}}
+\note{\begin{itemize}
+  \item Dust: DECaPS, with near-infrared dust (Marshall et al.\ 2006) where it saturates; checked against VVV.
+  \item Roman: photometric noise from pixel-level simulations (Wilson et al.\ 2023); a two-part astrometric error
+        with a correlated piece that does not average down.
+  \item Ordinary lenses from the Besan\c{c}on catalogue; the adopted GBTDS fields and published schedule (from
+        February 2027).
+  \item Black holes: mass functions from supernova models (rapid / delayed) and population synthesis; natal kicks;
+        scenarios with and without a lower mass gap.
+  \item Full run: a $0.02^\circ$ grid over Roman's detectors; $25\times$ the sightlines, Monte Carlo errors
+        $\sim5\times$ smaller, and maps.
+\end{itemize}}
 \end{frame}
 
 \begin{frame}{The plan (2/2): beyond the forecast}
 \centering
+\vspace{1mm}
 \roadmap{}{}{on}{on}
-\vspace{2mm}
+\vspace{5mm}
+\raggedright
 \begin{columns}[T]
-\begin{column}{.5\linewidth}
-\small
-\textbf{4. Beyond the Fisher approximation}
-\begin{itemize}\footnotesize
-  \item full Bayesian (MCMC) fits of simulated black-hole events: posterior widths against Fisher
-  \item parallax and blending degeneracies --- the kind that troubled OGLE-2011-BLG-0462
+\begin{column}{.48\linewidth}
+\textbf{4. Beyond Fisher}
+\begin{itemize}
+  \item Bayesian fits, degeneracies
 \end{itemize}
-\textbf{5. Seeing the two images}
-\begin{itemize}\footnotesize
-  \item fit two point sources to simulated Roman images: turn the $0.25$--$34\%$ bracket into one number
+\vspace{2mm}
+\textbf{5. The two images}
+\begin{itemize}
+  \item tested on simulated Roman images
 \end{itemize}
 \end{column}
 \begin{column}{.48\linewidth}
-\small
 \textbf{6. The inverse problem}
-\begin{itemize}\footnotesize
-  \item simulated event lists as mock data
-  \item hierarchical Bayesian inference of the abundance and the mass function, with detection
-        efficiency and per-event errors
-  \item can Roman and Rubin \textbf{test the lower mass gap}?
-\end{itemize}
-\textbf{If time allows}
-\begin{itemize}\footnotesize
-  \item Roman + \emph{Gaia} astrometry
-  \item isolated black holes vs.\ astrometric binaries
+\begin{itemize}
+  \item abundance \& mass function
+  \item can we \textbf{test the mass gap}?
 \end{itemize}
 \end{column}
 \end{columns}
+\note{\begin{itemize}
+  \item Stage 4: full Bayesian (MCMC) fits of simulated black-hole events; posterior widths against the Fisher
+        forecasts; parallax and blending degeneracies of the kind that troubled OGLE-2011-BLG-0462.
+  \item Stage 5: fit two point sources to simulated Roman images, to turn the $0.25$--$34\%$ bracket into one number.
+  \item Stage 6: simulated event lists as mock data; hierarchical Bayesian inference of the abundance and the mass
+        function, with detection efficiency and per-event errors.
+  \item If time allows: Roman + \emph{Gaia} astrometry; isolated black holes vs astrometric binaries.
+\end{itemize}}
 \end{frame}
 
 \begin{frame}{Schedule}
 \centering
+\vspace{2mm}
 % columns: Autumn 1405 ... Summer 1408 (solar hijri seasons), as in the proposal
 \begin{tikzpicture}[x=0.69cm, y=0.5cm, font=\footnotesize]
   \def\lw{-0.2}
   % year and season headers
   \foreach \y/\a/\b in {1405/0/2, 1406/2/6, 1407/6/10, 1408/10/12} {
     \node[font=\small\bfseries] at ({(\a+\b)/2},1.6) {\y};
-    \draw[jdverylightgrey] (\a,1.1) -- (\a,-12.2);}
-  \draw[jdverylightgrey] (12,1.1) -- (12,-12.2);
+    \draw[jdverylightgrey] (\a,1.1) -- (\a,-11.2);}
+  \draw[jdverylightgrey] (12,1.1) -- (12,-11.2);
   \foreach \s [count=\i from 0] in {Aut,Win,Spr,Sum,Aut,Win,Spr,Sum,Aut,Win,Spr,Sum}
     \node[text=jdgrey, font=\scriptsize] at (\i+0.5,0.6) {\s};
   % rows: label / list of active columns (0 = Autumn 1405)
