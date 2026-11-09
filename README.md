@@ -22,10 +22,15 @@ Slides are in `tex/` (one file per section, `08_backup.tex` for the backup slide
 
 ```bash
 python art/lensing_animation.py      # img/anim/frame_00.jpg ... frame_80.jpg
-python art/microlensing_cartoon.py   # img/microlensing-cartoon.jpg (closing slide)
+python art/microlensing_well.py      # img/microlensing-well.jpg (closing slide)
+python art/microlensing_cartoon.py   # img/microlensing-cartoon.jpg (earlier, face-on alternative)
 ```
 
-Both need numpy, scipy, matplotlib and Pillow. The animation re-renders the reverse ray tracer
+All three need numpy, scipy, matplotlib and Pillow. The animation re-renders the reverse ray tracer
 `microlens_movie.c` (point lens crossing a limb-darkened star) and measures the magnification and the
-centroid shift from the traced images. The cartoon ray-traces a watercolour bulge sky, a yellow source
-star and ink ripples through a point lens.
+centroid shift from the traced images. The closing image ray-casts a sheet of spacetime sinking into a
+black hole's well, drawn as hatched ink bands, with a background star seen as its two lensed arcs; the
+earlier face-on version ray-traces a watercolour bulge sky and ink ripples through a point lens.
+
+Speaker notes: every slide carries `\note{...}` with the details cut from the slide; `seminar.tex` says
+how to show them.
