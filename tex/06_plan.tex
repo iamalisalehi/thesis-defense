@@ -116,15 +116,15 @@
 \begin{frame}{Schedule}
 \centering
 % columns: Autumn 1405 ... Summer 1408 (solar hijri seasons), as in the proposal
-\begin{tikzpicture}[x=0.78cm, y=0.4cm, font=\scriptsize]
+\begin{tikzpicture}[x=0.69cm, y=0.5cm, font=\footnotesize]
   \def\lw{-0.2}
   % year and season headers
   \foreach \y/\a/\b in {1405/0/2, 1406/2/6, 1407/6/10, 1408/10/12} {
-    \node[font=\footnotesize\bfseries] at ({(\a+\b)/2},1.6) {\y};
+    \node[font=\small\bfseries] at ({(\a+\b)/2},1.6) {\y};
     \draw[jdverylightgrey] (\a,1.1) -- (\a,-12.2);}
   \draw[jdverylightgrey] (12,1.1) -- (12,-12.2);
   \foreach \s [count=\i from 0] in {Aut,Win,Spr,Sum,Aut,Win,Spr,Sum,Aut,Win,Spr,Sum}
-    \node[text=jdgrey] at (\i+0.5,0.6) {\s};
+    \node[text=jdgrey, font=\scriptsize] at (\i+0.5,0.6) {\s};
   % rows: label / list of active columns (0 = Autumn 1405)
   \foreach \lab/\cols [count=\r from 1] in {
       {Dust tables, checked against VVV}/{0,1},

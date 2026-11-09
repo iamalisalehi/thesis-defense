@@ -4,8 +4,8 @@
 
 \begin{frame}{A Monte Carlo of the bulge sky}
 \centering
-\begin{tikzpicture}[font=\scriptsize,
-    inb/.style={terminator, fill=orange!12, text width=2.45cm, align=center, minimum height=1.55cm},
+\begin{tikzpicture}[font=\scriptsize, execute at begin node={\hyphenpenalty=10000},
+    inb/.style={terminator, fill=orange!12, text width=2.6cm, align=center, minimum height=1.55cm},
     row/.style={terminator, fill=blue!8, text width=14.2cm, align=center, minimum height=2.2em},
     resb/.style={terminator, fill=green!15, align=center, minimum height=2.4em}]
   \node[inb] (g) at (0,0)     {\textbf{Galaxy model}\\[1pt] Besan\c{c}on densities, synthetic CMD; $ugrizy$ + F146};
@@ -38,17 +38,17 @@
 
 \begin{frame}{Simulating one event}
 \centering
-\begin{tikzpicture}[font=\footnotesize,
-    st/.style={terminator, fill=blue!8, text width=3.3cm, align=center, minimum height=3.6em},
-    q/.style={terminator, fill=yellow!25, text width=3.3cm, align=center, minimum height=3.6em},
+\begin{tikzpicture}[font=\scriptsize, execute at begin node={\hyphenpenalty=10000},
+    st/.style={terminator, fill=blue!8, text width=3.0cm, align=center, minimum height=3.6em},
+    q/.style={terminator, fill=yellow!25, text width=3.0cm, align=center, minimum height=3.6em},
     nb/.style={draw=none, font=\scriptsize\itshape, text=jdgrey}]
   \node[st] (src) at (0,0)   {\textbf{Source}: distance, type, magnitudes, dust};
-  \node[st] (len) at (4.1,0) {\textbf{Lens}: mass, distance $\propto$ rate, velocities, $u_0\le3$, $t_0$ in 10\,yr};
-  \node[q]  (vis) at (8.2,0) {\textbf{Visible?} bright enough at the peak, not saturated};
-  \node[st] (dat) at (12.3,0) {\textbf{Data at every real visit}: magnification \& centroid, with parallax; noise};
-  \node[q]  (det) at (12.3,-2.3) {\textbf{Detected?} $\Delta\chi^2\ge500$ and 3 points $>3\sigma$ --- Rubin / Roman / joint};
-  \node[st] (fis) at (8.2,-2.3) {\textbf{Fisher forecast}: $\sigma$ on $\tE$, $\piE$, $\tetE$, mass --- three times};
-  \node[st] (row) at (4.1,-2.3) {\textbf{One row} of the event table};
+  \node[st] (len) at (3.85,0) {\textbf{Lens}: mass, distance $\propto$ rate, velocities, $u_0\le3$, $t_0$ in 10\,yr};
+  \node[q]  (vis) at (7.7,0) {\textbf{Visible?} bright enough at the peak, not saturated};
+  \node[st] (dat) at (11.55,0) {\textbf{Data at every real visit}: magnification \& centroid, with parallax; noise};
+  \node[q]  (det) at (11.55,-2.3) {\textbf{Detected?} $\Delta\chi^2\ge500$ and 3 points $>3\sigma$ --- Rubin / Roman / joint};
+  \node[st] (fis) at (7.7,-2.3) {\textbf{Fisher forecast}: $\sigma$ on $\tE$, $\piE$, $\tetE$, mass --- three times};
+  \node[st] (row) at (3.85,-2.3) {\textbf{One row} of the event table};
   \node[q]  (done) at (0,-2.3) {\textbf{Enough events} on this sightline?};
   \path[connector] (src) -- (len);
   \path[connector] (len) -- (vis);

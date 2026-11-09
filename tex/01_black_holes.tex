@@ -57,11 +57,11 @@ an isolated black hole.\\[4pt]
 % schematic mass axis (log scale): 1 Msun at x=0, 100 Msun at x=6.6
 \begin{tikzpicture}[x=1cm, y=1cm, font=\footnotesize]
   \fill[orange!45] ({\massx{1.1}},1.0) rectangle ({\massx{2.0}},1.45);
-  \node[anchor=south] at ({\massx{1.45}},1.45) {neutron stars};
+  \node[anchor=south, align=center, font=\scriptsize] at ({\massx{1.45}},1.45) {neutron\\ stars};
   \fill[pattern=north east lines, pattern color=jdgrey] ({\massx{2.0}},1.0) rectangle ({\massx{5.0}},1.45);
   \node[anchor=south, text=jdgrey] at ({\massx{3.2}},1.45) {gap?};
   \fill[jdblue!60] ({\massx{5}},1.0) rectangle ({\massx{20}},1.45);
-  \node[anchor=south] at ({\massx{10}},1.45) {X-ray binaries};
+  \node[anchor=south, align=center, font=\scriptsize] at ({\massx{12}},1.45) {X-ray\\ binaries};
   \fill[violet!35] ({\massx{5}},0.25) rectangle ({\massx{100}},0.7);
   \node[anchor=west] at ({\massx{20}},0.475) {GW mergers};
   \draw[-{Latex}] (0,0) -- (6.9,0);

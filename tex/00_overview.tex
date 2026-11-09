@@ -8,7 +8,7 @@
     lab/.style={draw=none, font=\scriptsize\itshape, text=jddarkgrey}]
   \node[cbox, fill=yellow!25] (bh)  at (-5.6, 2.9) {\textbf{Isolated\\ black holes}};
   \node[cbox, fill=yellow!25] (ml)  at (-1.6, 2.9) {\textbf{Gravitational\\ microlensing}};
-  \path[connector] (bh) -- node[lab, above] {only gravity} (ml);
+  \path[connector] (bh) -- node[lab, above, align=center] {only\\ gravity} (ml);
 \uncover<2->{
   \node[cbox, fill=blue!15] (ph) at (-3.5, 1.15) {Photometry\\ $\tE$, $\piE$};
   \node[cbox, fill=blue!15] (as) at ( 0.3, 1.15) {Astrometry\\ $\tetE$};
@@ -30,7 +30,7 @@
   \path[connector] (ru) -- (sim);
 }
 \uncover<6->{
-  \node[cbox, fill=green!20] (fi) at (5.05, -0.6) {Fisher forecasts\\ \footnotesize Rubin / Roman / joint};
+  \node[cbox, fill=green!20] (fi) at (5.05, -0.6) {Fisher forecasts\\ \scriptsize Rubin, Roman, joint};
   \path[connector] (sim) -- (fi);
   \path[connector, dashed] (m) -- (fi);
 }
