@@ -9,12 +9,12 @@
 \begin{itemize}\setlength{\itemsep}{8pt}
   \item<+-> $\sim\!10^8$ stellar black holes in the Milky Way
   \item<+-> Almost all known ones are in \textbf{binaries}
-  \item<+-> The binary changes their mass and velocity
+  \\ {\small (seen through a companion's light, X-rays, gravitational waves)}
   \item<+-> \textbf{Isolated} black holes are dark
 \end{itemize}
 \end{column}
 \begin{column}{.42\linewidth}
-\uncover<5->{%
+\uncover<4->{%
 \begin{beamercolorbox}[rounded=true,sep=8pt,wd=\linewidth]{block body alerted}
 \centering
 \textbf{Gravitational microlensing}\\[3pt]
@@ -22,7 +22,7 @@ the only way to \emph{see}\\ and \emph{weigh} an isolated black hole
 \end{beamercolorbox}}
 \end{column}
 \end{columns}
-\vfill
+\vspace*{\fill}
 \refnote{%
 \ads{2020A\%26A...638A..94O}{Olejak et al.\ 2020, A\&A 638, A94};
 \ads{2020ApJ...889...31L}{Lam et al.\ 2020, ApJ 889, 31};
@@ -33,9 +33,53 @@ the only way to \emph{see}\\ and \emph{weigh} an isolated black hole
         (Olejak et al.\ 2020), $2.2\times10^8$ at $5$--$16\,\Msun$ (Lam et al.\ 2020).
   \item Known ones: X-ray binaries (accretion from a companion), \emph{Gaia} BH1--3 (a companion's orbit),
         gravitational-wave mergers (distant galaxies).
-  \item Mass transfer and binary evolution change the black hole's mass and velocity, so these samples are biased.
   \item An isolated black hole accretes too little from the interstellar medium to be seen.
   \item Microlensing needs no light from the lens, only its gravity.
+\end{itemize}}
+\end{frame}
+
+\begin{frame}{Why not the black holes in binaries?}
+\vspace{1mm}
+\begin{columns}[T]
+\begin{column}{.48\linewidth}
+\textbf{In a binary}
+\begin{itemize}\setlength{\itemsep}{5pt}
+  \item<2-> \textbf{Mass} reshaped by the companion\\ {\small (mass transfer, stripped envelopes)}
+  \item<3-> Only \textbf{weak kicks} survive\\ {\small (a strong kick unbinds the pair)}
+  \item<4-> Seen only while \textbf{active}\\ {\small (X-ray outbursts: selection effects)}
+\end{itemize}
+\end{column}
+\begin{column}{.48\linewidth}
+\textbf{Isolated}
+\begin{itemize}\setlength{\itemsep}{5pt}
+  \item<2-> Mass set by the \textbf{star's own collapse}
+  \item<3-> Carry their \textbf{full natal kick}
+  \item<4-> Found by \textbf{gravity alone}:\\ every one can lens
+\end{itemize}
+\end{column}
+\end{columns}
+\vfill
+\uncover<5->{%
+\begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body alerted}
+\centering
+Binaries are not \emph{wrong}: they answer a different question (binary evolution).\\
+Supernova physics and the Galaxy's black-hole census need the \textbf{isolated} ones too
+\end{beamercolorbox}}
+\vfill
+\refnote{%
+\ads{2012Sci...337..444S}{Sana et al.\ 2012, Science 337, 444};
+\ads{2012MNRAS.425.2799R}{Repetto et al.\ 2012, MNRAS 425, 2799};
+\ads{2012ApJ...757...36K}{Kreidberg et al.\ 2012, ApJ 757, 36}}
+\note{\begin{itemize}
+  \item Most massive stars are born in binaries that interact (Sana et al.\ 2012): the companion strips or feeds the
+        progenitor, so a binary black hole's mass records binary evolution, not single-star collapse alone.
+  \item Kicks: a black hole kicked hard enough leaves its companion and becomes isolated. Binaries keep the
+        weak-kick ones, so their velocities underestimate the kicks (Repetto et al.\ 2012 infer kicks from where X-ray
+        binaries sit in the Galaxy, an indirect route).
+  \item X-ray binaries are found in outburst, and their masses rest on orbital modelling: the apparent
+        $2$--$5\,\Msun$ gap may be partly a systematic (Kreidberg et al.\ 2012).
+  \item So the binary sample is a biased subset for these questions. Isolated black holes are the missing, unbiased
+        complement, and microlensing is the one way to weigh them.
 \end{itemize}}
 \end{frame}
 
@@ -84,78 +128,5 @@ the only way to \emph{see}\\ and \emph{weigh} an isolated black hole
         stars, or a selection effect? The answer traces the supernova mechanism (rapid vs delayed, Fryer et al.\ 2012).
   \item Natal kicks: the velocities black holes receive at birth.
   \item $F$ = the black holes' share of the Galaxy's stellar mass; the literature range is a factor $\sim6$.
-\end{itemize}}
-\end{frame}
-
-\begin{frame}{The first one: OGLE-2011-BLG-0462}
-\vspace{1mm}
-\begin{columns}[T]
-\begin{column}{.38\linewidth}
-\centering
-\includegraphics[width=.92\linewidth]{sahu2022_photometry}
-\end{column}
-\begin{column}{.24\linewidth}
-\centering
-\vspace{2mm}
-\includegraphics[angle=90,width=.9\linewidth]{sahu2022_sky}
-\end{column}
-\begin{column}{.34\linewidth}
-\begin{itemize}\setlength{\itemsep}{6pt}
-  \item $\tE\approx270$\,d
-  \item $\piE$: ground photometry
-  \item $\tetE$: \emph{HST}, 6 years
-  \item<2-> $7.1$ vs.\ $1.6$--$4.4\,\Msun$\\ from the same data
-\end{itemize}
-\end{column}
-\end{columns}
-\vspace{2mm}
-\credit{\ads{2022ApJ...933...83S}{Sahu et al.\ 2022, ApJ 933, 83}}
-\vspace{4mm}
-
-\uncover<3->{%
-\begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body alerted}
-\centering
-After a decade of searching: \textbf{one} measured mass --- and the systematics matter
-\end{beamercolorbox}}
-\vfill
-\refnote{%
-\ads{2022ApJ...933L..23L}{Lam et al.\ 2022, ApJL 933, L23};
-\ads{2022ApJ...937L..24M}{Mr\'oz, Udalski \& Gould 2022, ApJL 937, L24};
-\ads{2023ApJ...955..116L}{Lam \& Lu 2023, ApJ 955, 116}}
-\note{\begin{itemize}
-  \item Sahu et al.\ 2022: $7.1\pm1.3\,\Msun$ at $1.58$\,kpc. Lam et al.\ 2022, similar data: $1.6$--$4.4\,\Msun$.
-  \item Settled only after the astrometric systematics were understood (Mr\'oz et al.\ 2022; Lam \& Lu 2023):
-        a $\sim7\,\Msun$ black hole.
-  \item Lessons: the mass needs \emph{both} $\piE$ and $\tetE$; systematics can move it by a factor $\sim2$.
-  \item Its transverse velocity ($\sim45$\,km/s relative to the disc) hints at a natal kick.
-\end{itemize}}
-\end{frame}
-
-\begin{frame}{Black holes stand out in the microlensing observables}
-\vspace{1mm}
-\begin{columns}[c]
-\begin{column}{.60\linewidth}
-\centering
-\includegraphics[width=.48\linewidth]{lam2020_tE_piE}\hspace{2mm}%
-\includegraphics[width=.48\linewidth]{lam2020_deltac_piE}\\[2mm]
-\credit{\ads{2020ApJ...889...31L}{Lam et al.\ 2020, ApJ 889, 31} (PopSyCLE)}
-\end{column}
-\begin{column}{.36\linewidth}
-Black holes have
-\begin{itemize}\setlength{\itemsep}{4pt}
-  \item a \textbf{long} $\tE$
-  \item a \textbf{small} $\piE$
-  \item a \textbf{large} centroid shift
-\end{itemize}
-\vspace{6mm}
-\uncover<2->{Roman: masses of \emph{hundreds}?\\[2pt] \textbf{This thesis tests it.}}
-\end{column}
-\end{columns}
-\vfill
-\refnote{\ads{2023ApJ...955..116L}{Lam \& Lu 2023, ApJ 955, 116}}
-\note{\begin{itemize}
-  \item PopSyCLE simulation of bulge events: black holes (BH) separate from stars, white dwarfs and neutron stars.
-  \item Lam \& Lu 2023 predict that Roman, with HST-like astrometry over a far larger field, will measure the masses of
-        hundreds of isolated black holes. This thesis tests that quantitatively.
 \end{itemize}}
 \end{frame}
