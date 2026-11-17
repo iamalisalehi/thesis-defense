@@ -1,27 +1,23 @@
 % !TeX root = ../seminar.tex
 \section{Roman and Rubin}
-\frame{\sectionpage}
 
 {\setbeamercolor{background canvas}{bg=black}
 \begin{frame}[plain]
 \begin{tikzpicture}[remember picture, overlay]
-  \node[anchor=south, inner sep=0] (mw) at ([yshift=10mm]current page.south)
-       {\includegraphics[width=\paperwidth]{nasa_milky_way_anatomy}};
-  \node[anchor=south west, text=white, font=\Large\bfseries] at ([xshift=5mm, yshift=1.5mm]mw.north west)
-       {Where we look: the Galactic bulge};
-  \node<2->[anchor=north, text=white, font=\small] at ([yshift=-1mm]mw.south)
-       {Sources: \textbf{bulge}, lenses: \textbf{disk} \& \textbf{bulge}%
-        \only<3->{$\;\Rightarrow\;$ the densest star field, the \textbf{most events}}};
-  \node[anchor=south east, inner sep=0] at ([xshift=-3mm, yshift=1mm]current page.south east)
-       {\credit{\href{https://svs.gsfc.nasa.gov/14935}{NASA Goddard Space Flight Center, Milky Way Anatomy (2025)}}};
+  \node[inner sep=0] at (current page.center) {\includegraphics[width=\paperwidth]{roman_assembled}};
+  \node[bleedtitle, anchor=north west] at ([xshift=5mm, yshift=-4mm]current page.north west)
+       {Roman, fully assembled};
+  \node[bleedtext, anchor=north west] at ([xshift=5mm, yshift=-15mm]current page.north west)
+       {A $2.4$\,m mirror like \emph{Hubble}'s,\\ a field of view $\sim\!100\times$ larger};
+  \bleedcredit{\href{https://www.nasa.gov/image-article/nasas-nancy-grace-roman-space-telescope-completed/}{NASA/Jolearra Tshiteya}}
+  \bleedsection
 \end{tikzpicture}
 \note{\begin{itemize}
-  \item Disk: young and old stars, thin and thick components; bulge/bar: old stars around the centre; halo: sparse.
-  \item Toward the bulge the line of sight crosses $\sim8$\,kpc of disk and then the bulge: the optical depth is
-        highest there, $\sim$ a few $\times10^{-6}$. Dust in the disk is the price: hence the near-infrared.
-  \item Our simulator draws sources and lenses from the disk and bulge (Besan\c{c}on model) along each sightline.
+  \item NASA Goddard clean room, November 2025: the telescope and spacecraft joined. The technicians give the scale.
+  \item Wide Field Instrument: $0.28$\,deg$^2$ per pointing, near-infrared, diffraction-limited.
 \end{itemize}}
 \end{frame}}
+
 
 \begin{frame}{Roman's Galactic Bulge Time Domain Survey}
 \vspace{2mm}
@@ -37,7 +33,7 @@
   \item<+-> Near-infrared: \textbf{little dust}
   \item<+-> An exposure every $12$\,min
   \item<+-> $\sim\!1$\,mas \textbf{astrometry}
-  \item<+-> At \textbf{L2}: a second viewpoint
+  \item<+-> At \textbf{L2}: a second viewpoint\\ for the parallax?
 \end{itemize}
 \end{column}
 \end{columns}
@@ -49,9 +45,27 @@
   \item Ten $\sim70$-day seasons: six at high cadence ($12.1$\,min), four at low cadence ($\sim5$\,d); gaps while the
         bulge is near the Sun. $\sim5\times10^4$ exposures per field.
   \item Diffraction-limited: $\sim1$\,mas per exposure for bright stars.
-  \item L2 and Earth are $0.01$\,AU apart: satellite parallax with Rubin.
+  \item L2 and Earth are $0.01$\,AU apart: a satellite parallax with Rubin was expected to help; the preliminary results test it.
 \end{itemize}}
 \end{frame}
+
+{\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture, overlay]
+  % portrait photo, full width, cropped to the band of sky and the dome (from 30% of its height down)
+  \node[anchor=north, inner sep=0] at ([yshift=7.2cm]current page.north)
+       {\includegraphics[width=\paperwidth]{rubin_milky_way}};
+  \node[bleedtitle, anchor=north west] at ([xshift=5mm, yshift=-4mm]current page.north west)
+       {Vera C.\ Rubin Observatory, Chile};
+  \node[bleedtext, anchor=north west] at ([xshift=5mm, yshift=-15mm]current page.north west)
+       {$8.4$\,m mirror, a $9.6$\,deg$^2$ camera:\\ the whole southern sky every few nights};
+  \bleedcredit{\href{https://noirlab.edu/public/images/20220408PachonFPano35mmRubinAux_MW_EQ-001-CC-c3/}{RubinObs/NOIRLab/SLAC/NSF/DOE/AURA/P.~Hor\'alek}}
+\end{tikzpicture}
+\note{\begin{itemize}
+  \item The Galactic bulge rising over Rubin on Cerro Pach\'on.
+  \item The Legacy Survey of Space and Time: ten years, optical $ugrizy$, a 3.2-gigapixel camera.
+\end{itemize}}
+\end{frame}}
 
 \begin{frame}{Rubin, and why the two complement each other}
 \vspace{1mm}

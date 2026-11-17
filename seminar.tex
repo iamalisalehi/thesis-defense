@@ -25,6 +25,18 @@
 \newcommand{\refnote}[1]{{\hypersetup{urlcolor=gray}\textcolor{gray}{\fontsize{6.5}{8}\selectfont #1}}}
 \newcommand{\credit}[1]{\refnote{Image credit: #1}}
 
+% Full-bleed photo slides: white text on a translucent black box, credit in the corner.
+\tikzset{bleedtitle/.style={text=white, font=\Large\bfseries, fill=black, fill opacity=.55, text opacity=1,
+                            inner sep=4pt, rounded corners=2pt},
+         bleedtext/.style={text=white, font=\normalsize, fill=black, fill opacity=.55, text opacity=1,
+                           inner sep=4pt, rounded corners=2pt, align=left}}
+% on a photo slide that opens a section (it replaces the section page)
+\newcommand{\bleedsection}{\node[bleedtext, font=\small, anchor=north east]
+    at ([xshift=-3mm, yshift=-3mm]current page.north east) {\insertsectionnumber\enspace|\enspace\insertsection};}
+\newcommand{\bleedcredit}[1]{\node[anchor=south east, inner sep=2pt, fill=black, fill opacity=.6, text opacity=1]
+    at ([xshift=-2mm, yshift=1mm]current page.south east)
+    {{\hypersetup{urlcolor=white!80}\textcolor{white!80}{\fontsize{6.5}{8}\selectfont Image credit: #1}}};}
+
 \usetheme{JD}
 \beamertemplatenavigationsymbolsempty
 
@@ -57,9 +69,6 @@
 
 \input{tex/00_overview}
 
-\begin{frame}{Outline}
-    \tableofcontents
-\end{frame}
 
 \input{tex/01_black_holes}
 \input{tex/02_microlensing}

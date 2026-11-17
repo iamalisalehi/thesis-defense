@@ -19,14 +19,13 @@
 \end{itemize}}
 \end{frame}
 
-{
-\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{microlensing-well}}
+% Closing: the Milky Way, zoomed so the bulge fills the slide (earlier closing art: img/microlensing-well.jpg)
+{\setbeamercolor{background canvas}{bg=black}
 \begin{frame}[plain]
-\begin{center}
-\vspace*{6.9cm}
-\contourlength{2pt}
-\contournumber{20}
-\contour{black}{\Huge \textcolor{white}{Thank you for your attention!}}\\
-\end{center}
-\end{frame}
-}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[inner sep=0] at ([yshift=1.6cm]current page.center)
+       {\includegraphics[width=1.6\paperwidth]{eso_milky_way_panorama}};
+  \node[text=white, font=\Huge] at ([yshift=-2.3cm]current page.center) {Thank you for your attention!};
+  \bleedcredit{\href{https://www.eso.org/public/images/eso0932a/}{ESO/S.~Brunier}}
+\end{tikzpicture}
+\end{frame}}

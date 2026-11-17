@@ -9,6 +9,74 @@
 \vfill
 \end{frame}
 
+\begin{frame}{Backup: the Einstein radius is Roman's measurement}
+\vspace{1mm}
+\begin{columns}[c]
+\begin{column}{.56\linewidth}
+\centering
+\includegraphics[width=.94\linewidth]{h5_astrometry_summary}\\[1mm]
+\refnote{Ordinary lenses in Roman's fields, as simulated.}
+\end{column}
+\begin{column}{.40\linewidth}
+\begin{itemize}\setlength{\itemsep}{6pt}
+  \item \textbf{Black holes}: $3.4$\,mas shift,\\ seen in single exposures
+  \item \textbf{Ordinary}: $0.12$\,mas,\\ needs $\sim\!5\times10^4$ exposures
+  \item Rubin adds nothing to $\tetE$
+\end{itemize}
+\vspace{4mm}
+{%
+\begin{beamercolorbox}[rounded=true,sep=5pt,wd=\linewidth]{block body alerted}
+\centering Risk: does the $1.1$\,mas floor average down?
+\end{beamercolorbox}}
+\end{column}
+\end{columns}
+\vfill
+\refnote{Astrometric floor: \ads{2019JATIS...5d4005S}{Sanderson et al.\ 2019}}
+\note{\begin{itemize}
+  \item Roman's per-exposure error: a $1.1$\,mas floor for bright stars, $\approx2.8$\,mas for a typical source.
+  \item Black holes: median maximum shift $3.4$\,mas; $\tetE$ to 10\% for 97\% of them.
+  \item Ordinary lenses: median $0.12$\,mas; the signal emerges only if the floor averages down over all exposures.
+        Black holes are the least sensitive to this assumption.
+\end{itemize}}
+\end{frame}
+
+\begin{frame}{Backup: seeing the two images}
+\vspace{1mm}
+\begin{columns}[c]
+\begin{column}{.56\linewidth}
+\centering
+\includegraphics[width=.94\linewidth]{p6_resolution}\\[1mm]
+\refnote{(a) by population, telescope and criterion; (b) against lens mass. As simulated.}
+\end{column}
+\begin{column}{.40\linewidth}
+\[
+  \Delta\theta = \tetE\sqrt{u^2+4}
+\]
+{Roman, black holes:\\[3pt]
+\begin{tabular}{@{}ll@{}}
+generous bar & $34\%$ \\
+strict bar & $15\%$ \\
+PSF width & $0.25\%$
+\end{tabular}}
+\vspace{5mm}
+
+{%
+\begin{beamercolorbox}[rounded=true,sep=5pt,wd=\linewidth]{block body alerted}
+\centering The criterion decides: test it on Roman images
+\end{beamercolorbox}}
+\end{column}
+\end{columns}
+\vfill
+\refnote{Criterion: \ads{2026ApJ..1009..116S}{Sajadian \& Makler 2026, ApJ 1009, 116}}
+\note{\begin{itemize}
+  \item Resolvable: at least three visits with both images detectable and $\Delta\theta$ above a bar:
+        $\mathcal{D}\sigma_{\rm ast}$ with $\mathcal{D}=5$ (generous) or $20$ (strict), or the PSF width.
+  \item Rubin resolves $\approx5\%$ of its black-hole events at the generous bar; for lighter lenses resolution is rare.
+  \item Two orders of magnitude between the bars: the criterion for Roman's diffraction-limited images must be
+        measured on simulated Roman images (stage 5).
+\end{itemize}}
+\end{frame}
+
 \begin{frame}{Backup: light curves and centroid shifts for several $u_0$}
 \centering
 \vspace{2mm}

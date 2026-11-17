@@ -12,13 +12,13 @@
   \path[connector] (bh) -- node[lab, above, align=center] {only\\ gravity} (ml);
 }
 \uncover<3->{
-  \node[cbox, fill=blue!15] (ph) at (-3.5, 1.15) {Photometry\\ $\tE$, $\piE$};
-  \node[cbox, fill=blue!15] (as) at ( 0.3, 1.15) {Astrometry\\ $\tetE$};
+  \node[cbox, fill=blue!15] (ph) at (-3.5, 1.15) {Photometry\\ \footnotesize how bright: timescale, parallax};
+  \node[cbox, fill=blue!15] (as) at ( 0.3, 1.15) {Astrometry\\ \footnotesize where: the Einstein radius};
   \path[connector] (ml) -- (ph);
   \path[connector] (ml) -- (as);
 }
 \uncover<4->{
-  \node[cbox, fill=blue!15] (m) at (-1.6, -0.6) {Lens mass\\ $\Ml=\tetE/\kappa\piE$};
+  \node[cbox, fill=blue!15] (m) at (-1.6, -0.6) {\textbf{Lens mass}};
   \path[connector] (ph) -- (m);
   \path[connector] (as) -- (m);
 }

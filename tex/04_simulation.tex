@@ -1,65 +1,55 @@
 % !TeX root = ../seminar.tex
 \section{The Simulation}
-\frame{\sectionpage}
 
-\begin{frame}{A Monte Carlo of the bulge sky}
-\centering
-\vspace{1mm}
-\begin{tikzpicture}[font=\footnotesize, execute at begin node={\hyphenpenalty=10000},
-    inb/.style={terminator, fill=orange!12, text width=2.5cm, align=center, minimum height=1.25cm},
-    row/.style={terminator, fill=blue!8, text width=13.6cm, align=center, minimum height=2.1em},
-    resb/.style={terminator, fill=green!15, align=center, minimum height=2.3em}]
-  \node[inb] (g) at (0,0)     {\textbf{Galaxy}\\ Besan\c{c}on model};
-  \node[inb] (d) at (2.9,0)   {\textbf{Dust}\\ 3D maps};
-  \node[inb] (p) at (5.8,0)   {\textbf{Lenses}\\ stars, BHs, NSs};
-  \node[inb] (s) at (8.7,0)   {\textbf{Schedules}\\ LSST, GBTDS};
-  \node[inb] (e) at (11.6,0)  {\textbf{Noise}\\ per visit};
-  \uncover<2->{
-  \node[row] (sky) at (5.8,-1.5) {$1{,}829$ sightlines over $68$\,deg$^2$};
-  \foreach \n in {g,d,p,s,e} \path[connector] (\n.south) -- (\n.south |- sky.north);}
-  \uncover<3->{
-  \node[row] (mc) at (5.8,-2.55) {each sightline: draw $\to$ simulate both surveys $\to$ detect $\to$ forecast};
-  \path[connector] (sky) -- (mc);}
-  \uncover<4->{
-  \node[row] (tab) at (5.8,-3.6) {event table: truth, who detects, forecast errors};
-  \path[connector] (mc) -- (tab);}
-  \uncover<5->{
-  \node[resb, text width=5.6cm] (w) at (2.5,-4.85) {weight by event rate $\to$ the sky};
-  \node[resb, text width=5.6cm] (an) at (9.1,-4.85) {analyses and yields};
-  \path[connector] (tab.south -| w.north) -- (w.north);
-  \path[connector] (w) -- (an);}
+{\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south, inner sep=0] (mw) at ([yshift=10mm]current page.south)
+       {\includegraphics[width=\paperwidth]{nasa_milky_way_anatomy}};
+  \node[anchor=south west, text=white, font=\Large\bfseries] at ([xshift=5mm, yshift=1.5mm]mw.north west)
+       {The Galaxy we simulate};
+  \node[anchor=north, text=white, font=\small] at ([yshift=-1mm]mw.south)
+       {Sources in the \textbf{bulge}, lenses in the \textbf{disk} \& \textbf{bulge}: the densest star field, the \textbf{most events}};
+  \node[anchor=south east, inner sep=0] at ([xshift=-3mm, yshift=1mm]current page.south east)
+       {\credit{\href{https://svs.gsfc.nasa.gov/14935}{NASA Goddard Space Flight Center, Milky Way Anatomy (2025)}}};
+  \bleedsection
 \end{tikzpicture}
-\vfill
-\refnote{Built on Dr.\ Sajadian's microlensing simulation (Magellanic Clouds), extended to two observatories.
-\ads{2003A\%26A...409..523R}{Robin et al.\ 2003};
-\ads{2019ApJ...887...93G}{Green et al.\ 2019};
-\ads{2025ApJ...992...39Z}{Zucker et al.\ 2025};
-\ads{1989ApJ...345..245C}{Cardelli et al.\ 1989}}
 \note{\begin{itemize}
-  \item Galaxy: Besan\c{c}on densities and a synthetic colour--magnitude diagram; magnitudes in $ugrizy$ and F146.
-  \item Dust: $A_V(D)$ from Bayestar and DECaPS, converted with the CCM89 law.
-  \item Lenses: ordinary stars and remnants, black holes, or neutron stars (one population per run).
-  \item Schedules: Rubin's simulated LSST visit list; Roman's GBTDS seasons, fields and cadence.
-  \item Sky: $0.1^\circ$ grid inside Roman's fields, $0.2^\circ$ outside; each sightline carries its area.
-  \item The Monte Carlo does not draw events in proportion to the rate, so every event is weighted by its event rate.
+  \item Disk: young and old stars, thin and thick components; bulge/bar: old stars around the centre; halo: sparse.
+  \item Toward the bulge the line of sight crosses $\sim8$\,kpc of disk and then the bulge: the optical depth is
+        highest there, $\sim$ a few $\times10^{-6}$. Dust in the disk is the price: hence the near-infrared.
+  \item Our simulator draws sources and lenses from the disk and bulge (Besan\c{c}on model) along each sightline.
 \end{itemize}}
-\end{frame}
+\end{frame}}
 
-\begin{frame}{Simulating one event}
+
+\begin{frame}{The simulator}
 \centering
-\vspace{2mm}
+\vspace{-1mm}
 \begin{tikzpicture}[font=\footnotesize, execute at begin node={\hyphenpenalty=10000},
-    st/.style={terminator, fill=blue!8, text width=2.7cm, align=center, minimum height=3.2em},
-    q/.style={terminator, fill=yellow!25, text width=2.7cm, align=center, minimum height=3.2em},
+    inb/.style={terminator, fill=orange!12, text width=2.4cm, align=center, minimum height=2.5em},
+    st/.style={terminator, fill=blue!8, text width=2.5cm, align=center, minimum height=3em},
+    q/.style={terminator, fill=yellow!25, text width=2.5cm, align=center, minimum height=3em},
     nb/.style={draw=none, font=\scriptsize\itshape, text=jdgrey}]
+  % inputs
+  \node[inb] (g) at (0,1.75)     {\textbf{Galaxy}\\ Besan\c{c}on};
+  \node[inb] (d) at (2.8,1.75)   {\textbf{Dust}\\ 3D maps};
+  \node[inb] (p) at (5.6,1.75)   {\textbf{Lenses}\\ stars, BHs or NSs};
+  \node[inb] (s) at (8.4,1.75)   {\textbf{Schedules}\\ LSST, GBTDS};
+  \node[inb] (e) at (11.2,1.75)  {\textbf{Noise}\\ per visit};
+  % the loop, run on every sightline
+  \uncover<2->{
+  \draw[jdlightgrey, dashed, rounded corners] (-1.55,0.85) rectangle (12.8,-3.05);
+  \node[nb, anchor=north east] at (12.8,-3.1) {repeated on each of $1{,}829$ sightlines ($68$\,deg$^2$)};
+  \foreach \n in {g,d,p,s,e} \path[connector] (\n.south) -- ++(0,-0.42);
   \node[st] (src) at (0,0)     {\textbf{Source}\\ star, distance, dust};
   \node[st] (len) at (3.75,0)  {\textbf{Lens}\\ mass, distance, velocity};
   \node[q]  (vis) at (7.5,0)   {\textbf{Visible?}};
-  \node[st] (dat) at (11.25,0) {\textbf{Data}\\ at every real visit};
-  \node[q]  (det) at (11.25,-2.2) {\textbf{Detected?}\\ $\Delta\chi^2\ge500$};
-  \node[st] (fis) at (7.5,-2.2)   {\textbf{Fisher forecast}\\ three times};
-  \node[st] (row) at (3.75,-2.2)  {\textbf{Event table}};
-  \node[q]  (done) at (0,-2.2)    {\textbf{Enough events?}};
+  \node[st] (dat) at (11.2,0)  {\textbf{Data}\\ at every real visit};
+  \node[q]  (det) at (11.2,-2.1) {\textbf{Detected?}\\ $\Delta\chi^2\ge500$};
+  \node[st] (fis) at (7.5,-2.1)  {\textbf{Fisher forecast}\\ three times};
+  \node[st] (row) at (3.75,-2.1) {\textbf{Event table}};
+  \node[q]  (done) at (0,-2.1)   {\textbf{Enough events?}};
   \path[connector] (src) -- (len);
   \path[connector] (len) -- (vis);
   \path[connector] (vis) -- node[nb, above] {yes} (dat);
@@ -67,20 +57,30 @@
   \path[connector] (det) -- node[nb, above] {yes} (fis);
   \path[connector] (fis) -- (row);
   \path[connector] (row) -- (done);
-  \path[connector] (done) -- node[nb, left] {no} (src);
+  \path[connector] (done) -- node[nb, left] {no} (src);}
 \end{tikzpicture}
 
-\vspace{8mm}
-\uncover<2->{Rubin from \textbf{Earth}, Roman from \textbf{L2}: two slightly different light curves}
+\vspace{4mm}
+\uncover<3->{Rubin from \textbf{Earth}, Roman from \textbf{L2}: both light curves, with parallax\\[2pt]
+every event weighted by its \textbf{event rate} $\to$ numbers for the sky}
 \vfill
-\refnote{Detection criterion as in \ads{2019ApJS..241....3P}{Penny et al.\ 2019, ApJS 241, 3}}
+\refnote{Built on Dr.\ Sajadian's microlensing simulation (Magellanic Clouds), extended to two observatories.
+\ads{2003A\%26A...409..523R}{Robin et al.\ 2003};
+\ads{2019ApJ...887...93G}{Green et al.\ 2019};
+\ads{2025ApJ...992...39Z}{Zucker et al.\ 2025};
+\ads{1989ApJ...345..245C}{Cardelli et al.\ 1989};
+detection as in \ads{2019ApJS..241....3P}{Penny et al.\ 2019}}
 \note{\begin{itemize}
+  \item Galaxy: Besan\c{c}on densities and a synthetic colour--magnitude diagram; magnitudes in $ugrizy$ and F146.
+        Dust: $A_V(D)$ from Bayestar and DECaPS, CCM89 law. Lenses: ordinary stars and remnants, black holes, or
+        neutron stars (one population per run). Schedules: Rubin's simulated LSST visits; Roman's GBTDS seasons.
+  \item Sky: $0.1^\circ$ grid inside Roman's fields, $0.2^\circ$ outside; each sightline carries its area.
   \item Lens distance drawn in proportion to the event rate; $u_0\le3$; $t_0$ anywhere in the ten years.
   \item Visible: bright enough at the peak and not saturated, in two Rubin bands or in Roman's F146.
-  \item Data: magnification and centroid shift with parallax at every real visit; each instrument's noise added.
+  \item Data: magnification and centroid shift with parallax (annual, and L2 vs Earth) at every real visit.
   \item Detected: $\Delta\chi^2\ge500$ against a constant star and three consecutive points above $3\sigma$; tested on
-        Rubin's data, Roman's and both. Every draw is kept, detected or not, for efficiencies.
-  \item Labels: detected by Rubin only, Roman only, both, or only jointly.
+        Rubin's data, Roman's and both. Labels: Rubin only, Roman only, both, or only jointly.
+  \item The Monte Carlo does not draw events in proportion to the rate, so every event is weighted by its event rate.
 \end{itemize}}
 \end{frame}
 
@@ -141,19 +141,19 @@ matrices as in \ads{2023AJ....165...96S}{Sajadian \& Sahu 2023}}
 \begin{frame}{One simulated black hole}
 \vspace{1mm}
 \begin{columns}[c]
-\begin{column}{.64\linewidth}
+\begin{column}{.73\linewidth}
 \centering
-\includegraphics[width=.96\linewidth, trim=0 255 0 0, clip]{both_011_3x3}
+\includegraphics[width=\linewidth, trim=0 255 0 40, clip]{both_011_3x3}
 \end{column}
-\begin{column}{.32\linewidth}
+\begin{column}{.25\linewidth}
 \textbf{$23.9\,\Msun$ at $1.9$\,kpc}\\[3pt]
 $\tE=343$\,d, $\tetE=8.5$\,mas
 \vspace{6mm}
 
 \uncover<2->{%
 \begin{beamercolorbox}[rounded=true,sep=5pt,wd=\linewidth]{block body example}
-Roman: \textbf{mass to $0.5\%$}\\[2pt]
-Rubin alone: $\tE$ to $74\%$
+\small Roman:\\ \textbf{mass to $0.5\%$}\\[3pt]
+Rubin alone:\\ $\tE$ to $74\%$
 \end{beamercolorbox}}
 \end{column}
 \end{columns}

@@ -31,40 +31,38 @@
   \path[connector] (a) -- (b); \path[connector] (b) -- (c); \path[connector] (c) -- (d);
 \end{tikzpicture}}
 
-\begin{frame}{The plan (1/2): a better model, then the full run}
+\begin{frame}{The plan (1/2): fix what moves the answer, then the full run}
 \centering
 \vspace{1mm}
 \roadmap{on}{on}{}{}
-\vspace{5mm}
-\raggedright
-\begin{columns}[T]
-\begin{column}{.48\linewidth}
-\textbf{1. The physical model}
-\begin{itemize}
-  \item dust near the plane
-  \item Roman's noise \& astrometric errors
-  \item Besan\c{c}on lenses, the adopted fields
-\end{itemize}
-\end{column}
-\begin{column}{.48\linewidth}
-\textbf{2. Black-hole physics}
-\begin{itemize}
-  \item mass functions, natal kicks, mass gap
-\end{itemize}
-\vspace{2mm}
-\textbf{3. The full run}
-\begin{itemize}
-  \item $\sim\!4{,}800$ sightlines on a cluster
-\end{itemize}
-\end{column}
-\end{columns}
+\vspace{4mm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}l@{\quad$\to$\quad}l@{}}
+\toprule
+\textbf{What moves the answer} & \multicolumn{1}{l}{\textbf{The fix}} \\
+\midrule
+Correlated astrometric errors & a two-part Roman error model \\
+Dust near the plane: $3$--$6\times$ too thin & DECaPS + near-IR maps, VVV check \\
+Roman's photometric noise & pixel-level simulations \\
+Field geometry: $+15$--$25\%$ events & the adopted fields and schedule \\
+Black-hole physics & mass functions, kicks, mass gap \\
+\bottomrule
+\end{tabular}
+\vspace{3mm}
+
+\textbf{Then the full run:} $\sim\!4{,}800$ sightlines on a cluster
 \vfill
 \refnote{\ads{2006A\%26A...453..635M}{Marshall et al.\ 2006};
 \ads{2023ApJS..269....5W}{Wilson et al.\ 2023};
 \ads{2012ApJ...749...91F}{Fryer et al.\ 2012};
 \ads{2020A\%26A...638A..94O}{Olejak et al.\ 2020}}
 \note{\begin{itemize}
-  \item Dust: DECaPS, with near-infrared dust (Marshall et al.\ 2006) where it saturates; checked against VVV.
+  \item The preliminary runs showed which inputs move the answer most; each gets a fix.
+  \item Astrometry: whether Roman's floor averages down decides neutron-star and ordinary-lens masses.
+  \item Dust: the map used is 3--6 times too thin within $\sim1^\circ$ of the plane (VVV check); correcting it lowers
+        Roman's yields by $\sim1/3$, Rubin's by $>1/2$, and leaves the survey comparison intact.
+  \item Dust fix: DECaPS, with near-infrared dust (Marshall et al.\ 2006) where it saturates; checked against VVV.
   \item Roman: photometric noise from pixel-level simulations (Wilson et al.\ 2023); a two-part astrometric error
         with a correlated piece that does not average down.
   \item Ordinary lenses from the Besan\c{c}on catalogue; the adopted GBTDS fields and published schedule (from
@@ -91,7 +89,9 @@
 \vspace{2mm}
 \textbf{5. The two images}
 \begin{itemize}
-  \item tested on simulated Roman images
+  \item black holes: $\gtrsim10$\,mas apart
+  \item Roman resolves $0.25$--$34\%$:\\ the criterion decides
+  \item test it on simulated Roman images
 \end{itemize}
 \end{column}
 \begin{column}{.48\linewidth}

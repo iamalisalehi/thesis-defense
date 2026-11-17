@@ -36,15 +36,22 @@ rounded
 \centering
 $F$ = the population's share of the Galaxy's stellar mass \qquad $N(F) = F\,N_1$
 \end{beamercolorbox}}
+\vspace{4mm}
+\uncover<3->{\centering Checks passed: OGLE-IV timescales, Penny et al.\ rates, Sajadian \& Sahu fractions\par}
 \vfill
 \refnote{\ads{2001MNRAS.322..231K}{Kroupa 2001, MNRAS 322, 231};
-\ads{2000ApJ...535..928G}{Gould 2000, ApJ 535, 928}}
+\ads{2000ApJ...535..928G}{Gould 2000, ApJ 535, 928};
+\ads{2019ApJS..244...29M}{Mr\'oz et al.\ 2019, ApJS 244, 29};
+\ads{2019ApJS..241....3P}{Penny et al.\ 2019};
+\ads{2023AJ....165...96S}{Sajadian \& Sahu 2023}}
 \note{\begin{itemize}
   \item Ordinary lenses: Kroupa IMF evolved for a $10$\,Gyr bulge (white dwarfs, $1.4\,\Msun$ neutron stars,
         $5$--$29\,\Msun$ black holes). Black holes: log-uniform $3$--$1000\,\Msun$. Neutron stars: $1.35\pm0.15\,\Msun$.
   \item Roman's fields modelled as six circles ($1.47$\,deg$^2$). The thesis replaces these simplifications.
   \item The model's dust is too thin near the plane; all numbers here are corrected for it.
   \item Literature: $F_{\rm BH}\approx0.005$--$0.03$, $F_{\rm NS}\lesssim0.06$.
+  \item Checks: weighted $\tE$ mean $23.5$ vs OGLE-IV's $23.8$\,d (Mr\'oz et al.\ 2019); Roman's rate within $\sim25\%$
+        of Penny et al.; black-hole fractions agree with Sajadian \& Sahu on their sample.
 \end{itemize}}
 \end{frame}
 
@@ -124,65 +131,42 @@ mass to $10\%$ & $\approx0 \to \mathbf{8\%}$ & $\approx0 \to \mathbf{16\%}$ & $\
 \end{itemize}}
 \end{frame}
 
-\begin{frame}{The Einstein radius is Roman's measurement}
-\vspace{1mm}
-\begin{columns}[c]
-\begin{column}{.56\linewidth}
-\centering
-\includegraphics[width=.94\linewidth]{h5_astrometry_summary}\\[1mm]
-\refnote{Ordinary lenses in Roman's fields, as simulated.}
-\end{column}
-\begin{column}{.40\linewidth}
-\begin{itemize}\setlength{\itemsep}{6pt}
-  \item<+-> \textbf{Black holes}: $3.4$\,mas shift,\\ seen in single exposures
-  \item<+-> \textbf{Ordinary}: $0.12$\,mas,\\ needs $\sim\!5\times10^4$ exposures
-  \item<+-> Rubin adds nothing to $\tetE$
-\end{itemize}
-\vspace{4mm}
-\uncover<4->{%
-\begin{beamercolorbox}[rounded=true,sep=5pt,wd=\linewidth]{block body alerted}
-\centering Risk: does the $1.1$\,mas floor average down?
-\end{beamercolorbox}}
-\end{column}
-\end{columns}
-\vfill
-\refnote{Astrometric floor: \ads{2019JATIS...5d4005S}{Sanderson et al.\ 2019}}
-\note{\begin{itemize}
-  \item Roman's per-exposure error: a $1.1$\,mas floor for bright stars, $\approx2.8$\,mas for a typical source.
-  \item Black holes: median maximum shift $3.4$\,mas; $\tetE$ to 10\% for 97\% of them.
-  \item Ordinary lenses: median $0.12$\,mas; the signal emerges only if the floor averages down over all exposures.
-        Black holes are the least sensitive to this assumption.
-\end{itemize}}
-\end{frame}
-
 \begin{frame}{For black holes the parallax limits the mass}
 \vspace{1mm}
 \begin{columns}[c]
-\begin{column}{.56\linewidth}
+\begin{column}{.54\linewidth}
 \centering
-\includegraphics[width=.94\linewidth, trim=0 14 508 0, clip]{p7_precision}\\[1mm]
+\includegraphics[width=.96\linewidth, trim=0 14 508 0, clip]{p7_precision}\\[1mm]
 \refnote{Cumulative fractional errors of (a) $\tE$, (b) $\piE$, (c) $\tetE$, (d) mass. As simulated.}
 \end{column}
-\begin{column}{.40\linewidth}
+\begin{column}{.42\linewidth}
 Roman, black holes, to $10\%$:\\[3pt]
 \begin{tabular}{@{}ll@{}}
 $\tetE$ & $\approx97\%$ \\
 $\piE$ & $\approx13\%$ \\
 mass & $\approx10\%$
 \end{tabular}
-\vspace{5mm}
+\vspace{4mm}
 
-\uncover<2->{%
-\[
-  \piE = \sqrt{\frac{\pirel}{\kappa M}}
-\]
-heavy lens $\Rightarrow$ small $\piE$}
+\uncover<2->{$\tetE$ easy: a $3.4$\,mas shift\\ $\piE=\sqrt{\pirel/\kappa\Ml}$ \textbf{small}}
+\vspace{4mm}
+
+\uncover<3->{%
+\begin{beamercolorbox}[rounded=true,sep=5pt,wd=\linewidth]{block body alerted}
+\small\textbf{Expected:} a satellite parallax, L2 + Earth\\[2pt]
+\textbf{Found:} $<1\%$ gain for black holes:\\ Roman's seasons already trace Earth's orbit
+\end{beamercolorbox}}
 \end{column}
 \end{columns}
 \note{\begin{itemize}
   \item Curves: black holes (bh) and neutron stars (ns); Rubin, Roman, joint. Dotted: 10\%.
+  \item $\tetE$ is Roman's: black holes shift the centroid by $3.4$\,mas (median), seen in single exposures; Rubin adds
+        nothing to $\tetE$.
   \item Heavy lenses have a large $\tetE$ but a small $\piE$: the parallax, not the Einstein radius, decides how many
         black-hole masses we get.
+  \item Satellite parallax: $\Delta u\approx0.01\,\piE$ between L2 and Earth, tiny for a black hole's small $\piE$. It
+        helps short events, which annual parallax cannot reach; black-hole events last months to years, and Roman's
+        ten seasons over five years already trace Earth's orbit. Rubin's decade adds $<0.4\%$ more.
 \end{itemize}}
 \end{frame}
 
@@ -212,7 +196,8 @@ NS & $36{,}500\,F$ & $1{,}100\,F$ \\
 \begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body example}
 \centering
 $F_{\rm BH}=0.005$--$0.03$:\\[2pt]
-\textbf{30--170} events\\ \textbf{3--17} masses to $10\%$
+\textbf{30--170} events\\ \textbf{3--17} masses to $10\%$\\[3pt]
+{\small with Rubin: $\lesssim\!13\%$ more}
 \end{beamercolorbox}}
 \end{column}
 \end{columns}
@@ -224,67 +209,3 @@ $F_{\rm BH}=0.005$--$0.03$:\\[2pt]
 \end{itemize}}
 \end{frame}
 
-\begin{frame}{Seeing the two images}
-\vspace{1mm}
-\begin{columns}[c]
-\begin{column}{.56\linewidth}
-\centering
-\includegraphics[width=.94\linewidth]{p6_resolution}\\[1mm]
-\refnote{(a) by population, telescope and criterion; (b) against lens mass. As simulated.}
-\end{column}
-\begin{column}{.40\linewidth}
-\[
-  \Delta\theta = \tetE\sqrt{u^2+4}
-\]
-\uncover<2->{Roman, black holes:\\[3pt]
-\begin{tabular}{@{}ll@{}}
-generous bar & $34\%$ \\
-strict bar & $15\%$ \\
-PSF width & $0.25\%$
-\end{tabular}}
-\vspace{5mm}
-
-\uncover<3->{%
-\begin{beamercolorbox}[rounded=true,sep=5pt,wd=\linewidth]{block body alerted}
-\centering The criterion decides: test it on Roman images
-\end{beamercolorbox}}
-\end{column}
-\end{columns}
-\vfill
-\refnote{Criterion: \ads{2026ApJ..1009..116S}{Sajadian \& Makler 2026, ApJ 1009, 116}}
-\note{\begin{itemize}
-  \item Resolvable: at least three visits with both images detectable and $\Delta\theta$ above a bar:
-        $\mathcal{D}\sigma_{\rm ast}$ with $\mathcal{D}=5$ (generous) or $20$ (strict), or the PSF width.
-  \item Rubin resolves $\approx5\%$ of its black-hole events at the generous bar; for lighter lenses resolution is rare.
-  \item Two orders of magnitude between the bars: the criterion for Roman's diffraction-limited images must be
-        measured on simulated Roman images (stage 5).
-\end{itemize}}
-\end{frame}
-
-\begin{frame}{What the preliminary runs taught us}
-\vspace{2mm}
-The inputs that move the answer most:
-\vspace{3mm}
-\begin{enumerate}\setlength{\itemsep}{5pt}
-  \item<2-> \textbf{Correlated astrometric errors}
-  \item<3-> \textbf{Dust near the plane}: $3$--$6$ times too thin
-  \item<4-> \textbf{Roman's photometric noise}
-  \item<5-> \textbf{The field geometry}: $+15$--$25\%$ events
-  \item<6-> \textbf{Black-hole physics} and the image criterion
-\end{enumerate}
-\vspace{5mm}
-\uncover<7->{Checks passed: OGLE-IV timescales, Penny et al.\ rates, Sajadian \& Sahu fractions}
-\vfill
-\refnote{\ads{2019ApJS..244...29M}{Mr\'oz et al.\ 2019, ApJS 244, 29};
-\ads{2020A\%26A...644A.140S}{Surot et al.\ 2020, A\&A 644, A140};
-\ads{2019ApJS..241....3P}{Penny et al.\ 2019};
-\ads{2023AJ....165...96S}{Sajadian \& Sahu 2023}}
-\note{\begin{itemize}
-  \item Astrometry: whether Roman's floor averages down decides neutron-star and ordinary-lens masses.
-  \item Dust: the map used is 3--6 times too thin within $\sim1^\circ$ of the plane (VVV check); correcting it lowers
-        Roman's yields by $\sim1/3$, Rubin's by $>1/2$, and leaves the survey comparison intact.
-  \item Noise: to be taken from pixel-level simulations. Geometry: the adopted layout gives Roman $15$--$25\%$ more events.
-  \item Checks: weighted $\tE$ mean $23.5$ vs OGLE-IV's $23.8$\,d; Roman's rate within $\sim25\%$ of Penny et al.;
-        black-hole fractions agree with Sajadian \& Sahu on their sample.
-\end{itemize}}
-\end{frame}
