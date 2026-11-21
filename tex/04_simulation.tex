@@ -9,7 +9,7 @@
   \node[anchor=south west, text=white, font=\Large\bfseries] at ([xshift=5mm, yshift=1.5mm]mw.north west)
        {The Galaxy we simulate};
   \node[anchor=north, text=white, font=\small] at ([yshift=-1mm]mw.south)
-       {Sources in the \textbf{bulge}, lenses in the \textbf{disk} \& \textbf{bulge}: the densest star field, the \textbf{most events}};
+       {The sightlines sample sources and lenses in the Galactic disk and bulge.};
   \node[anchor=south east, inner sep=0] at ([xshift=-3mm, yshift=1mm]current page.south east)
        {\credit{\href{https://svs.gsfc.nasa.gov/14935}{NASA Goddard Space Flight Center, Milky Way Anatomy (2025)}}};
   \bleedsection
@@ -22,11 +22,10 @@
 \end{itemize}}
 \end{frame}}
 
-
-\begin{frame}{The simulator}
+\begin{frame}{How I simulated both surveys on the same events}
 \centering
 \vspace{-1mm}
-\begin{tikzpicture}[font=\footnotesize, execute at begin node={\hyphenpenalty=10000},
+\begin{tikzpicture}[y=.84cm, font=\footnotesize, execute at begin node={\hyphenpenalty=10000},
     inb/.style={terminator, fill=orange!12, text width=2.4cm, align=center, minimum height=2.5em},
     st/.style={terminator, fill=blue!8, text width=2.5cm, align=center, minimum height=3em},
     q/.style={terminator, fill=yellow!25, text width=2.5cm, align=center, minimum height=3em},
@@ -45,9 +44,9 @@
   \node[st] (src) at (0,0)     {\textbf{Source}\\ star, distance, dust};
   \node[st] (len) at (3.75,0)  {\textbf{Lens}\\ mass, distance, velocity};
   \node[q]  (vis) at (7.5,0)   {\textbf{Visible?}};
-  \node[st] (dat) at (11.2,0)  {\textbf{Data}\\ at every real visit};
+  \node[st] (dat) at (11.2,0)  {\textbf{Data}\\ at scheduled visits};
   \node[q]  (det) at (11.2,-2.1) {\textbf{Detected?}\\ $\Delta\chi^2\ge500$};
-  \node[st] (fis) at (7.5,-2.1)  {\textbf{Fisher forecast}\\ three times};
+  \node[st] (fis) at (7.5,-2.1)  {\textbf{Fisher forecasts}\\ Roman, Rubin, joint};
   \node[st] (row) at (3.75,-2.1) {\textbf{Event table}};
   \node[q]  (done) at (0,-2.1)   {\textbf{Enough events?}};
   \path[connector] (src) -- (len);
@@ -60,16 +59,16 @@
   \path[connector] (done) -- node[nb, left] {no} (src);}
 \end{tikzpicture}
 
-\vspace{4mm}
-\uncover<3->{Rubin from \textbf{Earth}, Roman from \textbf{L2}: both light curves, with parallax\\[2pt]
-every event weighted by its \textbf{event rate} $\to$ numbers for the sky}
+\vspace{2mm}
+\uncover<3->{Keep undetected draws for the efficiency denominator.\\[2pt]
+Weight all draws by their event rates to forecast the sky.}
 \vfill
-\refnote{Built on Dr.\ Sajadian's microlensing simulation (Magellanic Clouds), extended to two observatories.
+\refnote{I adapted Dr.\ Sajadian's Magellanic Clouds simulator for joint Roman--Rubin observations toward the Galactic bulge.
 \ads{2003A\%26A...409..523R}{Robin et al.\ 2003};
 \ads{2019ApJ...887...93G}{Green et al.\ 2019};
 \ads{2025ApJ...992...39Z}{Zucker et al.\ 2025};
 \ads{1989ApJ...345..245C}{Cardelli et al.\ 1989};
-detection as in \ads{2019ApJS..241....3P}{Penny et al.\ 2019}}
+see also \ads{2019ApJS..241....3P}{Penny et al.\ 2019}}
 \note{\begin{itemize}
   \item Galaxy: Besan\c{c}on densities and a synthetic colour--magnitude diagram; magnitudes in $ugrizy$ and F146.
         Dust: $A_V(D)$ from Bayestar and DECaPS, CCM89 law. Lenses: ordinary stars and remnants, black holes, or
@@ -77,27 +76,27 @@ detection as in \ads{2019ApJS..241....3P}{Penny et al.\ 2019}}
   \item Sky: $0.1^\circ$ grid inside Roman's fields, $0.2^\circ$ outside; each sightline carries its area.
   \item Lens distance drawn in proportion to the event rate; $u_0\le3$; $t_0$ anywhere in the ten years.
   \item Visible: bright enough at the peak and not saturated, in two Rubin bands or in Roman's F146.
-  \item Data: magnification and centroid shift with parallax (annual, and L2 vs Earth) at every real visit.
+  \item Data: point-source, point-lens magnification and centroid shift at scheduled visits, with annual and satellite parallax.
   \item Detected: $\Delta\chi^2\ge500$ against a constant star and three consecutive points above $3\sigma$; tested on
         Rubin's data, Roman's and both. Labels: Rubin only, Roman only, both, or only jointly.
   \item The Monte Carlo does not draw events in proportion to the rate, so every event is weighted by its event rate.
 \end{itemize}}
 \end{frame}
 
-\begin{frame}{Forecasting the measurement: three Fisher matrices}
+\begin{frame}{Predicting precision for the same event three ways}
 \vspace{2mm}
 \begin{columns}[c]
 \begin{column}{.42\linewidth}
 \centering
-Curvature of $\chi^2$ at the truth:
+Local sensitivity at the simulated parameters
 \[
-  F_{jk} = \sum_i \frac{1}{\sigma_i^2}\,\frac{\partial m_i}{\partial\theta_j}\,\frac{\partial m_i}{\partial\theta_k}
+  \mathcal I_{jk} = \sum_i \frac{1}{s_i^2}\,\frac{\partial m_i}{\partial p_j}\,\frac{\partial m_i}{\partial p_k}
 \]
 \[
-  C = F^{-1}
+  C \simeq \mathcal I^{-1},\qquad \sigma(p_j)=\sqrt{C_{jj}}
 \]
 \vspace{2mm}
-\uncover<2->{\textbf{characterised:}\\ $\tE>2\sigma_{\tE}$ and $\piE>2\sigma_{\piE}$}
+\uncover<2->{\textbf{characterised:}\\ $\tE>2\sigma(\tE)$ and $\piE>2\sigma(\piE)$}
 \end{column}
 \begin{column}{.54\linewidth}
 \centering
@@ -107,9 +106,9 @@ Curvature of $\chi^2$ at the truth:
     s/.style={terminator, fill=green!15, text width=1.2cm, align=center}]
   \node[d] (rd) at (0,1.3)  {Rubin's data};
   \node[d] (od) at (0,-1.3) {Roman's data};
-  \node[f] (fr) at (3.1,1.3)  {$F^{\rm Rubin}$};
-  \node[f] (fo) at (3.1,-1.3) {$F^{\rm Roman}$};
-  \node[f] (fj) at (3.1,0)    {$F^{\rm Rubin}+F^{\rm Roman}$};
+  \node[f] (fr) at (3.1,1.3)  {$\mathcal I^{\rm Rubin}$};
+  \node[f] (fo) at (3.1,-1.3) {$\mathcal I^{\rm Roman}$};
+  \node[f] (fj) at (3.1,0)    {$\mathcal I^{\rm Rubin}+\mathcal I^{\rm Roman}$};
   \node[s] (sr) at (5.9,1.3)  {$\sigma_{\rm Rubin}$};
   \node[s] (sj) at (5.9,0)    {$\sigma_{\rm joint}$};
   \node[s] (so) at (5.9,-1.3) {$\sigma_{\rm Roman}$};
@@ -129,39 +128,42 @@ Curvature of $\chi^2$ at the truth:
 \refnote{Characterisation criterion: \ads{2025ApJS..276...10A}{Abrams et al.\ 2025}; separate photometric and astrometric
 matrices as in \ads{2023AJ....165...96S}{Sajadian \& Sahu 2023}}
 \note{\begin{itemize}
-  \item Too many events to fit each one; $F^{-1}$ is the Cram\'er--Rao bound for the real sampling and noise.
-  \item Photometric matrix: $u_0$, $\tE$, $t_0$, $\piE$, the direction $\xi$, and a source magnitude and blending per
-        telescope. Astrometric matrix: $\tetE$, the source proper motion (2), $\piE$.
+  \item $m_i$ is the predicted measurement, $s_i$ is its per-visit uncertainty, and $p_j$ is a model parameter. The inverse information is a local, Gaussian precision forecast.
+  \item Each of the three survey partitions has separate photometric and astrometric blocks in the first overview.
+        Photometry fits $u_0$, $\tE$, $t_0$, $\piE$, the sky direction and a baseline magnitude and source fraction
+        per telescope. Astrometry fits $\tetE$, the two source proper-motion components and $\piE$, holding the other
+        event parameters fixed. The backup slides document the limits of this approximation.
   \item The three forecasts share the source, blending, $u_0$ and dust, so the per-event ratios
         $\sigma_{\rm joint}/\sigma_{\rm Roman}$, $\sigma_{\rm joint}/\sigma_{\rm Rubin}$ isolate what each survey adds.
-        Built-in check: $\sigma_{\rm joint}\le\sigma_{\rm single}$.
+Use a common sample to compare precision, and keep this distinct from the detection counts.
 \end{itemize}}
 \end{frame}
 
-\begin{frame}{One simulated black hole}
-\vspace{1mm}
-\begin{columns}[c]
-\begin{column}{.73\linewidth}
+\begin{frame}{One simulated black hole seen by both surveys}
 \centering
-\includegraphics[width=\linewidth, trim=0 255 0 40, clip]{both_011_3x3}
-\end{column}
-\begin{column}{.25\linewidth}
-\textbf{$23.9\,\Msun$ at $1.9$\,kpc}\\[3pt]
-$\tE=343$\,d, $\tetE=8.5$\,mas
-\vspace{6mm}
+$23.9\,\Msun$ at $1.9$\,kpc \qquad $\tE=343$\,d \qquad $\tetE=8.5$\,mas
+\vspace{2mm}
 
+\begin{columns}[c]
+\begin{column}{.34\linewidth}
+\centering\small\textbf{Light curve near the peak}\\[2pt]
+\includegraphics[width=\linewidth, trim=347 403 19 60, clip]{both_011_3x3}
+\end{column}
+\begin{column}{.34\linewidth}
+\centering\small\textbf{Centroid shift over time}\\[2pt]
+\includegraphics[width=\linewidth, trim=184 257 193 212, clip]{both_011_3x3}
+\end{column}
+\begin{column}{.27\linewidth}
 \uncover<2->{%
 \begin{beamercolorbox}[rounded=true,sep=5pt,wd=\linewidth]{block body example}
-\small Roman:\\ \textbf{mass to $0.5\%$}\\[3pt]
-Rubin alone:\\ $\tE$ to $74\%$
+\small Roman's forecast mass error is \textbf{$0.5\%$}.\\[4pt]
+Rubin alone constrains $\tE$ to $74\%$.
 \end{beamercolorbox}}
 \end{column}
 \end{columns}
 \vfill
-\refnote{This work, preliminary runs. Chosen for illustration, not typical.}
-\note{\begin{itemize}
-  \item Top row: photometry, Rubin's six bands and Roman's F146; Roman's seasons shaded (dark: high cadence).
-  \item (d) the parallax signal; (e, f) the centroid shift (max.\ $3.0$\,mas) against Roman's $1.1$\,mas floor.
-  \item Joint and Roman-alone precisions are the same here: $\tE$ to $0.3\%$, mass to $0.5\%$.
-\end{itemize}}
+\refnote{September sample gallery, event both\_011. Orange points are Roman, other colours are Rubin filters.}
+\note{This hand-picked case illustrates the observables in one simulation. The two model curves include and exclude
+      parallax. Roman detects the wings even though the observed peak is outside its seasons. The largest centroid
+      shift is about $3.0$ mas. The Roman and joint Fisher forecasts are nearly identical for this event.}
 \end{frame}

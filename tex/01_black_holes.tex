@@ -8,7 +8,7 @@
   \node[bleedtitle, anchor=north west] at ([xshift=5mm, yshift=-4mm]current page.north west)
        {Black holes hide among these stars};
   \node[bleedtext, anchor=north west] at ([xshift=5mm, yshift=-15mm]current page.north west)
-       {None of them shine};
+       {An isolated black hole can reveal itself by lensing a background star};
   \bleedcredit{\href{https://www.nasa.gov/missions/roman-space-telescope/euclid-view-of-milky-way-heart-previews-core-survey-by-nasas-roman/}{ESA/Euclid/Euclid Consortium/NASA, CFHT; image processing J.-C.~Cuillandre \& E.~Bertin (CEA Paris-Saclay)}}
   \bleedsection
 \end{tikzpicture}
@@ -16,41 +16,39 @@
   \item \emph{Euclid} with ground-based colour: a region near the Galactic centre that Roman's bulge survey will
         observe repeatedly.
   \item The Milky Way should hold $\sim10^8$ stellar black holes, and a field like this one hides many of them.
-        Without a companion they emit nothing: the question of the next slides is how to find them.
+        Without a luminous companion or bright accretion flow, they are hard to detect directly.
 \end{itemize}}
 \end{frame}}
 
 
-\begin{frame}{Almost every known black hole is in a binary}
+\begin{frame}{Why look beyond binaries?}
 \vspace{1mm}
-$\sim\!10^8$ stellar black holes in the Milky Way; the known ones are seen through a \textbf{companion}\\
-{\small (its light, X-rays from accretion, gravitational waves)}. \uncover<2->{Why not use those?}
+Population models predict $\sim\!10^8$ stellar black holes in the Milky Way. Most detections come from binary systems.
 \vspace{3mm}
 
 \begin{columns}[T]
 \begin{column}{.48\linewidth}
 \textbf{In a binary}
 \begin{itemize}\setlength{\itemsep}{5pt}
-  \item<3-> \textbf{Mass} reshaped by the companion\\ {\small (mass transfer, stripped envelopes)}
-  \item<4-> Only \textbf{weak kicks} survive\\ {\small (a strong kick unbinds the pair)}
-  \item<5-> Seen only while \textbf{active}\\ {\small (X-ray outbursts: selection effects)}
+  \item<2-> \textbf{Mass} can be reshaped by the companion\\ {\small (mass transfer, stripped envelopes)}
+  \item<2-> A strong \textbf{kick} can unbind the pair
+  \item<2-> Detectability depends on the companion\\ {\small (e.g.\ accretion in X-ray binaries)}
 \end{itemize}
 \end{column}
 \begin{column}{.48\linewidth}
 \textbf{Isolated}
 \begin{itemize}\setlength{\itemsep}{5pt}
-  \item<3-> Mass set by the \textbf{star's own collapse}
-  \item<4-> Carry their \textbf{full natal kick}
-  \item<5-> Found by \textbf{gravity alone}:\\ every one can lens
+  \item<2-> Can probe \textbf{single-star collapse} and disrupted binaries
+  \item<2-> Can include remnants with strong \textbf{natal kicks}
+  \item<2-> Can be found by their \textbf{gravity}\\ when a background star lines up
 \end{itemize}
 \end{column}
 \end{columns}
 \vfill
-\uncover<6->{%
+\uncover<2->{%
 \begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body alerted}
 \centering
-Binaries are not \emph{wrong}: they answer a different question (binary evolution).\\
-Supernova physics and the Galaxy's black-hole census need the \textbf{isolated} ones too
+Microlensing samples a different population, with its own selection effects.
 \end{beamercolorbox}}
 \vfill
 \refnote{%
@@ -61,19 +59,18 @@ Supernova physics and the Galaxy's black-hole census need the \textbf{isolated} 
 \ads{2012MNRAS.425.2799R}{Repetto et al.\ 2012, MNRAS 425, 2799};
 \ads{2012ApJ...757...36K}{Kreidberg et al.\ 2012, ApJ 757, 36}}
 \note{\begin{itemize}
-  \item Stars above $\sim20\,\Msun$ end as black holes. Population syntheses: $1.2\times10^8$ at $\sim14\,\Msun$
+  \item Population-synthesis examples: $1.2\times10^8$ at $\sim14\,\Msun$
         (Olejak et al.\ 2020), $2.2\times10^8$ at $5$--$16\,\Msun$ (Lam et al.\ 2020).
   \item Known ones: X-ray binaries (accretion from a companion), \emph{Gaia} BH1--3 (a companion's orbit),
         gravitational-wave mergers (distant galaxies).
   \item Most massive stars are born in binaries that interact (Sana et al.\ 2012): the companion strips or feeds the
         progenitor, so a binary black hole's mass records binary evolution, not single-star collapse alone.
-  \item Kicks: a black hole kicked hard enough leaves its companion and becomes isolated. Binaries keep the
-        weak-kick ones, so their velocities underestimate the kicks (Repetto et al.\ 2012 infer kicks from where X-ray
-        binaries sit in the Galaxy, an indirect route).
+  \item A kick can unbind a binary. Survival depends on the kick direction, orbital speed and mass loss.
+        Repetto et al.\ 2012 inferred kicks indirectly from where X-ray binaries sit in the Galaxy.
   \item X-ray binaries are found in outburst, and their masses rest on orbital modelling: the apparent
         $2$--$5\,\Msun$ gap may be partly a systematic (Kreidberg et al.\ 2012).
-  \item So the binary sample is a biased subset for these questions. Isolated black holes are the missing, unbiased
-        complement, and microlensing is the one way to weigh them.
+  \item Microlensing selects on distance, relative motion, mass, source brightness and survey coverage.
+        A population analysis will need to model this selection.
 \end{itemize}}
 \end{frame}
 
@@ -85,7 +82,7 @@ Supernova physics and the Galaxy's black-hole census need the \textbf{isolated} 
   \item<+-> \textbf{Mass function:} is there a mass gap?
   \item<+-> \textbf{Natal kicks:} how fast are they born?
   \item<+-> \textbf{Abundance} $F$: their share of\\ the stellar mass, $0.5$--$3\%$
-  \item<+-> These need \textbf{many} masses, not one
+  \item<+-> Population inference needs a sample with a quantified selection function
 \end{itemize}
 \end{column}
 \begin{column}{.52\linewidth}
@@ -116,7 +113,7 @@ Supernova physics and the Galaxy's black-hole census need the \textbf{isolated} 
 \uncover<5->{%
 \begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body alerted}
 \centering
-Isolated black holes are dark: \textbf{gravitational microlensing} is the only way to \emph{see} and \emph{weigh} them
+\textbf{Gravitational microlensing} can weigh a lens even when its light is undetectable.
 \end{beamercolorbox}}
 \vfill
 \refnote{%
@@ -127,7 +124,7 @@ Isolated black holes are dark: \textbf{gravitational microlensing} is the only w
   \item X-ray binary masses peak near $8\,\Msun$ with a deficit below $\sim5\,\Msun$: a real gap above the neutron
         stars, or a selection effect? The answer traces the supernova mechanism (rapid vs delayed, Fryer et al.\ 2012).
   \item Natal kicks: the velocities black holes receive at birth.
-  \item An isolated black hole accretes too little from the interstellar medium to be seen. Microlensing needs no
+  \item Accretion from the interstellar medium can be very faint. Microlensing needs no
         light from the lens, only its gravity.
   \item $F$ = the black holes' share of the Galaxy's stellar mass; the literature range is a factor $\sim6$.
 \end{itemize}}

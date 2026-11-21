@@ -1,14 +1,13 @@
 % !TeX root = ../seminar.tex
 \section{The Plan}
-\frame{\sectionpage}
 
-\begin{frame}{Hypotheses}
+\begin{frame}{What the proposal will test}
 \vspace{4mm}
 \begin{enumerate}\setlength{\itemsep}{9pt}
-  \item<+-> Roman weighs a few to $\sim\!20$ isolated black holes; the \textbf{parallax} is the limit
-  \item<+-> Roman \textbf{measures} in its fields; Rubin \textbf{widens} the sky
-  \item<+-> \textbf{Dust} and \textbf{correlated astrometric errors} matter most
-  \item<+-> The \textbf{mass function} --- and a mass gap --- leaves a visible imprint
+  \item<+-> Does \textbf{parallax} still limit the mass yield with updated survey and noise models?
+  \item<+-> Which events benefit most from \textbf{combining} the surveys?
+  \item<+-> How much do \textbf{dust} and \textbf{correlated astrometric errors} move the forecast?
+  \item<+-> Can the observed sample constrain the \textbf{mass function} and test a low-mass gap?
 \end{enumerate}
 \note{Questions that follow:
 \begin{itemize}
@@ -31,7 +30,7 @@
   \path[connector] (a) -- (b); \path[connector] (b) -- (c); \path[connector] (c) -- (d);
 \end{tikzpicture}}
 
-\begin{frame}{The plan (1/2): fix what moves the answer, then the full run}
+\begin{frame}{The proposal (1/2): refine the inputs and rerun}
 \centering
 \vspace{1mm}
 \roadmap{on}{on}{}{}
@@ -40,18 +39,18 @@
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{@{}l@{\quad$\to$\quad}l@{}}
 \toprule
-\textbf{What moves the answer} & \multicolumn{1}{l}{\textbf{The fix}} \\
+\textbf{Sensitive input} & \multicolumn{1}{l}{\textbf{Proposed test or update}} \\
 \midrule
 Correlated astrometric errors & a two-part Roman error model \\
 Dust near the plane: $3$--$6\times$ too thin & DECaPS + near-IR maps, VVV check \\
 Roman's photometric noise & pixel-level simulations \\
-Field geometry: $+15$--$25\%$ events & the adopted fields and schedule \\
+Approximate field geometry & the adopted fields and schedule \\
 Black-hole physics & mass functions, kicks, mass gap \\
 \bottomrule
 \end{tabular}
 \vspace{3mm}
 
-\textbf{Then the full run:} $\sim\!4{,}800$ sightlines on a cluster
+\textbf{Then rerun at finer sky resolution} over Roman's detector footprint.
 \vfill
 \refnote{\ads{2006A\%26A...453..635M}{Marshall et al.\ 2006};
 \ads{2023ApJS..269....5W}{Wilson et al.\ 2023};
@@ -65,8 +64,7 @@ Black-hole physics & mass functions, kicks, mass gap \\
   \item Dust fix: DECaPS, with near-infrared dust (Marshall et al.\ 2006) where it saturates; checked against VVV.
   \item Roman: photometric noise from pixel-level simulations (Wilson et al.\ 2023); a two-part astrometric error
         with a correlated piece that does not average down.
-  \item Ordinary lenses from the Besan\c{c}on catalogue; the adopted GBTDS fields and published schedule (from
-        February 2027).
+  \item Ordinary lenses from the Besan\c{c}on catalogue; the adopted GBTDS fields and their published observing plan.
   \item Black holes: mass functions from supernova models (rapid / delayed) and population synthesis; natal kicks;
         scenarios with and without a lower mass gap.
   \item Full run: a $0.02^\circ$ grid over Roman's detectors; $25\times$ the sightlines, Monte Carlo errors
@@ -74,7 +72,7 @@ Black-hole physics & mass functions, kicks, mass gap \\
 \end{itemize}}
 \end{frame}
 
-\begin{frame}{The plan (2/2): beyond the forecast}
+\begin{frame}{The proposal (2/2): validate and infer the population}
 \centering
 \vspace{1mm}
 \roadmap{}{}{on}{on}
@@ -84,21 +82,19 @@ Black-hole physics & mass functions, kicks, mass gap \\
 \begin{column}{.48\linewidth}
 \textbf{4. Beyond Fisher}
 \begin{itemize}
-  \item Bayesian fits, degeneracies
+  \item Compare Bayesian fits with Fisher forecasts and test degeneracies
 \end{itemize}
 \vspace{2mm}
 \textbf{5. The two images}
 \begin{itemize}
-  \item black holes: $\gtrsim10$\,mas apart
-  \item Roman resolves $0.25$--$34\%$:\\ the criterion decides
-  \item test it on simulated Roman images
+  \item Test when the close images can be separated in simulated Roman exposures
 \end{itemize}
 \end{column}
 \begin{column}{.48\linewidth}
 \textbf{6. The inverse problem}
 \begin{itemize}
-  \item abundance \& mass function
-  \item can we \textbf{test the mass gap}?
+  \item Use mock catalogues to infer abundance and the mass function
+  \item Include the detection efficiency and per-event measurement uncertainty
 \end{itemize}
 \end{column}
 \end{columns}
@@ -110,40 +106,4 @@ Black-hole physics & mass functions, kicks, mass gap \\
         function, with detection efficiency and per-event errors.
   \item If time allows: Roman + \emph{Gaia} astrometry; isolated black holes vs astrometric binaries.
 \end{itemize}}
-\end{frame}
-
-\begin{frame}{Schedule}
-\centering
-\vspace{2mm}
-% columns: Autumn 1405 ... Summer 1408 (solar hijri seasons), as in the proposal
-\begin{tikzpicture}[x=0.69cm, y=0.5cm, font=\footnotesize]
-  \def\lw{-0.2}
-  % year and season headers
-  \foreach \y/\a/\b in {1405/0/2, 1406/2/6, 1407/6/10, 1408/10/12} {
-    \node[font=\small\bfseries] at ({(\a+\b)/2},1.6) {\y};
-    \draw[jdverylightgrey] (\a,1.1) -- (\a,-11.2);}
-  \draw[jdverylightgrey] (12,1.1) -- (12,-11.2);
-  \foreach \s [count=\i from 0] in {Aut,Win,Spr,Sum,Aut,Win,Spr,Sum,Aut,Win,Spr,Sum}
-    \node[text=jdgrey, font=\scriptsize] at (\i+0.5,0.6) {\s};
-  % rows: label / list of active columns (0 = Autumn 1405)
-  \foreach \lab/\cols [count=\r from 1] in {
-      {Dust tables, checked against VVV}/{0,1},
-      {Roman noise \& astrometric error model}/{0,1,2},
-      {Adopted fields; event rate vs OGLE-IV}/{1,2},
-      {Black-hole mass function, kicks, mass gap}/{2,3,4},
-      {Pilot and full runs on the cluster}/{3,4,5},
-      {Bayesian fits, Fisher test, degeneracies}/{4,5,6,7},
-      {Resolving the images (Roman images)}/{6,7},
-      {Inverse problem: abundance \& mass function}/{7,8,9},
-      {Papers}/{5,6,9,10},
-      {Thesis}/{8,9,10,11},
-      {Defence}/{11}} {
-    \node[anchor=east] at (\lw,{-\r+0.5}) {\lab};
-    \foreach \c in \cols
-      \fill[jdblue!70, rounded corners=1pt] (\c+0.06,{-\r+0.12}) rectangle (\c+0.94,{-\r+0.88});
-  }
-  \draw[jdverylightgrey] (0,0.15) -- (12,0.15);
-\end{tikzpicture}
-\vfill
-\refnote{Six semesters, autumn 1405 (September 2026) to summer 1408.}
 \end{frame}

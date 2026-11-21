@@ -11,7 +11,7 @@
   \node[anchor=north west, text=white, align=left, text width=6.2cm] at ([xshift=8mm, yshift=1mm]current page.west)
        {A galaxy \emph{behind} a galaxy,\\ stretched into a ring};
   \node[anchor=north west, text=white, align=left, text width=6.2cm] at ([xshift=8mm, yshift=-12mm]current page.west)
-       {\small Our lenses are stars and black holes:\\ the ring is $\sim$\,mas, \textbf{too small to see}};
+       {\small With a star or a black hole as the lens, the images are usually only a few milliarcseconds apart.};
   \bleedcredit{\href{https://esawebb.org/images/potm2503a/}{ESA/Webb, NASA \& CSA, G.~Mahler (CC BY 4.0)}}
   \bleedsection
 \end{tikzpicture}
@@ -69,173 +69,149 @@
   \qquad\qquad
   \tetE = \sqrt{\kappa\,M\,\pirel}
 \]
-{\small\color{jdgrey} $\kappa = 8.14$\,mas$/\Msun$, \quad $\pirel = {\rm AU}\,(1/D_L - 1/D_S)$: the lens--source parallax}\par}
+{\small\color{jdgrey} $\kappa = 8.14$\,mas$/\Msun$, \quad $\pirel = {\rm AU}\,(1/D_L - 1/D_S)$ is the relative lens--source parallax}\par}
 \vspace{1mm}
-\uncover<4->{bulge star: $\tetE\approx0.4$\,mas \qquad black hole: $\tetE\approx5$\,mas, images $\gtrsim10$\,mas apart}
+\uncover<4->{Example angular Einstein radii: $0.4$\,mas (star) and $5.5$\,mas (black hole)}
 \vfill
 \refnote{\ads{1986ApJ...304....1P}{Paczy\'nski 1986, ApJ 304, 1}}
 \note{\begin{itemize}
   \item Images at $\theta_\pm = \tfrac{\tetE}{2}\bigl(u\pm\sqrt{u^2+4}\bigr)$, $u=\beta/\tetE$.
   \item $\kappa = 8.144\,{\rm mas}/\Msun$, $\pirel = {\rm AU}(1/D_L-1/D_S)$.
   \item Bulge star: $0.5\,\Msun$, $D_L=6$, $D_S=8$\,kpc. Black hole: $10\,\Msun$ at $2$\,kpc.
-  \item The two images are $\sim2\tetE$ apart: usually far too close to separate.
+  \item The separation is $\tetE\sqrt{u^2+4}$. At perfect point-source alignment the images form a ring of radius $\tetE$.
 \end{itemize}}
 \end{frame}
 
-\begin{frame}{A lens crossing a star}
+\begin{frame}{An off-axis microlensing event in motion}
 \centering
-\vspace{2mm}
-\animategraphics[autoplay, loop, controls=off, poster=40, width=.76\linewidth]{16}{img/anim/frame_}{00}{80}
+The source passes \(0.35\,\tetE\) from the lens and produces two unresolved images.
 
-\vspace{4mm}
-We see only the \textbf{total light} (top: \textbf{photometry})\\ and where its \textbf{centre} lies (bottom: \textbf{astrometry})
+\smallskip
+\animategraphics[autoplay,loop,controls=none,poster=32,width=.94\linewidth]{10}%
+  {img/sim/point_lens_animation}{}{}
+
 \vfill
-\refnote{Reverse ray tracing of a limb-darkened star, $R_\star=0.6\,\tetE$ (A.~Salehi); the curves are
-measured from the traced images.}
-\note{\begin{itemize}
-  \item In a real event the images are too close to separate: a telescope sees only their total light and its centre.
-  \item Near the peak the lens is \emph{inside} the stellar disc: an Einstein ring forms, the finite source caps the
-        magnification and reverses the centroid shift. Dashed grey: a point source.
-\end{itemize}}
+\refnote{Illustrative point lens and point source. Image-marker areas scale with each image's flux.}
+\note{Allow about 20 seconds for two or three passes. Start with the sky view: the source would
+      move along the dashed line. Follow the two image markers; the telescope records their summed
+      flux and the flux-weighted centroid. The flux peaks at closest approach. The centroid is
+      farthest from the unlensed source on either wing, where $u=\sqrt{2}$. The poster shows closest
+      approach and both full curves. These are the same curves used on the following slide.
+      An exact point-source alignment forms a ring. The appendix animation illustrates a central
+      transit of a finite star.}
 \end{frame}
 
-\begin{frame}{Two observables: photometry and astrometry}
-\vspace{1mm}
-\centering
-The two images are $\sim2\tetE$ apart: usually unresolved, seen as one blended star
-\vspace{1mm}
-\begin{columns}[T]
-\begin{column}{.47\linewidth}
-\centering
-\textbf{Photometry}: \emph{how bright?}\\
-{\small the star's flux vs.\ time (the light curve)}
+\begin{frame}{How the light curve and centroid shift constrain the event}
+\begin{columns}[c]
+\begin{column}{.48\linewidth}
+\includegraphics[width=\linewidth]{point_lens_curves}
+\centering\refnote{The same off-axis event, with blending and parallax omitted.}
+\end{column}
+\begin{column}{.49\linewidth}
+\small
+\textbf{Flux gives the trajectory in units of $\tetE$.}
 \[
   A(u) = \frac{u^2+2}{u\sqrt{u^2+4}}
 \]
-\uncover<2->{%
+Peak time gives $t_0$, peak height constrains $u_0$, and the width constrains $\tE$.
+
+\vspace{2mm}
+\textbf{The centroid gives the angular scale.}
 \[
-  \tE = \frac{\tetE}{\mu_{\rm rel}}
+  \delta\theta(t) = \tetE\,\frac{u(t)}{u(t)^2+2}
 \]
-mixes \textbf{mass}, \textbf{distance}, \textbf{velocity}}
-\end{column}
-\begin{column}{.47\linewidth}
-\centering
-\uncover<3->{%
-\textbf{Astrometry}: \emph{where?}\\
-{\small the light centre's position on the sky vs.\ time}
-\[
-  \delta\theta = \frac{\tetE\,u}{u^2+2}
-\]
-\[
-  \delta\theta_{\max} = \frac{\tetE}{\sqrt8}\quad\text{at } u=\sqrt2
-\]
-measures $\tetE$ directly}
+Fit the scale $\tetE$ to the centroid's departures from the source's unlensed sky motion.
 \end{column}
 \end{columns}
+\vspace{2mm}
+\centering\small
+$u(t)=\sqrt{u_0^2+[(t-t_0)/\tE]^2}$ for straight-line motion,\quad
+$\tE=\tetE/\mu_{\rm rel}$
 \vfill
-{\centering\small\color{jdgrey} $u$: lens--source separation in units of $\tetE$; \quad $\mu_{\rm rel}$: their relative proper motion\par}
-\vspace{1mm}
-\refnote{\ads{1986ApJ...304....1P}{Paczy\'nski 1986, ApJ 304, 1};
-\ads{2000ApJ...542..785G}{Gould 2000, ApJ 542, 785}}
-\note{\begin{itemize}
-  \item $u(t) = \sqrt{u_0^2 + ((t-t_0)/\tE)^2}$: impact parameter $u_0$, peak time $t_0$.
-  \item The timescale is the one physical quantity a simple light curve gives. Bulge events: $\tE\sim20$\,d;
-        black holes: hundreds of days.
-  \item The centroid shift peaks $\sim1.4\,\tE$ from the photometric peak, often in a different Roman season.
-  \item The images are $\Delta\theta=\tetE\sqrt{u^2+4}\ge2\tetE$ apart: $\gtrsim10$\,mas for tens of $\Msun$ at a few kpc,
-        so for heavy, nearby lenses they may be resolved.
-\end{itemize}}
+\refnote{\ads{1986ApJ...304....1P}{Paczy\'nski 1986}; \ads{2000ApJ...534..213D}{Dominik \& Sahu 2000}}
+\note{Here $u$ is the angular separation of source and lens in units of $\tetE$, and $\mu_{\rm rel}$
+      is their relative proper motion, in milliarcseconds per year if $\tetE$ is in milliarcseconds.
+      Observed flux is $F_S A[u(t)]+F_B$, where $F_S$ is the unlensed source flux and $F_B$ is blended
+      light. Fit those together with the event geometry. The centroid is a two-dimensional measurement.
+      It is compared to a baseline including source position, proper motion, and ordinary annual
+      parallax, with blends modelled if needed. The ideal shift magnitude peaks at $u=\sqrt{2}$,
+      which can fall on either wing. A timescale alone mixes mass, distance, and relative motion.}
 \end{frame}
 
-\begin{frame}{Microlensing parallax: a second viewpoint}
-\vspace{1mm}
+\begin{frame}{How a change of viewpoint measures parallax}
 \centering
-\begin{tikzpicture}[font=\footnotesize, x=1cm, y=1cm]
-  % left: annual parallax (Earth's orbit makes the track wiggle)
+\begin{tikzpicture}[font=\footnotesize]
   \begin{scope}
-    \draw[jdlightgrey, fill=jdverylightgrey!40] (0,0) circle (1.1);
-    \fill (0,0) circle (2pt) node[below left=-1pt] {lens};
-    \node[text=jdgrey, font=\scriptsize] at (0,1.35) {Einstein ring};
-    \draw[orange!80!black, dashed, -{Latex}] (-2.3,0.35) -- (2.3,0.35);
-    \uncover<2->{\draw[orange!80!black, very thick, -{Latex}, domain=-2.3:2.3, samples=80]
-         plot (\x, {0.35+0.28*sin(deg(2.6*\x))});
-    \node[align=center, font=\small] at (0,-1.85) {\textbf{annual}: Earth's orbit\\ \footnotesize needs a long event};}
+    \draw[jdlightgrey, densely dashed] (0,0) circle (0.83);
+    \fill (0,0) circle (2pt) node[below left] {lens};
+    \draw[jdgrey, dashed, -{Latex}] (-2,0.38) -- (2,0.38);
+    \draw[orange!75!black, very thick, -{Latex}, domain=-2:2, samples=60]
+         plot (\x, {0.38+0.25*sin(deg(2.75*\x))});
+    \node[align=center] at (0,-1.45) {\textbf{Annual parallax}\\
+       Earth's orbit changes the track over time.\\Fit the distortion of the light curve.};
   \end{scope}
-  % right: satellite parallax (Earth and L2 see different tracks)
-  \uncover<3->{
-  \begin{scope}[xshift=6.0cm]
-    \draw[jdlightgrey, fill=jdverylightgrey!40] (0,0) circle (1.1);
+  \begin{scope}[xshift=6.2cm]
+    \draw[jdlightgrey, densely dashed] (0,0) circle (0.83);
     \fill (0,0) circle (2pt);
-    \draw[jdblue, very thick, -{Latex}] (-2.3,0.25) -- (2.3,0.25) node[right] {Earth};
-    \draw[red!70!black, very thick, -{Latex}] (-2.3,0.65) -- (2.3,0.65) node[right] {L2};
-    \draw[{Latex[length=1.3mm]}-{Latex[length=1.3mm]}] (-1.75,0.25) -- node[left=1pt] {$\Delta u$} (-1.75,0.65);
-    \node[align=center, font=\small] at (0,-1.85) {\textbf{satellite}: Roman vs.\ Rubin\\ \footnotesize works for short events too};
-  \end{scope}}
+    \draw[jdblue, very thick, -{Latex}] (-2,0.30) -- (2,0.30) node[right] {Rubin};
+    \draw[red!70!black, very thick, -{Latex}] (-2,0.78) -- (2,0.78) node[right] {Roman};
+    \draw[-{Latex[length=1.5mm]}, thick] (-1.25,.30) -- (-.93,.78);
+    \node[align=center] at (0,-1.45) {\textbf{Satellite parallax}\\
+      Two locations give two tracks.\\Fit differences in peak time and magnification.};
+  \end{scope}
 \end{tikzpicture}
+\vspace{4mm}
 
-\vspace{1mm}
-\[
-  \piE = \frac{\pirel}{\tetE}
-  \qquad
-  \uncover<2->{\vec u(t) = \vec u_0 + \frac{t-t_0}{\tE}\,\hat{\vec\mu} + \piE\,\vec s(t)}
-  \qquad
-  \uncover<3->{\Delta u \simeq \piE\,\frac{D_\perp}{\rm AU}}
-\]
-\uncover<4->{Black hole: $\piE=\sqrt{\pirel/\kappa\Ml}$ is \textbf{small} $\Rightarrow$ a small, slow wiggle}
+$\displaystyle \piE=\frac{\pirel}{\tetE}$
+\hspace{8mm}
+$\displaystyle |\Delta\boldsymbol{u}|=\piE\frac{D_\perp}{\mathrm{AU}}$
+\hspace{5mm}
+{\small $D_\perp$ is the projected observer separation}
 \vfill
-\refnote{\ads{1966MNRAS.134..315R}{Refsdal 1966, MNRAS 134, 315};
-\ads{1992ApJ...392..442G}{Gould 1992, ApJ 392, 442};
-\ads{2000ApJ...542..785G}{Gould 2000, ApJ 542, 785}}
-\note{\begin{itemize}
-  \item Parallax: the same lens--source pair seen from a different place lines up differently. $\piE$ is the relative
-        parallax $\pirel={\rm AU}(1/D_L-1/D_S)$ in units of $\tetE$: one AU of observer motion moves the track by
-        $\piE$ Einstein radii.
-  \item Annual: $\vec s(t)$ = Earth's (or Roman's) displacement from uniform motion, in AU, projected on the sky.
-        It needs $\tE$ to be a sizeable fraction of a year: black holes qualify.
-  \item Satellite: two observers $D_\perp$ apart see the peak at different times and heights, at the same moment,
-        so it needs no long event (as with \emph{Spitzer}). Roman (L2) and Earth: $D_\perp\approx0.01$\,AU, so
-        $\Delta u\approx0.01\,\piE$.
-  \item The expectation going in: Roman + Rubin give a satellite parallax. The results test it.
-  \item Black hole, $10\,\Msun$ at $2$\,kpc, source at $8$\,kpc: $\piE\approx0.05$.
-\end{itemize}}
+\refnote{Tracks and shifts are schematic. Dashed circles mark the scale $\tetE$.
+\quad \ads{1966MNRAS.134..315R}{Refsdal 1966}; \ads{1992ApJ...392..442G}{Gould 1992}}
+\note{An AU is an astronomical unit, the mean Earth--Sun distance. Fit the response to the known
+      observer positions. Long events give the Earth's orbit time to bend the apparent trajectory;
+      the same trajectory change can also affect astrometry. The two viewpoints can help a short event if
+      both observatories have useful data near peak. Earth and Sun--Earth L2 are roughly 0.01 AU
+      apart in three dimensions, so the projected separation is at most of that order.}
 \end{frame}
 
 \begin{frame}{From observables to a lens mass}
-\centering
-\vspace{2mm}
-\begin{tikzpicture}[font=\small,
-    ob/.style={terminator, fill=orange!15, text width=2.6cm, align=center, minimum height=3.2em},
-    qu/.style={terminator, fill=blue!10, text width=4.4cm, align=center, minimum height=3em},
-    re/.style={terminator, fill=green!15, text width=3.0cm, align=center, minimum height=3em}]
-  \node[ob] (ph) at (0,1.1) {\textbf{Photometry}};
-  \node[ob] (as) at (0,-1.1) {\textbf{Astrometry}};
-  \node[qu] (te) at (4.9,1.9) {$\tE$, $u_0$, $t_0$: the shape};
-  \uncover<2->{\node[qu] (pi) at (4.9,0) {$\piE$: the parallax};}
-  \uncover<3->{\node[qu] (th) at (4.9,-1.9) {$\tetE$: the centroid's excursion};}
-  \uncover<4->{
-  \node[re] (m) at (9.9,0.85) {\textbf{Lens mass}\\ $\Ml = \dfrac{\tetE}{\kappa\,\piE}$};
-  \node[re] (d) at (9.9,-1.05) {\textbf{Distance}\\ $\pirel = \tetE\,\piE$};}
-  \path[connector] (ph.east) -- (te.west);
-  \uncover<2->{\path[connector] (ph.east) -- (pi.west); \path[connector] (as.east) -- (pi.west);}
-  \uncover<3->{\path[connector] (as.east) -- (th.west);}
-  \uncover<4->{
-  \path[connector] (pi.east) -- (m.west); \path[connector] (th.east) -- (m.west);
-  \path[connector] (pi.east) -- (d.west); \path[connector] (th.east) -- (d.west);}
-\end{tikzpicture}
-
+\begin{columns}[T]
+\begin{column}{.47\linewidth}
+\textbf{A light curve in time}\par\smallskip
+The distortion driven by the observer's motion gives the microlensing parallax.
+\par\medskip{\centering $\piE=\pirel/\tetE$\par}
+\end{column}
+\begin{column}{.47\linewidth}
+\textbf{A centroid track on the sky}\par\smallskip
+The angular size of the lensing shift gives the angular Einstein radius.
+\par\medskip{\centering $\tetE^2=\kappa\,\Ml\,\pirel$\par}
+\end{column}
+\end{columns}
 \vspace{5mm}
-\uncover<5->{%
-\[
-  \left(\frac{\sigma_M}{M}\right)^2 = \left(\frac{\sigma_{\piE}}{\piE}\right)^2 + \left(\frac{\sigma_{\tetE}}{\tetE}\right)^2
-\]
-Black holes: $\tetE$ large (easy), $\piE$ small (hard)}
+\begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body example}
+\centering
+$\displaystyle
+  \underbrace{\Ml=\frac{\tetE}{\kappa\,\piE}}_{\text{lens mass}}
+  \qquad
+  \underbrace{\pirel=\tetE\,\piE
+  \quad\Longrightarrow\quad D_L=\left(D_S^{-1}+\pirel/\mathrm{AU}\right)^{-1}}_{\text{lens distance given source distance }D_S}$
+\end{beamercolorbox}
+\vspace{3mm}
+At fixed lens and source distances, higher lens mass gives a larger $\tetE$ and a smaller $\piE$.
 \vfill
-\refnote{\ads{2000ApJ...542..785G}{Gould 2000, ApJ 542, 785}}
-\note{\begin{itemize}
-  \item $\piE = \pirel/\tetE$: from the light curve's distortion by Earth's orbit (annual parallax), or from two
-        observers at once (satellite parallax: Roman at L2, Rubin on Earth, $0.01$\,AU apart).
-  \item $\tetE$: from the size of the centroid's excursion, or from the separation of the two images.
-\end{itemize}}
+\refnote{$\kappa=8.14$ milliarcseconds per solar mass. \quad \ads{2000ApJ...542..785G}{Gould 2000}}
+\note{Eliminate the relative lens--source parallax $\pirel$ between the two relations.
+      The distance relation uses angles in radians with AU and distances in consistent units.
+      Equivalently, $D_L$ in kiloparsecs is the reciprocal of $D_S^{-1}$ in inverse kiloparsecs
+      plus the numerical value of $\pirel$ in milliarcseconds.
+      The timescale helps recover the trajectory and gives $\mu_{\rm rel}$ once $\tetE$ is known.
+      The 2022 observations on the next case study give $\tetE\simeq5.2$ mas and $\piE\simeq0.09$.
+      Dividing $5.2$ by $(8.14\times0.09)$ gives about seven solar masses. For error propagation,
+      $\mathrm{var}(\ln M)=\mathrm{var}(\ln\tetE)+\mathrm{var}(\ln\piE)
+      -2\,\mathrm{cov}(\ln\tetE,\ln\piE)$.}
 \end{frame}
 
 {\setbeamercolor{background canvas}{bg=black}
@@ -256,23 +232,23 @@ Black holes: $\tetE$ large (easy), $\piE$ small (hard)}
 \end{itemize}}
 \end{frame}}
 
-\begin{frame}{The first isolated black hole: OGLE-2011-BLG-0462}
+\begin{frame}{Weighing a real lens: OGLE-2011-BLG-0462}
 \vspace{1mm}
 \begin{columns}[T]
 \begin{column}{.38\linewidth}
 \centering
-\includegraphics[width=.92\linewidth]{sahu2022_photometry}
+\includegraphics[width=.95\linewidth]{sahu2022_photometry}\\[-1pt]\small Ground photometry
 \end{column}
 \begin{column}{.24\linewidth}
 \centering
 \vspace{2mm}
-\includegraphics[angle=90,width=.9\linewidth]{sahu2022_sky}
+\includegraphics[angle=90,width=.92\linewidth]{sahu2022_sky}\\[2pt]\small Hubble astrometry
 \end{column}
 \begin{column}{.34\linewidth}
 \begin{itemize}\setlength{\itemsep}{6pt}
-  \item<+-> Photometry: $\tE\approx270$\,d,\\ $\piE$ from the ground
-  \item<+-> Astrometry: \emph{HST}, 6 years\\ $\to\tetE\approx5$\,mas
-  \item<+-> $\Ml = 7.1\pm1.3\,\Msun$\\ at $1.6$\,kpc
+  \item<+-> Ground light curve: annual distortion gives $\piE\approx0.09$
+  \item<+-> \emph{Hubble} centroid track: $\tetE\approx5.2$\,mas
+  \item<+-> Together: $\Ml=(7.1\pm1.3)\,\Msun$ at $1.6$\,kpc
 \end{itemize}
 \end{column}
 \end{columns}
@@ -282,8 +258,7 @@ Black holes: $\tetE$ large (easy), $\piE$ small (hard)}
 \uncover<4->{%
 \begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body alerted}
 \centering
-The first \textbf{dark} object weighed by its gravity alone:\\
-both observables together \textbf{work}
+A dark lens with a stellar black-hole mass in the 2022 analysis.
 \end{beamercolorbox}}
 \vfill
 \note{\begin{itemize}
@@ -296,17 +271,17 @@ both observables together \textbf{work}
 \end{itemize}}
 \end{frame}
 
-\begin{frame}{\ldots but how heavy is it?}
+\begin{frame}{Why the same event gave different masses}
 \vspace{1mm}
 \begin{columns}[c]
 \begin{column}{.50\linewidth}
 \centering
 % published masses of the lens, linear axis 0-10 Msun, 0.6 cm per Msun
 \begin{tikzpicture}[x=0.5cm, y=0.62cm, font=\footnotesize]
-  \fill[orange!25] (1.1,-0.4) rectangle (2.3,4.6);
-  \node[anchor=south, align=center, font=\scriptsize] at (1.7,4.6) {neutron\\ stars};
-  \fill[jdblue!12] (5,-0.4) rectangle (10,4.6);
-  \node[anchor=south, font=\scriptsize] at (7.5,4.6) {black holes};
+  \fill[orange!25] (1.1,-0.4) rectangle (2.3,5.2);
+  \node[anchor=south, align=center, font=\scriptsize] at (1.7,5.2) {neutron\\ stars};
+  \fill[jdblue!12] (5,-0.4) rectangle (10,5.2);
+  \node[anchor=south, font=\scriptsize] at (7.5,5.2) {stellar black holes};
   \draw[-{Latex}] (0,-0.4) -- (10.3,-0.4);
   \foreach \m in {0,2,...,10} \draw (\m,-0.4) -- (\m,-0.55) node[below] {\m};
   \node[below] at (5,-1.05) {lens mass [$\Msun$]};
@@ -316,15 +291,18 @@ both observables together \textbf{work}
     \node[anchor=east, font=\tiny] at (-0.2,2.8) {Lam+ 2022};}
   \uncover<4->{\draw[jdblue!80!black, very thick, {|-|}] (7.06,1.5) -- (8.70,1.5); \fill[jdblue!80!black] (7.88,1.5) circle (2.5pt);
     \node[anchor=east, font=\tiny] at (-0.2,1.5) {Mr\'oz+ 2022};
-    \draw[jdblue!80!black, very thick, {|-|}] (4.98,0.4) -- (7.22,0.4); \fill[jdblue!80!black] (6.03,0.4) circle (2.5pt);
-    \node[anchor=east, font=\tiny] at (-0.2,0.4) {Lam \& Lu 2023};}
+    \draw[jdblue!80!black, very thick, {|-|}] (4.99,0.4) -- (7.22,0.4); \fill[jdblue!80!black] (6.03,0.4) circle (2.5pt);
+    \node[anchor=east, font=\scriptsize] at (-0.2,0.4) {Lam \& Lu 2023};}
+  \uncover<4->{\draw[jdgreen!65!black, very thick, {|-|}] (6.32,4.7) -- (7.98,4.7);
+    \fill[jdgreen!65!black] (7.15,4.7) circle (2.5pt);
+    \node[anchor=east, font=\scriptsize] at (-0.2,4.7) {Sahu+ 2025};}
 \end{tikzpicture}
 \end{column}
 \begin{column}{.46\linewidth}
 \begin{itemize}\setlength{\itemsep}{6pt}
   \item<2-> Same event, nearly the same data:\\ black hole \emph{or} neutron star?
-  \item<3-> \textbf{Systematics}, not noise:\\ in $\piE$ (ground) and $\tetE$ (\emph{HST})
-  \item<4-> Settled only by re-analysis:\\ a $\sim7\,\Msun$ black hole
+  \item<3-> Photometric systematics affected $\piE$. Nearby light biased the Hubble centroid.
+  \item<4-> With additional Hubble epochs, Sahu et al.\ (2025) found $(7.15\pm0.83)\,\Msun$.
 \end{itemize}
 \end{column}
 \end{columns}
@@ -332,22 +310,22 @@ both observables together \textbf{work}
 \uncover<5->{%
 \begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body alerted}
 \centering
-$\Ml=\tetE/\kappa\piE$: a bias in \emph{either} observable goes straight into the mass.\\
-For a black hole $\piE$ is small and easily biased $\Rightarrow$ measure it robustly
+$\Ml=\tetE/\kappa\piE$: systematics in either fitted scale affect the mass.\\
+This motivates testing parallax and blending systematics in the forecasts.
 \end{beamercolorbox}}
 \vfill
 \refnote{%
 \ads{2022ApJ...933...83S}{Sahu et al.\ 2022, ApJ 933, 83};
 \ads{2022ApJ...933L..23L}{Lam et al.\ 2022, ApJL 933, L23};
 \ads{2022ApJ...937L..24M}{Mr\'oz, Udalski \& Gould 2022, ApJL 937, L24};
-\ads{2023ApJ...955..116L}{Lam \& Lu 2023, ApJ 955, 116}}
+\ads{2023ApJ...955..116L}{Lam \& Lu 2023}; \ads{2025ApJ...983..104S}{Sahu et al.\ 2025}. Intervals as published.}
 \note{\begin{itemize}
   \item Lam et al.\ 2022 analysed similar photometry and \emph{HST} astrometry and found $1.6$--$4.4\,\Msun$: a neutron
         star could not be excluded.
   \item The difference lay in the systematics: the ground-based parallax (which data sets, how their errors are
         treated) and the reduction of the \emph{HST} images.
   \item Mr\'oz, Udalski \& Gould 2022 re-derived the parallax from OGLE photometry; Lam \& Lu 2023 re-analysed with more
-        \emph{HST} epochs. Both: a black hole.
+        \emph{HST} epochs. Both favour a black hole. Sahu et al.\ 2025 added Hubble astrometry from 2021--2022 and updated the ground photometry.
   \item Lessons for this thesis: the mass needs \emph{both} $\piE$ and $\tetE$, and a single event's mass can move by a
         factor $\sim2$. A robust $\piE$ is the crux: how well Roman (and Rubin) can measure it is what the forecast must
         tell us.
@@ -364,22 +342,21 @@ For a black hole $\piE$ is small and easily biased $\Rightarrow$ measure it robu
 \credit{\ads{2020ApJ...889...31L}{Lam et al.\ 2020, ApJ 889, 31} (PopSyCLE)}
 \end{column}
 \begin{column}{.36\linewidth}
-Black holes have
+Black-hole candidates tend to have
 \begin{itemize}\setlength{\itemsep}{4pt}
   \item a \textbf{long} $\tE$
   \item a \textbf{small} $\piE$
   \item a \textbf{large} centroid shift
 \end{itemize}
 \vspace{6mm}
-\uncover<2->{Long, heavy events:\\ \textbf{Roman} and \textbf{Rubin} will see them}
+\uncover<2->{The populations overlap. A mass measurement helps classify each candidate.}
 \end{column}
 \end{columns}
 \vfill
 \refnote{\ads{2023ApJ...955..116L}{Lam \& Lu 2023, ApJ 955, 116}}
 \note{\begin{itemize}
-  \item PopSyCLE simulation of bulge events: black holes (BH) separate from stars, white dwarfs and neutron stars.
-  \item Lam \& Lu 2023 predict that Roman, with HST-like astrometry over a far larger field, will measure the masses of
-        hundreds of isolated black holes. Roman and Rubin have each been forecast alone; the next section shows what
+  \item PopSyCLE simulation of bulge events: black holes (BH) occupy a different part of parameter space on average, with substantial overlap.
+  \item Roman and Rubin have each been forecast alone; the next section shows what
         is missing: both, on the same events.
 \end{itemize}}
 \end{frame}

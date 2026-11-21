@@ -22,7 +22,7 @@
 % References and image credits: small grey text on the slide, as in the defense.
 % \ads{bibcode}{text} links to the NASA ADS abstract page.
 \newcommand{\ads}[2]{\href{https://ui.adsabs.harvard.edu/abs/#1}{#2}}
-\newcommand{\refnote}[1]{{\hypersetup{urlcolor=gray}\textcolor{gray}{\fontsize{6.5}{8}\selectfont #1}}}
+\newcommand{\refnote}[1]{{\hypersetup{urlcolor=gray}\textcolor{gray}{\scriptsize #1}}}
 \newcommand{\credit}[1]{\refnote{Image credit: #1}}
 
 % Full-bleed photo slides: white text on a translucent black box, credit in the corner.
@@ -35,7 +35,7 @@
     at ([xshift=-3mm, yshift=-3mm]current page.north east) {\insertsectionnumber\enspace|\enspace\insertsection};}
 \newcommand{\bleedcredit}[1]{\node[anchor=south east, inner sep=2pt, fill=black, fill opacity=.6, text opacity=1]
     at ([xshift=-2mm, yshift=1mm]current page.south east)
-    {{\hypersetup{urlcolor=white!80}\textcolor{white!80}{\fontsize{6.5}{8}\selectfont Image credit: #1}}};}
+    {{\hypersetup{urlcolor=white!80}\textcolor{white!80}{\scriptsize Image credit: #1}}};}
 
 \usetheme{JD}
 \beamertemplatenavigationsymbolsempty
@@ -46,12 +46,12 @@
 
 \title
     [Isolated black holes with Roman \& Rubin]
-    {Detecting Isolated Black Holes through Gravitational\\ Microlensing with Next-Generation Telescopes}
+    {Detecting Isolated Black Holes through Gravitational\texorpdfstring{\\}{ }Microlensing with Next-Generation Telescopes}
 \subtitle{Ph.D.\ seminar}
 \author
     [A. Salehi]
-    {Ali Salehi\\[6pt]
-     {\small Supervisor: Dr.\ Sedighe Sajadian\\Advisor: Dr.\ Hamed Bakhshian}}
+    {Ali Salehi\texorpdfstring{\\[6pt]}{ }
+     {\small Supervisor: Dr.\ Sedighe Sajadian\texorpdfstring{\\}{, }Advisor: Dr.\ Hamed Bakhshian}}
 \institute
     [\hypersetup{urlcolor=jdgrey}\href{https://english.iut.ac.ir/}{IUT}]
     {Department of Physics\\%
