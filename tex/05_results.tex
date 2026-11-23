@@ -1,5 +1,6 @@
 % !TeX root = ../seminar.tex
-\section{Preliminary Results}
+\section{Results and Conclusion}
+\frame{\sectionpage}
 
 \begin{frame}{What the first overview forecast covers}
 \begin{columns}[T]
@@ -28,7 +29,7 @@ We weight draws by event rate. Headline yields apply a dust adjustment after sim
 For a compact-object abundance $F$, the event yield scales as $N(F)=F\,N_1$.
 \end{beamercolorbox}}
 \vfill
-\refnote{First overview report and proposal. Yields use the per-resolved-object counting convention.}
+\refnote{First overview report. Yields use the per-resolved-object counting convention.}
 \note{The ordinary-lens run uses a Kroupa initial mass function evolved for an old bulge. The separate black-hole
       run samples $dN/dM\propto M^{-1}$ and uses a simple kinematic model. The neutron-star distribution
       is centred on $1.35\,\Msun$ with width $0.15\,\Msun$. $F$ is the fraction of Galactic stellar mass
@@ -38,39 +39,59 @@ For a compact-object abundance $F$, the event yield scales as $N(F)=F\,N_1$.
       were left as run. The backups give the details and the external checks.}
 \end{frame}
 
-\begin{frame}{Roman detects more events within its footprint}
-\begin{columns}[c]
-\begin{column}{.48\linewidth}
-\textbf{Ordinary lenses inside Roman's fields}\\[4pt]
-\begin{tabular}{@{}lr@{}}
-Roman detections & $\approx50{,}000$ \\
-Rubin detections & $\approx4{,}900$
-\end{tabular}
-\vspace{6mm}
-
-\uncover<2->{Outside those fields, Rubin accounts for \textbf{about 60\% of the detections across the simulated region}.}
-\end{column}
-\begin{column}{.47\linewidth}
+\begin{frame}{Roman detects more black-hole events in its fields}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.57\linewidth}
 \centering
-\textbf{Extinction toward the bulge}\\[-1mm]
-{\small At $A_V\approx7.2$ magnitudes}
-\begin{tikzpicture}[font=\small]
-  \fill[orange!65] (0,1.6) rectangle (5.18,2.1);
-  \node[anchor=west, font=\footnotesize] at (0.1,1.85) {Rubin $r$: $6.1$\,mag};
-  \fill[jdblue!65] (0,0.8) rectangle (1.19,1.3);
-  \node[anchor=west, font=\footnotesize] at (1.3,1.05) {Roman F146: $1.4$\,mag};
-  \draw (0,0.6) -- (0,2.25);
+\textbf{Expected detections within Roman's footprint}\\[4pt]
+{\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.22}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Lens population & Roman & Rubin \\
+\midrule
+\rowcolor{jdlightestblue}
+\textbf{Black holes} & $\mathbf{5{,}660}\,F_{\rm BH}$ & $\mathbf{690}\,F_{\rm BH}$ \\
+Neutron stars & $36{,}500\,F_{\rm NS}$ & $3{,}620\,F_{\rm NS}$ \\
+Ordinary lenses & $50{,}400$ & $4{,}850$ \\
+\bottomrule
+\end{tabular}\par}
+\vspace{2mm}
+\footnotesize $F_{\rm BH}$ and $F_{\rm NS}$ are the fractions of Galactic stellar mass in black holes and neutron stars.
+\end{column}
+\begin{column}{.38\linewidth}
+\centering
+\textbf{Why infrared helps}\\
+{\small Extinction at $A_V\approx7.2$\,mag}
+\begin{tikzpicture}[font=\footnotesize, x=.69cm, y=.87cm]
+  \fill[orange!65] (0,1.6) rectangle (6.1,2.13);
+  \node[anchor=west] at (.12,1.865) {Rubin $r$ \enspace $6.1$\,mag};
+  \fill[jdblue!72] (0,.85) rectangle (1.4,1.38);
+  \node[anchor=west] at (1.54,1.115) {Roman F146 \enspace $1.4$\,mag};
+  \draw[jdgrey] (0,.73) -- (0,2.24);
 \end{tikzpicture}
 \end{column}
 \end{columns}
+
+\vspace{5mm}
+\uncover<2->{%
+\begin{beamercolorbox}[rounded=true,sep=6pt,wd=\linewidth]{block body example}
+Across the simulated region, Rubin detects the events outside Roman's fields.
+They account for about \textbf{65\%} of black-hole, 61\% of neutron-star, and 59\% of ordinary-lens detections.
+\end{beamercolorbox}}
 \vfill
-\refnote{Rate-weighted, dust-adjusted yields for the ten-year window. Extinction law: \ads{1989ApJ...345..245C}{Cardelli et al.\ 1989}.}
-\note{The two detection counts overlap. For ordinary lenses the report gives $50{,}350\pm2{,}945$
-      for Roman and $4{,}853\pm515$ for Rubin within the footprint. Of all ordinary-lens detections
-      in the simulated region, $(59\pm5)\%$ are outside Roman's footprint, where Rubin is the only
-      simulated observer. The bar chart takes $A_V$ from the median toward Roman's footprint detections.
-      Within the footprint, nearly all Rubin-only ordinary-lens detections peak when Roman is not observing.
-      Rubin's time coverage matters most when the signal is concentrated inside a Roman gap.}
+\refnote{Rate-weighted, dust-adjusted forecasts for the ten-year window. Detection counts for the two
+surveys overlap inside Roman's fields. Extinction law \ads{1989ApJ...345..245C}{Cardelli et al.\ 1989}.}
+\note{At an assumed one per cent of Galactic stellar mass in black holes, the footprint forecast is
+      about 57 detections with Roman and 7 with Rubin, approximately an eight-fold difference. The
+      compact-object coefficients in the table give ten-year event yields per unit abundance, while
+      the ordinary-lens row uses the reference stellar population convention. The two surveys may
+      detect the same event. The outer-region shares use all unique detections across the simulated
+      region for each lens population. Before rounding, the shares are $65.0\pm4.1\%$ for black holes,
+      $60.9\pm4.7\%$ for neutron stars, and $58.5\pm5.1\%$ for ordinary lenses. The extinction example
+      uses the median visual extinction of Roman's ordinary-lens detections. The larger optical
+      extinction helps explain Roman's advantage in these fields.}
 \end{frame}
 
 \begin{frame}{Roman's data sharpen masses for events Rubin detects}
@@ -88,58 +109,53 @@ mass error below $10\%$ & $\approx0\to8\%$ & $\approx0\to16\%$ & $0.2\%\to\mathb
 \bottomrule
 \end{tabular}
 
-\vspace{4mm}
-\uncover<2->{\small About \textbf{13\% more} black-hole masses reach $10\%$ in the joint forecast across the full footprint,
-compared with the Roman-only yield.\par}
+\vspace{5mm}
+\small Each comparison uses the same events selected by Rubin.\par
 \vfill
 \refnote{Rate-weighted and dust-adjusted. Underlying Rubin detections before dust adjustment have
 $\Neff=685$ (ordinary), $1{,}687$ (neutron stars), and $2{,}011$ (black holes).}
-\note{The table has a common denominator across each pair of fractions. The reverse comparison below it
-      compares two total footprint yields, about $651F$ joint and $579F$ Roman-only for black holes.
-      A $10\%$ mass means a forecast fractional $1\sigma$ error below $0.10$. The joint black-hole share
+\note{Each pair of fractions uses the same Rubin-selected sample. A $10\%$ mass means a
+      forecast fractional $1\sigma$ error below $0.10$. The joint black-hole share
       in the table is $53.3\pm1.8$ percent. Most Rubin black-hole detections in these fields are also
       Roman detections. Rubin broadens both sky and time coverage, but extra visits often have little
       information on well-covered, heavily extinguished events.}
 \end{frame}
 
-\begin{frame}{For black holes, parallax limits the mass precision}
-\begin{columns}[c]
-\begin{column}{.52\linewidth}
-\centering\small
-\textbf{Roman precision in the September runs}
-\begin{tikzpicture}[x=.046cm,y=.92cm,font=\footnotesize]
-  \node[anchor=east] at (-3,2.3) {$\tetE$};
-  \node[anchor=east] at (-3,1.3) {$\piE$};
-  \node[anchor=east] at (-3,.3) {$\Ml$};
-  \foreach \y/\val/\lab in {2.3/97/97,1.3/12.85/13,.3/12.6/13} {
-    \fill[jdverylightgrey] (0,\y-.22) rectangle (100,\y+.22);
-    \fill[jdblue!75] (0,\y-.22) rectangle (\val,\y+.22);
-    \node[anchor=east] at (99,\y+.43) {$\lab\%$};
-  }
-\end{tikzpicture}\\[-1mm]
-{\footnotesize Share with forecast error below $10\%$}
-\end{column}
-\begin{column}{.42\linewidth}
-Roman's detections have a median maximum centroid shift of \textbf{$3.4$\,mas}.
+\begin{frame}{Parallax is the harder measurement for black holes}
+\centering
+\textbf{Roman alone, share of forecasts with errors below $10\%$}
 
 \vspace{4mm}
-\uncover<2->{The Earth--L2 baseline gives negligible median gain in black-hole parallax precision in the paired simulation.}
-\end{column}
-\end{columns}
+\begin{tikzpicture}[x=.081cm, y=1cm, font=\small]
+  \foreach \x in {0,25,50,75,100} {
+    \draw[gray!23] (\x,.15) -- (\x,2.1);
+    \node[anchor=north, font=\footnotesize, text=jdgrey] at (\x,.10) {\x\%};
+  }
+  \node[anchor=east] at (-3,1.72) {Einstein radius $\tetE$};
+  \fill[jdblue!74!black] (0,1.49) rectangle (97,1.95);
+  \node[anchor=east, text=white, font=\small\bfseries] at (95,1.72) {97\%};
+  \node[anchor=east] at (-3,.77) {Microlensing parallax $\piE$};
+  \fill[orange!75!black] (0,.54) rectangle (12.85,1.00);
+  \node[anchor=west, font=\small\bfseries, fill=white, inner sep=2pt] at (15.4,.77) {12.9\%};
+\end{tikzpicture}
+
+\vspace{5mm}
+A well-measured centroid shift gives the Einstein radius.\\
+The mass still depends on how well we measure parallax.
 \vfill
-\refnote{Rate-weighted, as simulated. Each bar uses the Roman sample with a forecast available
-for that parameter ($\Neff\simeq8{,}700$).}
-\note{The rates shown here come from the report's compact-object table. The Roman-only mass
-      fraction after the separate dust adjustment is about $10\%$ of Roman's detections.
-      For the black-hole parallax test, rerun the precision calculation with Roman placed at Earth
-      and keep the sampling and noise fixed. The median parallax-error ratio for L2 vs Earth was
-      effectively one for black holes. The projected baseline is short, and the annual signal already
-      contributes information across Roman's observing seasons.}
+\refnote{September black-hole forecast, rate-weighted before the dust adjustment.
+Each bar uses Roman events with a forecast for that parameter ($\Neff\simeq8{,}700$).}
+\note{The cut is a fractional $1\sigma$ error below 0.10. The effective sample sizes are
+      $8{,}708$ for the Einstein radius and $8{,}680$ for parallax. Each share describes the
+      forecasts for that observable from Roman alone. In a paired test, moving Roman from
+      L2 to Earth while holding the sampling and noise fixed had negligible effect on the
+      median black-hole parallax precision in the September model. See the backup slide
+      on the spatial and temporal baselines.}
 \end{frame}
 
 \begin{frame}{How many black holes could Roman weigh?}
 \centering
-For a black-hole population containing \textbf{$0.5$--$3\%$} of Galactic stellar mass
+If black holes contain \textbf{$0.5$--$3\%$} of Galactic stellar mass
 \vspace{4mm}
 
 \begin{columns}[T]
@@ -158,16 +174,20 @@ masses with errors below $10\%$
 \end{columns}
 \vspace{4mm}
 
-$\displaystyle N_{\rm det}=(5{,}660\pm320)F,\qquad N_{\rm mass}=(579\pm42)F$
-\vspace{3mm}
-
-\uncover<2->{\small Dust, field geometry, correlated astrometric errors and the assumed black-hole population all affect these yields.\par}
+\uncover<2->{%
+\textbf{Expected masses with errors below $10\%$ at fixed abundance $F$}\\[3pt]
+Roman alone $(579\pm42)F$
+\quad$\longrightarrow$\quad
+Roman and Rubin $(651\pm47)F$\par}
 \vfill
-\refnote{First overview report, after the dust adjustment. Roman-only forecast in the $1.47$\,deg$^2$
-model footprint within the ten-year survey window.}
+\refnote{The boxes show Roman-only forecasts. All yields use the $1.47$\,deg$^2$ model footprint
+and a ten-year window, after the dust adjustment.}
 \note{The endpoints vary the assumed $F$ with the mass function and kinematics held fixed. They are an abundance
       scenario range. The uncertainties on the coefficients include Monte Carlo error and uncertainty
       in the dust adjustment. They do not include all survey and population-model uncertainties.
       An astrometric floor that is correlated across visits especially affects weaker centroid signals.
-      The numerical yields here use the original model footprint, so the proposal includes a rerun on the adopted fields.}
+      Roman alone gives $(5{,}660\pm320)F$ detections. Adding Rubin increases the forecast
+      number of precise masses by about $12.5\%$ relative to the Roman-only yield. This is a
+      comparison of total yields in the same footprint. The lower and upper counts shown
+      on the slide are the Roman-only forecasts.}
 \end{frame}

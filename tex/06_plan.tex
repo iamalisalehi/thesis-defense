@@ -1,109 +1,15 @@
 % !TeX root = ../seminar.tex
-\section{The Plan}
-
-\begin{frame}{What the proposal will test}
-\vspace{4mm}
-\begin{enumerate}\setlength{\itemsep}{9pt}
-  \item<+-> Does \textbf{parallax} still limit the mass yield with updated survey and noise models?
-  \item<+-> Which events benefit most from \textbf{combining} the surveys?
-  \item<+-> How much do \textbf{dust} and \textbf{correlated astrometric errors} move the forecast?
-  \item<+-> Can the observed sample constrain the \textbf{mass function} and test a low-mass gap?
-\end{enumerate}
-\note{Questions that follow:
-\begin{itemize}
-  \item How do the numbers of masses to 10, 5 and 1\% depend on the abundance and the mass function?
-  \item If part of Roman's astrometric error is correlated, which lenses can still be weighed?
-  \item How far are the Fisher forecasts from full fits? How often do degeneracies and blending matter?
-  \item From the expected event list, how well can $F$ and the mass function --- and the mass gap --- be determined?
-\end{itemize}}
-\end{frame}
-
-% the roadmap drawn once, with one stage group highlighted
-\newcommand{\roadmap}[4]{%
-\begin{tikzpicture}[font=\footnotesize,
-    sg/.style={terminator, text width=3.05cm, align=center, minimum height=3.3em, fill=jdlightestgrey, text=jdgrey},
-    on/.style={fill=blue!12, text=black, very thick}]
-  \node[sg, #1] (a) at (0,0)     {\textbf{Stages 1--2}\\ a better model};
-  \node[sg, #2] (b) at (3.75,0)  {\textbf{Stage 3}\\ the full run};
-  \node[sg, #3] (c) at (7.5,0)   {\textbf{Stages 4--5}\\ fits \& images};
-  \node[sg, #4] (d) at (11.25,0) {\textbf{Stage 6}\\ the inverse problem};
-  \path[connector] (a) -- (b); \path[connector] (b) -- (c); \path[connector] (c) -- (d);
-\end{tikzpicture}}
-
-\begin{frame}{The proposal (1/2): refine the inputs and rerun}
-\centering
-\vspace{1mm}
-\roadmap{on}{on}{}{}
-\vspace{4mm}
-
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{}l@{\quad$\to$\quad}l@{}}
-\toprule
-\textbf{Sensitive input} & \multicolumn{1}{l}{\textbf{Proposed test or update}} \\
-\midrule
-Correlated astrometric errors & a two-part Roman error model \\
-Dust near the plane: $3$--$6\times$ too thin & DECaPS + near-IR maps, VVV check \\
-Roman's photometric noise & pixel-level simulations \\
-Approximate field geometry & the adopted fields and schedule \\
-Black-hole physics & mass functions, kicks, mass gap \\
-\bottomrule
-\end{tabular}
-\vspace{3mm}
-
-\textbf{Then rerun at finer sky resolution} over Roman's detector footprint.
-\vfill
-\refnote{\ads{2006A\%26A...453..635M}{Marshall et al.\ 2006};
-\ads{2023ApJS..269....5W}{Wilson et al.\ 2023};
-\ads{2012ApJ...749...91F}{Fryer et al.\ 2012};
-\ads{2020A\%26A...638A..94O}{Olejak et al.\ 2020}}
-\note{\begin{itemize}
-  \item The preliminary runs showed which inputs move the answer most; each gets a fix.
-  \item Astrometry: whether Roman's floor averages down decides neutron-star and ordinary-lens masses.
-  \item Dust: the map used is 3--6 times too thin within $\sim1^\circ$ of the plane (VVV check); correcting it lowers
-        Roman's yields by $\sim1/3$, Rubin's by $>1/2$, and leaves the survey comparison intact.
-  \item Dust fix: DECaPS, with near-infrared dust (Marshall et al.\ 2006) where it saturates; checked against VVV.
-  \item Roman: photometric noise from pixel-level simulations (Wilson et al.\ 2023); a two-part astrometric error
-        with a correlated piece that does not average down.
-  \item Ordinary lenses from the Besan\c{c}on catalogue; the adopted GBTDS fields and their published observing plan.
-  \item Black holes: mass functions from supernova models (rapid / delayed) and population synthesis; natal kicks;
-        scenarios with and without a lower mass gap.
-  \item Full run: a $0.02^\circ$ grid over Roman's detectors; $25\times$ the sightlines, Monte Carlo errors
-        $\sim5\times$ smaller, and maps.
-\end{itemize}}
-\end{frame}
-
-\begin{frame}{The proposal (2/2): validate and infer the population}
-\centering
-\vspace{1mm}
-\roadmap{}{}{on}{on}
-\vspace{5mm}
-\raggedright
-\begin{columns}[T]
-\begin{column}{.48\linewidth}
-\textbf{4. Beyond Fisher}
-\begin{itemize}
-  \item Compare Bayesian fits with Fisher forecasts and test degeneracies
+\begin{frame}{What comes next in the thesis}
+\begin{itemize}\setlength{\itemsep}{9pt}
+  \item<+-> \textbf{Refine the forecast.} Run on the adopted Roman footprint at finer resolution
+        and test how correlated astrometric errors affect mass precision.
+  \item<+-> \textbf{Test black-hole populations.} Vary the mass distribution and the velocities
+        black holes receive at birth.
+  \item<+-> \textbf{Infer the population.} Use mock detections, with survey selection and mass
+        errors, to test what we can learn about abundance and a possible low-mass gap.
 \end{itemize}
-\vspace{2mm}
-\textbf{5. The two images}
-\begin{itemize}
-  \item Test when the close images can be separated in simulated Roman exposures
-\end{itemize}
-\end{column}
-\begin{column}{.48\linewidth}
-\textbf{6. The inverse problem}
-\begin{itemize}
-  \item Use mock catalogues to infer abundance and the mass function
-  \item Include the detection efficiency and per-event measurement uncertainty
-\end{itemize}
-\end{column}
-\end{columns}
-\note{\begin{itemize}
-  \item Stage 4: full Bayesian (MCMC) fits of simulated black-hole events; posterior widths against the Fisher
-        forecasts; parallax and blending degeneracies of the kind that troubled OGLE-2011-BLG-0462.
-  \item Stage 5: fit two point sources to simulated Roman images, to turn the $0.25$--$34\%$ bracket into one number.
-  \item Stage 6: simulated event lists as mock data; hierarchical Bayesian inference of the abundance and the mass
-        function, with detection efficiency and per-event errors.
-  \item If time allows: Roman + \emph{Gaia} astrometry; isolated black holes vs astrometric binaries.
-\end{itemize}}
+\note{The first task is to establish which forecast results are stable as we refine the sky grid
+      and vary the astrometric noise assumptions. The second asks how the predicted observations
+      change with different black-hole populations. The third applies those forecasts to inference
+      from a realistically selected catalogue.}
 \end{frame}
